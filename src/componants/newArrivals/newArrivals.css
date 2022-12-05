@@ -1,0 +1,17 @@
+.arrivals-container {
+  background-color: #efebfb;
+  padding-bottom: 40px;
+}
+.add-to-cart-btn {
+  border-color: #6412e9;
+  padding: 0px 18px;
+  font-family: "Barlow";
+  font-weight: 700;
+  font-size: 12px;
+  color: #6412e9;
+  height: 24px;
+  background: #efebfb;
+}
+.add-btn:hover {
+  border-color: #6412e9 !important;
+}
