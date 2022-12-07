@@ -1,0 +1,122 @@
+.popular-product-container {
+  padding: 0px 16rem;
+}
+.title {
+  font-family: "Barlow";
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 46px;
+  text-align: center;
+  color: #6412e9;
+  margin-top: 22px;
+}
+.sub-title {
+  font-family: "Sedgwick Ave";
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 40px;
+  text-align: center;
+  color: #121217;
+  margin-top: 8px;
+  margin-bottom: 22px;
+}
+.product-details {
+  padding: 12px;
+}
+
+.product-title {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 26px;
+  color: #170a2c;
+  text-align: center;
+}
+.product-price {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 26px;
+  color: #121217;
+}
+.product-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.add-btn {
+  border-color: #6412e9;
+  padding: 0px 18px;
+  font-family: "Barlow";
+  font-weight: 700;
+  font-size: 12px;
+  color: #6412e9;
+  height: 24px;
+}
+.add-btn:hover {
+  border-color: #6412e9 !important;
+}
+
+.view-wrap {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.view-btn {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  text-align: center;
+  width: 13.5%;
+  height: 36px;
+  color: #6412e9;
+  background: #4afb9c;
+  border-radius: 5px;
+}
+.prev-btn {
+  position: absolute;
+  top: 46rem;
+  left: 14rem;
+}
+
+.view-more:hover {
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 36px;
+  }
+  .sub-title {
+    font-size: 26px;
+  }
+
+  .product-detail {
+    flex-direction: column;
+  }
+  .product-title {
+    text-align: center;
+  }
+  .popular-product-container {
+    padding: 0;
+  }
+  .view-wrap {
+    margin-top: 8px;
+  }
+  .view-btn {
+    width: 28%;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 950px) {
+  .popular-product-container {
+    padding: 2px 5rem;
+  }
+  .view-wrap {
+    margin-top: 11px;
+  }
+}
