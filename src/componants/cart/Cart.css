@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@800&family=Sedgwick+Ave&display=swap");
+.checkout-cart-container {
+  padding: 0px 16rem;
+  background-color: #efebfb;
+}
+
+.shopping-cart-heading {
+  /* width: 350px; */
+  /* height: 43px; */
+  /* margin-left: 400px; */
+  /* padding-top: 50px; */
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 46px;
+  color: #6412e9;
+}
+.cart-container {
+  width: 570px;
+  background: #ffffff;
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  padding-bottom: 15px;
+}
+.order-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 97%; */
+  padding: 19px 19px;
+}
+.order-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 58px;
+  /* width: 39%; */
+}
+.row-col-con {
+  padding-top: 20px;
+}
+.cart-row {
+  padding-top: 20px;
+  width: 540px;
+  height: 77px;
+  margin: auto;
+  margin-top: 20px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #b2bcca;
+  border-radius: 5px;
+}
+.product-img {
+  border: 5px;
+  padding-top: 0px;
+  margin-top: -15px;
+}
+.img-col img {
+  width: 70px;
+  height: 70px;
+}
+.product-title {
+  width: 150px;
+  height: 40px;
+  /* left: 103px;
+    top: 147px; */
+  left: 20px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  /* or 162% */
+
+  color: #646469;
+}
+.product-quat {
+  width: 260px;
+}
+.product-price {
+  width: 76px;
+  height: 34px;
+  /* left: 414px;
+top: 141px; */
+  left: 80px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  /* or 144% */
+
+  display: flex;
+  align-items: center;
+
+  color: #121217;
+}
+.remove {
+  /* left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%; */
+  left: 80px;
+  top: 8px;
+  color: #646469;
+}
+.order-row {
+  margin: 40px 10px;
+  margin-left: 40px;
+}
+.order-total {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  color: #121217;
+}
+.price {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+
+  color: #121217;
+}
+.proceeed-btn {
+  /* width: 223px; */
+  height: 41px;
+  /* left: 20px; */
+  background-color: #4afb9c;
+  border-radius: 5px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #170a2c;
+}
+.counter {
+  /* width:90px; */
+  margin-left: 60px;
+  display: flex;
+  flex-direction: row;
+}
+
+.quantity {
+  width: 40px;
+  height: 28px;
+  border: 1px solid #6412e9;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 14px;
+  /* or 88% */
+  padding: 7px 7px;
+  text-align: center;
+
+  color: #6412e9;
+}
+
+@media only screen and (max-width: 600px) {
+  .checkout-cart-container {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 70px;
+  }
+  .cart-container {
+    width: 93%;
+    margin-left: 10px;
+    
+  }
+  .cart-heading {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+  .cart-row {
+    width: 90%;
+    height: 150px;
+  }
+  .product-title {
+    margin-left: 20px;
+  }
+  .product-quat {
+    margin-left: 0px;
+  }
+  .product-price {
+    margin-left: 50px;
+    padding-left: 0px;
+  }
+  .remove {
+    margin-top: -40px;
+    margin-left: 175px;
+  }
+  .order-details {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .order-summary {
+    margin-left: -6rem;
+    gap: 1px;
+  }
+
+  .order-total {
+    margin-left: 20px;
+  }
+  .price {
+    margin: auto 50px;
+  }
+  .proceed-btn {
+    width: 100%;
+  }
+  .proceeed-btn {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 980px) {
+  .checkout-cart-container {
+    padding: 0px 7rem;
+    padding-bottom: 90px;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1590px) {
+  .checkout-cart-container{
+    height: 80vh;
+  }
+}

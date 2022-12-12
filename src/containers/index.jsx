@@ -1,17 +1,34 @@
 import React from "react";
-import Product from "../componants/popularProduct/Product";
-import Banner from "../componants/banner/Banner";
-import NewArrivals from "../componants/newArrivals/NewArrivals";
-import Footer from "../common/footer/Footer";
-import Header from "../componants/header/Header";
+import BillingAddress from "../componants/checkout/billingAddress/BillingAddress";
+import Cart from "../componants/cart/Cart";
+import BillingSummary from "../componants/checkout/billingSummary/BillingSummary";
+import OrderPlaced from "../componants/checkout/orderPlaced/OrderPlaced";
+import PaymentMethod from "../componants/checkout/paymentMethod/PaymentMethod";
+import Shipping from "../componants/checkout/shipping/Shipping";
+import Login from "../componants/login/Login";
+import { Route, Routes } from "react-router";
+import Layout from "../layout/Layout";
+import Home from "./home/Home";
+import Signup from "../componants/Signup/Signup";
+
 const Container = () => {
   return (
     <div>
-       <Header/>
-      <Banner />
-      <Product />
-      <NewArrivals />
-      <Footer />
+      <React.Fragment>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="sign-up" element={<Signup />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="billing-address" element={<BillingAddress />} />
+            <Route path="shipping" element={<Shipping />} />
+            <Route path="payment-method" element={<PaymentMethod />} />
+            <Route path="billing-summary" element={<BillingSummary />} />
+            <Route path="payment-success" element={<OrderPlaced />} />
+          </Routes>
+        </Layout>
+      </React.Fragment>
     </div>
   );
 };

@@ -24,7 +24,7 @@
   padding: 12px;
 }
 
-.product-title {
+.title-product {
   font-family: "Barlow";
   font-style: normal;
   font-weight: 500;
@@ -33,7 +33,7 @@
   color: #170a2c;
   text-align: center;
 }
-.product-price {
+.price-product {
   font-family: "Barlow";
   font-style: normal;
   font-weight: 700;
@@ -46,6 +46,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  margin-top: -5px;
 }
 .add-btn {
   border-color: #6412e9;
@@ -65,16 +66,16 @@
   margin-bottom: 4rem;
 }
 .view-btn {
-  font-family: "Barlow";
+  font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 700;
-  font-size: 13px;
-  line-height: 19px;
+  font-size: 16px;
+  line-height: 21px;
   text-align: center;
-  width: 13.5%;
-  height: 36px;
-  color: #6412e9;
-  background: #4afb9c;
+  width: 15%;
+  height: 40px;
+  color: #ffffff;
+  background: #6412e9;
   border-radius: 5px;
 }
 .prev-btn {
@@ -88,11 +89,15 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .main-header {
+    padding: 0px 13px;
+    margin-top: 70px;
+  }
   .title {
-    font-size: 36px;
+    font-size: 30px;
   }
   .sub-title {
-    font-size: 26px;
+    font-size: 18px;
   }
 
   .product-detail {
@@ -102,17 +107,20 @@
     text-align: center;
   }
   .popular-product-container {
-    padding: 0;
+    padding: 0 10px;
   }
   .view-wrap {
     margin-top: 8px;
   }
   .view-btn {
-    width: 28%;
+    width: 40%;
   }
 }
 
 @media only screen and (min-width: 500px) and (max-width: 950px) {
+  .main-header{
+    margin-top: 70px;
+  }
   .popular-product-container {
     padding: 2px 5rem;
   }

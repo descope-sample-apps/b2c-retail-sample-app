@@ -1,6 +1,6 @@
-import { Button, Carousel, Typography } from "antd";
+import { Button, Typography } from "antd";
 import React, { useState } from "react";
-import ProductData from "../popularProduct/ProductData.json";
+import { productData } from "../popularProduct/ProductData";
 import Slider from "react-slick";
 
 import "./newArrivals.css";
@@ -54,7 +54,7 @@ const NewArrivals = () => {
     ],
   };
 
-  const [products, setProducts] = useState(ProductData);
+  const [products, setProducts] = useState(productData);
 
   return (
     <div className="arrivals-container">
@@ -71,6 +71,11 @@ const NewArrivals = () => {
         ))}
       </Slider>
       <br />
+      <div className="view-wrap btn-wrap">
+        <Button className="view-btn">
+          <span className="view-more">View More</span>
+        </Button>
+      </div>
     </div>
   );
 };

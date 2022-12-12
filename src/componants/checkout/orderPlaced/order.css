@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@800&family=Sedgwick+Ave&display=swap");
+
+.checkout-order-container {
+  padding: 1rem 16rem;
+  background-color: #efebfb;
+  height: 81vh;
+}
+/* .sub-container{
+    margin: auto;
+} */
+.cart-heading {
+  width: 350px;
+  height: 43px;
+  margin-left: 400px;
+  padding-top: 100px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 46px;
+  color: #6412e9;
+}
+.order-container {
+  width: 80%;
+  height: 263px;
+  background: #ffffff;
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  margin-bottom: 6rem;
+}
+.order-heading {
+  height: 80px;
+  padding-top: 50px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 40px;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 60px;
+}
+.order-sub-heading {
+  height: 20px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4f4f4f;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+.btn-just-cont {
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+}
+
+.btn-just {
+  width: 40%;
+  height: 41px;
+  background: #ffffff;
+  border: 1px solid #6412e9;
+  border-radius: 5px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #6412e9;
+}
+.btn-just:hover {
+  color: #6412e9;
+  border: 1px solid #6412e9;
+}
+.btn-feed {
+  width: 40%;
+  height: 41px;
+  background-color: #4afb9c;
+  border-radius: 5px;
+  border-color: #4afb9c;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #6412e9;
+}
+@media only screen and (max-width: 600px) {
+  .checkout-order-container {
+    padding: 0;
+    padding-top: 2rem;
+  }
+  .order-container {
+    width: 92%;
+    margin-left: 15px;
+  }
+  .order-heading {
+    font-size: 21px;
+  }
+  .cart-heading {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+  .btn-feed,
+  .btn-just {
+    font-size: 13px !important;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 980px) {
+  .checkout-order-container {
+    padding: 2rem 9rem;
+    height: 50vh;
+  }
+  .cart-heading {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+  .top-container {
+    height: 580px;
+  }
+  .check-heading {
+    margin: auto;
+    margin-left: 15%;
+  }
+  .btn-just {
+    width: 44%;
+  }
+}
