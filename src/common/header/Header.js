@@ -3,11 +3,16 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from '@descope/react-sdk'
 import "./Header.css";
+
+const getDisplayName = (user) => {
+  return user?.email || "";
+}
+
 function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const { user, authenticated } = useAuth();
-  console.log("email",user)
-  const {loginLabel,linkPath} = (authenticated) ? {loginLabel:`${user.email} (Logout)`, linkPath:'/logout'} : {loginLabel: "Login", linkPath:'/login'};
+  const {loginLabel,linkPath} = (authenticated) ? {loginLabel:`${getDisplayName(user)} (Logout)`, linkPath:'/logout'} : {loginLabel: "Login", linkPath:'/login'};
+
   return (
     <>
       <nav className="main-nav">

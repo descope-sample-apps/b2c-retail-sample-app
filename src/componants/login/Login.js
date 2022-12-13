@@ -10,7 +10,6 @@ const Login = () => {
   const initialValues = {
     email: "",
   };
-	// let history = useHistory();
   const navigate = useNavigate()
 
 
