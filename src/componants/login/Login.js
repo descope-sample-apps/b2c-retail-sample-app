@@ -71,7 +71,7 @@ const Login = () => {
               </Typography>
               <Typography className="sign-up">
                 <NavLink to="/sign-up" className="btn-sign">
-                  SIGN UP
+                  SIGN UP <span style={{ fontWeight: 900 }}> > </span>
                 </NavLink>
               </Typography>
             </div>

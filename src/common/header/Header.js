@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 function Header() {
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [isNavExpanded, setIsNavExpanded] = useState(true);
   return (
     <>
       <nav className="main-nav">

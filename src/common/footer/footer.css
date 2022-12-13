@@ -12,8 +12,8 @@
 .footer-wrapper {
   background-color: #0f0a2c;
   text-align: center;
-  padding: 43px;
-  
+  padding: 4rem;
+  height: 10rem;
 }
 
 .footer-content {
@@ -46,10 +46,12 @@
   .learn {
     padding: 0.8rem 2rem;
   }
+  .footer-wrapper {
+    padding: 3rem;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 950px) {
   .learn {
     padding: 1.8rem 5rem;
   }
-  
 }

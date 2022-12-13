@@ -2,8 +2,10 @@ import React from 'react';
 import { Button, Typography } from 'antd';
 import './Banner.css';
 import arrowRight from "../../assets/arrow-right.svg";
-
+import { useNavigate } from "react-router";
 function Banner() {
+  const navigate = useNavigate();
+
   return (
    
     <>
@@ -17,7 +19,7 @@ function Banner() {
           We could all do with a chuckle. Wear a Tee-<br></br>Hee T-shirt today and spread some cheer!
 
           </p>
-          <Button className="sign-button">
+          <Button className="sign-button" onClick={() => navigate("/sign-up")}>
            Sign Up
           </Button>
         </div>

@@ -95,6 +95,7 @@
   .checkout-order-container {
     padding: 0;
     padding-top: 2rem;
+    height:75vh;
   }
   .order-container {
     width: 92%;
@@ -133,4 +134,10 @@
   .btn-just {
     width: 44%;
   }
+}
+@media only screen and (min-width: 1280px) and (max-width: 3060px){
+  .checkout-order-container {
+    height:77vh;
+  }
+  
 }

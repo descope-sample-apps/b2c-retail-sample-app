@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 13rem;
+  padding: 4rem 12rem;
   background: #efebfb;
-  gap: 5rem;
+  gap: 6rem;
+  padding-bottom: 8.4rem;
 }
 .first-div {
   flex: 1;
@@ -53,6 +54,20 @@
   padding: 10px;
   margin-bottom: 19px;
   height: 42px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 40px;
+  color: #716889;
+}
+.ant-divider-with-text::before {
+  border-block-start: 2px solid transparent !important;
+  border-block-start-color: #716889 !important;
+}
+.ant-divider-with-text::after {
+  border-block-start: 2px solid transparent !important;
+  border-block-start-color: #716889 !important;
 }
 .email-btn,
 .google-btn {
@@ -74,6 +89,8 @@
 .google-btn {
   color: #716889;
   margin-bottom: 12px;
+  border: none;
+  background: #efebfb;
 }
 .acct {
   display: flex;
@@ -87,13 +104,24 @@
   cursor: pointer;
 }
 .acct-link {
+  font-family: "Barlow";
+  font-style: normal;
   font-weight: 600;
+  font-size: 18px;
+  line-height: 40px;
+  color: #716889;
 }
 .sign-up {
   font-weight: 700;
 }
 .btn-sign {
   color: #716889 !important;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
 }
 @media only screen and (max-width: 600px) {
   .main-container-login {
@@ -111,11 +139,16 @@
     width: 93%;
   }
 }
-
-@media only screen and (min-width: 600px) and (max-width: 1000px) {
+@media only screen and (min-width: 820px) and (max-width: 1000px) {
   .main-container-login {
-    padding: 4rem 5rem;
-    gap: 37px;
+    padding: 4rem 2rem;
+    gap: 3rem;
+  }
+}
+@media only screen and (min-width: 700px) and (max-width: 810px) {
+  .main-container-login {
+    padding: 4rem 1rem;
+    gap: 5rem;
   }
   .login-container {
     width: 44%;
@@ -127,6 +160,7 @@
     font-size: 16px;
   }
 }
+
 @media only screen and (min-width: 1020px) and (max-width: 1200px) {
   .main-container-login {
     padding: 4rem 9rem;
@@ -134,10 +168,20 @@
     gap: 5rem;
   }
 }
-@media screen and (min-width: 1280px) and (max-width: 1590px) {
+@media only screen and (min-width: 1280px) and (max-width: 1500px) {
   .main-container-login {
     padding: 4rem 14rem;
     height: 69vh;
     gap: 5rem;
+  }
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1650px) {
+  .first-div {
+    margin-left: 10rem;
+  }
+  .login-container {
+    margin-right: 11rem;
+    width: 33%;
   }
 }

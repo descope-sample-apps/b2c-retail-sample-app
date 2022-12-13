@@ -78,7 +78,9 @@ function Cart() {
           ))}
         </div>
         <br />
-        <br />
+        <Typography className="cart-text">* To experience step-up authentication, change the number of cart items to more than 10.</Typography>
+      
+        
         <div className="order-details">
           <div className="order-summary">
             <Typography className="order-total">OrderTotal</Typography>
