@@ -2,11 +2,17 @@ import { Button, Divider, Typography } from "antd";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./login.css";
+import { AuthProvider, useAuth } from '@descope/react-sdk'
+import { Descope, SignUpOrInFlow } from '@descope/react-sdk'
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const initialValues = {
     email: "",
   };
+	// let history = useHistory();
+  const navigate = useNavigate()
+
 
   const [formValues, setFormValues] = useState(initialValues);
 
@@ -48,6 +54,15 @@ const Login = () => {
           </Typography>
         </div>
         <div className="login-container">
+        <SignUpOrInFlow
+            onSuccess={(e) => {
+              console.log('Logged in!');
+              navigate("/");
+            }}
+            onError={(e) => console.log('Could not logged in!')}
+        />
+        </div>
+        {/* <div className="login-container">
           <br />
           <Typography className="login-text">Login</Typography>
           <form className="form-login">
@@ -76,7 +91,7 @@ const Login = () => {
               </Typography>
             </div>
           </form>
-        </div>
+        </div> */}
       </div>
     </>
   );
