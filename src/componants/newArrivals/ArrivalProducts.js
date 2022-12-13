@@ -5,19 +5,22 @@ const ArrivalProducts = (product) => {
   const { image, title, price } = product;
   return (
     <div className="product-details">
-      <img
-        src={image}
-        alt={`${title}`}
-        style={{
-          width: "100%",
-          background: " #B4B1B8",
-          borderRadius: "4px",
-        }}
-      />
+      <div>
+        <img
+          src={image}
+          alt={`${title}`}
+          style={{
+            width: "100%",
+            background: " #B4B1B8",
+            borderRadius: "4px",
+            height: "9.2rem",
+          }}
+        />
+      </div>
 
-      <Typography className="product-title">{title}</Typography>
+      <Typography className="title-product">{title}</Typography>
       <div className="product-detail">
-        <Typography className="product-price">{price}</Typography>
+        <Typography className="price-product">{price}</Typography>
         <Button className="add-to-cart-btn">+ Add to cart</Button>
       </div>
     </div>

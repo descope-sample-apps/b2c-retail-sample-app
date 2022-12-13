@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@800&family=Sedgwick+Ave&display=swap");
+.billing-main-container {
+  width: 100%;
+  height: 769px;
+  background-color: #efebfb;
+  padding: 0 17rem;
+}
+/* .sub-container{
+    margin: auto;
+} */
+.checkout-cart-heading {
+  width: 350px;
+  height: 43px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 46px;
+  color: #6412e9;
+}
+.summary-container {
+  width: 570px;
+  height: 310px;
+  background: #ffffff;
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  /* margin: auto;
+  margin-top: 65px; */
+}
+.bill-heading {
+  width: 100%;
+  height: 20px;
+  padding: 17px 23px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 29px;
+}
+.subtotal-row {
+  width: 100%;
+  height: 20px;
+  margin: 25px 48px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #4f4f4f;
+}
+.title-row {
+  text-align: left;
+}
+.total-col {
+  text-align: center;
+}
+.grandtotal-row {
+  width: 100%;
+  height: 20px;
+  margin: 25px 48px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+.back-button {
+  width: 255px;
+  height: 41px;
+  margin-left: 21px;
+
+  background: #ffffff;
+  border: 1px solid #6412e9;
+  border-radius: 5px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #6412e9;
+}
+.payamt-button {
+  width: 255px;
+  height: 41px;
+  margin-left: 10px;
+  background: linear-gradient(137.27deg, #2f88ff 19.41%, #1d68cd 65.49%);
+  box-shadow: 0px 4px 4px rgba(14, 53, 191, 0.25);
+  border-radius: 6px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #f6f6f6;
+}
+
+@media only screen and (max-width: 550px) {
+  .billing-main-container {
+    padding: 0 1rem;
+    height: 489px;
+  }
+  .summary-container {
+    width: 100%;
+  }
+  .cart-heading {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+  .subtotal-row {
+    width: 80%;
+  }
+  .grandtotal-row {
+    width: 80%;
+  }
+  .back-button {
+    width: 90%;
+    margin-left: 10px;
+  }
+  .payamt-button {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 980px) {
+  .billing-main-container {
+    padding: 0 9rem;
+    height: 516px;
+  }
+  .cart-heading {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+}

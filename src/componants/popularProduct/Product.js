@@ -1,6 +1,6 @@
 import { Button, Typography } from "antd";
 import React, { useState } from "react";
-import ProductData from "./ProductData.json";
+import { productData } from "./ProductData";
 import Slider from "react-slick";
 import "./product.css";
 import ArrivalProducts from "../newArrivals/ArrivalProducts";
@@ -15,7 +15,7 @@ const SamplePrevArrow = (props) => {
 };
 
 const Product = () => {
-  const [products, setProducts] = useState(ProductData);
+  const [products, setProducts] = useState(productData);
 
   const settings = {
     infinite: true,
@@ -59,10 +59,12 @@ const Product = () => {
     <div>
       <br />
       <br />
-      <Typography className="title">Most Popular</Typography>
-      <Typography className="sub-title">
-        We love all our tees equally, but these ones are better
-      </Typography>
+      <div className="main-header">
+        <Typography className="title">Most Popular</Typography>
+        <Typography className="sub-title">
+          We love all our tees equally, but these ones are better
+        </Typography>
+      </div>
 
       <Slider {...settings} className="popular-product-container">
         {products.map((product) => (
