@@ -1,31 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { products } from "./type.js";
 // import Header from '../header/Header';
 import { useState } from "react";
-import { Col, Divider, Row, Typography } from "antd";
+import { Col, Row, Typography } from "antd";
 import { Button } from "antd";
 import "./Cart.css";
 import { useNavigate } from "react-router";
+
 function Cart() {
   const [productsData, setProductsData] = useState(products);
-  const [quantity, setQuantity] = useState(1);
-  // const [itemprice, setPrice] = useState(products);
+  
+  const[CART,setCART] = useState(productsData)
 
+  // useEffect(() => {
+  //   setCART(productsData)
+  // },[productsData])
+  const handleRemove = (id) => {
+  let updatedCart = CART.filter((item) => item.id !== id)
+        if(updatedCart <= 1){
+           navigate("/");
+        }
+      return setCART(updatedCart);
+  };
+      
+  
   const navigate = useNavigate();
-
-  var existingId = productsData.findIndex((prod) => prod.id);
-  const handleIncrement = (id) => {
-    if (existingId >= 0) {
-      setQuantity((id) => id + 1);
-    }
-  };
-
-  const handleDecrement = (id) => {
-    // setQuantity(prevCount => prevCount+1);
-    if (existingId >= 0) {
-      setQuantity((existingId) => existingId - 1);
-    }
-  };
 
   return (
     <div className="checkout-cart-container">
@@ -35,7 +34,7 @@ function Cart() {
       <br />
       <div className="cart-container">
         <div className="row-col-con">
-          {productsData.map((product, id) => (
+          {CART.map((product, id) => (
             <Row className="cart-row" key={id}>
               <Col className="img-col">
                 <div className="product-img">
@@ -51,17 +50,28 @@ function Cart() {
                     type="seconday"
                     className="decrement-btn"
                     onClick={() => {
-                      handleDecrement(product.id);
-                    }}
+                      if(product.quantity > 1){
+                      const _DECREMENT = CART.map((item,index) => {
+                       return id === index ? {...item, quantity: item.quantity - 1} : item
+                      })
+                      setCART(_DECREMENT)
+                      }
+                      else{
+                        handleRemove(product.id);
+                      }
+                  }}
                   >
                     -
                   </Button>
-                  <div className="quantity">{quantity}</div>
+                  <div className="quantity">{product.quantity}</div>
                   <Button
                     type="secondary"
                     className="increment-btn"
                     onClick={() => {
-                      handleIncrement(product.id);
+                       const _CART = CART.map((item,index) => {
+                        return id === index ? {...item, quantity: item.quantity + 1} : item
+                       })
+                       setCART(_CART)
                     }}
                   >
                     +
@@ -69,9 +79,12 @@ function Cart() {
                 </div>
               </Col>
               <Col span={5} order={4} className="product-price">
-                {product.price}
+                {(product.price * product.quantity).toFixed(2)}
               </Col>
-              <Col span={5} order={4} className="remove">
+              <Col span={5} order={4} className="remove" 
+                onClick={() => handleRemove(product.id)}
+              
+              >
                 <img src={require("../../assets/Shape.svg").default} />
               </Col>
             </Row>
@@ -84,7 +97,7 @@ function Cart() {
         <div className="order-details">
           <div className="order-summary">
             <Typography className="order-total">OrderTotal</Typography>
-            <Typography className="price">$2.46</Typography>
+            <Typography className="price">${CART.map(products => products.price * products.quantity).reduce(((total,value) => total + value)).toFixed(2)}</Typography>
           </div>
           <div className="proceed-btn">
             <Button

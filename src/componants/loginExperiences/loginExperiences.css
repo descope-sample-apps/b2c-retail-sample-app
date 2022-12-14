@@ -1,0 +1,179 @@
+.ant-collapse > .ant-collapse-item:last-child {
+  border-radius: 0;
+}
+.ant-collapse {
+  border-radius: 0;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    #6412e9 0%,
+    #fbbb00 34.15%,
+    #28e17d 69.05%,
+    #6412e9 100%
+  );
+}
+.ant-collapse-header {
+  align-items: center !important;
+  padding: 12px 11rem !important;
+  height: 85px;
+}
+.ant-collapse-content {
+  border-radius: 0 !important;
+  background: #d9d5de !important;
+  padding-bottom: 30px;
+}
+.ant-collapse-header-text {
+  /* padding: 11px 7rem; */
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  color: #170a2c;
+  margin-inline-end: initial !important;
+  flex: initial !important;
+}
+.ant-collapse-arrow {
+  font-size: 21px !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.panel-title {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #170a2c;
+  padding: 28px 7rem;
+}
+.tab-main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #0f0a2c;
+  border-radius: 15px;
+  padding: 1rem 1rem;
+  margin-left: 9rem;
+  margin-right: 9rem;
+  height: 25rem;
+}
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  text-shadow: none;
+  background: linear-gradient(
+    90deg,
+    #6412e9 0%,
+    #fbbb00 34.15%,
+    #28e17d 69.05%,
+    #6412e9 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ant-tabs-tab-btn:hover {
+  color: white;
+}
+.ant-tabs-tab {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px !important;
+  line-height: 46px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.ant-tabs-top > .ant-tabs-nav {
+  margin: 0;
+}
+.ant-tabs-ink-bar {
+  background: linear-gradient(
+    90deg,
+    #6412e9 0%,
+    #fbbb00 34.15%,
+    #28e17d 69.05%,
+    #6412e9 100%
+  ) !important;
+  box-shadow: 4px -4px 8px #00ffff;
+}
+.flow-content,
+.flow-content-right {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #c6c6cb;
+}
+.flow-content-right {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 5rem;
+  margin-top: 6rem;
+}
+.right-tab {
+  flex: 1;
+}
+@media only screen and (max-width: 600px) {
+  .ant-collapse-header {
+    padding: 0 !important;
+  }
+  .ant-collapse-header-text {
+    padding: 11px 1rem;
+  }
+  .ant-collapse-expand-icon {
+    padding-inline-end: 17px !important;
+  }
+
+  .tab-main-container {
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+    margin-top: 16px;
+  }
+
+  .panel-title {
+    padding: 0 1rem;
+  }
+  .flow-content-right {
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .ant-collapse-header {
+    padding: 12px 7rem !important;
+  }
+  .tab-main-container {
+    width: 97%;
+    margin-left: 0.4rem;
+    margin-right: 0;
+  }
+  .flow-content-right {
+    padding: 1rem;
+    margin-top: 9rem;
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1650px) {
+  .panel-title {
+    padding: 28px 18rem;
+  }
+  .tab-main-container {
+    margin-left: 19rem;
+    margin-right: 19rem;
+  }
+  .flow-content-right {
+    padding: 5rem;
+  }
+}
