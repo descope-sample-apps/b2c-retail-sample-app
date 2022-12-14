@@ -1,0 +1,13 @@
+.btn-client-sdk {
+  background: #6412e9;
+  border-radius: 5px;
+  border-color: #6412e9;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  width: 47%;
+  height: 40px;
+}

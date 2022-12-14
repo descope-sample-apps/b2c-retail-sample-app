@@ -173,3 +173,9 @@ color: #716889;
         font-size: 25px;
     }
 }
+@media only screen and (min-width: 1280px) and (max-width: 3060px){
+    .main-container{
+      height:68vh;
+    }
+    
+  }

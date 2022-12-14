@@ -1,0 +1,65 @@
+.main-flow-container {
+  display: flex;
+  justify-content: space-between;
+}
+.left-flow {
+  width: 46%;
+  padding: 9px;
+  /* background: #0f0a2c; */
+}
+.right-flow {
+  flex: 1;
+  background: #0c0824;
+  height: 398px;
+  padding: 14px;
+  margin-top: -5.3rem;
+}
+.inner-div {
+  border: 0.931707px dashed #f90c0c;
+  /* height: 83vmin; */
+  height: 100%;
+}
+.btn-learn {
+  background: #6412e9;
+  border-radius: 5px;
+  border-color: #6412e9;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  width: 47%;
+  height: 40px;
+}
+.btn-mobile-view {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-flow-container {
+    flex-direction: column;
+  }
+  .left-flow {
+    width: 100%;
+  }
+  .right-flow {
+    margin-top: -22px;
+    margin-bottom: 10px;
+    background: #0f0a2c;
+  }
+  .btn-desktop-view {
+    display: none;
+  }
+  .btn-mobile-view {
+    display: block;
+  }
+  .btn-learn {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .inner-div {
+    height: 45vmin;
+  }
+}

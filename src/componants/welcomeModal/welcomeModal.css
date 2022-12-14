@@ -1,0 +1,65 @@
+.ant-modal-mask {
+  background-color: transparent !important;
+}
+.ant-modal-content {
+  background: #ffffff !important;
+  opacity: 0.95 !important;
+  box-shadow: 8px 8px 12px rgba(151, 71, 255, 0.68) !important;
+  border-radius: 14px !important;
+  padding-bottom: 6rem !important;
+}
+.ant-modal-close {
+  right: 52px !important;
+}
+.modal-container {
+  width: 90% !important;
+}
+.modal-title {
+  margin-top: 12px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 46px;
+  color: #6412e9;
+  text-align: center;
+}
+.modal-subtitle {
+  font-family: "Sedgwick Ave";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 40px;
+  text-align: center;
+  color: #170a2c;
+}
+.content-wrapper {
+  padding: 0 15rem;
+}
+.content-head,
+.content-list {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #170a2c;
+}
+.anticon {
+  color: #6412e9;
+}
+.ant-modal-close-x {
+  font-size: 20px !important;
+}
+/* media */
+
+@media only screen and (max-width: 600px) {
+  .content-wrapper {
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+  .content-wrapper {
+    padding: 0 5rem;
+  }
+}

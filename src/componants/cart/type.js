@@ -4,17 +4,17 @@ export var products = [
   {
     id: 1,
     title: "Pastwords",
-    price: "$24.99",
-    image:bannerimg1
-      
+    price: "24.66",
+    image:bannerimg1,
+    quantity:1
   },
 
   {
     id: 2,
     title: "Authenti-late",
-    price: "$24.99",
-    image:bannerimg2
-      
+    price: "24.99",
+    image:bannerimg2,
+    quantity:1
   },
   // {
   //   "id": 3,

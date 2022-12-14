@@ -1,8 +1,14 @@
 import { Button, Typography } from "antd";
 import React from "react";
-
+import{ useState } from "react";
 const ArrivalProducts = (product) => {
   const { image, title, price } = product;
+  const[cart,setCart] = useState([])
+  console.log(cart)
+  const addToCart = (data) => {
+    setCart([...cart,data])
+   
+  }
   return (
     <div className="product-details">
       <div>
@@ -21,7 +27,7 @@ const ArrivalProducts = (product) => {
       <Typography className="title-product">{title}</Typography>
       <div className="product-detail">
         <Typography className="price-product">{price}</Typography>
-        <Button className="add-to-cart-btn">+ Add to cart</Button>
+        <Button className="add-to-cart-btn" onClick={() => addToCart(product)}>+ Add to cart</Button>
       </div>
     </div>
   );

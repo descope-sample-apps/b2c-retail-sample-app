@@ -105,6 +105,15 @@ bottom: 8.33%; */
   top: 8px;
   color: #646469;
 }
+.cart-text{
+font-family: 'Barlow';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 22px;
+color: #6412E9;
+padding: 0px 22px;
+}
 .order-row {
   margin: 40px 10px;
   margin-left: 40px;
