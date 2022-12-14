@@ -6,6 +6,7 @@ import OrderPlaced from "../componants/checkout/orderPlaced/OrderPlaced";
 import PaymentMethod from "../componants/checkout/paymentMethod/PaymentMethod";
 import Shipping from "../componants/checkout/shipping/Shipping";
 import Login from "../componants/login/Login";
+import Logout from "../componants/logout/Logout";
 import { Route, Routes } from "react-router";
 import Layout from "../layout/Layout";
 import Home from "./home/Home";
@@ -19,6 +20,7 @@ const Container = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="login" element={<Login />} />
+            <Route path="logout" element={<Logout />} />
             <Route path="sign-up" element={<Signup />} />
             <Route path="cart" element={<Cart />} />
             <Route path="billing-address" element={<BillingAddress />} />
