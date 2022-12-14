@@ -2,11 +2,16 @@ import { Button, Divider, Typography } from "antd";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./login.css";
+import { AuthProvider, useAuth } from '@descope/react-sdk'
+import { Descope, SignUpOrInFlow } from '@descope/react-sdk'
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const initialValues = {
     email: "",
   };
+  const navigate = useNavigate()
+
 
   const [formValues, setFormValues] = useState(initialValues);
 
@@ -48,34 +53,13 @@ const Login = () => {
           </Typography>
         </div>
         <div className="login-container">
-          <br />
-          <Typography className="login-text">Login</Typography>
-          <form className="form-login">
-            <input
-              className="input-email"
-              name="email"
-              value={formValues.email}
-              onChange={handleChange}
-              required
-              placeholder="Enter email address"
-            />
-
-            <Button className="email-btn" onClick={submitData}>
-              Continue with email
-            </Button>
-            <Divider>or</Divider>
-            <Button className="google-btn">Continue with google</Button>
-            <div className="acct">
-              <Typography className="acct-link">
-                Dont have an account?
-              </Typography>
-              <Typography className="sign-up">
-                <NavLink to="/sign-up" className="btn-sign">
-                  SIGN UP
-                </NavLink>
-              </Typography>
-            </div>
-          </form>
+        <SignUpOrInFlow
+            onSuccess={(e) => {
+              console.log('Logged in!');
+              navigate("/");
+            }}
+            onError={(e) => console.log('Could not logged in!')}
+        />
         </div>
       </div>
     </>

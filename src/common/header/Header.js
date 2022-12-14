@@ -1,9 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useAuth } from '@descope/react-sdk'
 import "./Header.css";
+
+const getDisplayName = (user) => {
+  return user?.email || "";
+}
+
 function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const { user, authenticated } = useAuth();
+  const {loginLabel,linkPath} = (authenticated) ? {loginLabel:`${getDisplayName(user)} (Logout)`, linkPath:'/logout'} : {loginLabel: "Login", linkPath:'/login'};
+
   return (
     <>
       <nav className="main-nav">
@@ -48,8 +57,8 @@ function Header() {
         </div>
         <div className="navbar-right">
           <div className="btntag">
-            <NavLink to="/login" className="nav-link">
-              Login
+            <NavLink to={linkPath} className="nav-link">
+              {loginLabel}
             </NavLink>
           </div>
           <NavLink to="cart">
