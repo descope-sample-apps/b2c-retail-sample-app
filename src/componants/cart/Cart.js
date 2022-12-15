@@ -102,7 +102,7 @@ function Cart() {
           <div className="proceed-btn">
             <Button
               className="proceeed-btn"
-              onClick={() => navigate("/payment-success")}
+              onClick={() => navigate("/step-up")}
             >
               Proceed to Checkout
             </Button>
