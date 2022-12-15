@@ -9,9 +9,10 @@ const AppRoot = () => {
   if (projectId) {
     localStorage.setItem('projectId', projectId);
   }
+  console.log("projectId", projectId)
   return (
       <AuthProvider
-          projectId={projectId || "P2IWkrFecmaDJzhQqV5L9MZslivd"}
+          projectId={projectId || process.env.REACT_APP_PROJECT_ID}
       >
        <App />
       </AuthProvider>

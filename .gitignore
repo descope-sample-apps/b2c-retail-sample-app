@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 .replit
 replit.nix
+
+# .env
+.env
