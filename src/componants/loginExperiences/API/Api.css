@@ -32,6 +32,9 @@
     width: 67%;
     height: 40px;
   }
+  .btn-mobile-view {
+    display: none;
+  }
   
   @media only screen and (max-width: 600px) {
     .main-flow-container {
@@ -42,6 +45,13 @@
     }
     .right-flow {
       margin-top: 0;
+    }
+   
+    .btn-mobile-view {
+      display: block;
+    }
+    .btn-api {
+      width: 100%;
     }
   }
   @media only screen and (min-width: 600px) and (max-width: 1000px) {

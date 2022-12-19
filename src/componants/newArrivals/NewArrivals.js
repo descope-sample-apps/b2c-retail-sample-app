@@ -1,6 +1,6 @@
 import { Button, Typography } from "antd";
 import React, { useState } from "react";
-import { productData } from "../popularProduct/ProductData";
+import { newArrivalData } from "./NewArrivalData";
 import Slider from "react-slick";
 
 import "./newArrivals.css";
@@ -16,6 +16,8 @@ const SamplePrevArrow = (props) => {
 };
 
 const NewArrivals = () => {
+  const getProductData = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
+
   const settings = {
     infinite: true,
     slidesToShow: 5,
@@ -53,9 +55,14 @@ const NewArrivals = () => {
       },
     ],
   };
+  const [cartArray, setCartArray] = useState(getProductData);
 
-  const [products, setProducts] = useState(productData);
-
+  const [products, setProducts] = useState(newArrivalData);
+  const addToCart = (data) => {
+    setCartArray([...cartArray, data]);
+    let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
+    localStorage.setItem('selectedItem', JSON.stringify([...getSelectedCartArray, data]));
+  };
   return (
     <div className="arrivals-container">
       <br />
@@ -67,7 +74,7 @@ const NewArrivals = () => {
 
       <Slider {...settings} className="popular-product-container">
         {products.map((product) => (
-          <ArrivalProducts {...product} key={product.id} />
+          <ArrivalProducts {...product} key={product.id} addToCart={addToCart}/>
         ))}
       </Slider>
       <br />

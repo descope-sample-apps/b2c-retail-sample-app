@@ -18,13 +18,23 @@ const Sdk = () => {
         <br />
 
         <div className="btn-desktop-view">
+        <a
+              href="https://docs.descope.com/build/guides/client_sdks/"
+              target="_blank"
+            >
           <Button className="btn-client-sdk">
-            <span>Client SDKs</span>
+              <span>Client SDKs</span>
           </Button>
+          </a>
           &nbsp;&nbsp;&nbsp;&nbsp;
+          <a
+              href="https://docs.descope.com/build/guides/backend_sdks/"
+              target="_blank"
+            >
           <Button className="btn-client-sdk">
-            <span>Backend SDKs</span>
+              <span>Backend SDKs</span>
           </Button>
+          </a>
         </div>
       </div>
       <div className="right-flow">
@@ -34,15 +44,24 @@ const Sdk = () => {
           </Typography>
         </div>
       </div>
-
       <div className="btn-mobile-view">
-        <Button className="btn-client-sdk ">
-          <span>Client SDKs</span>
-        </Button>
-        &nbsp;&nbsp;&nbsp;&nbsp;
+      <a
+            href="https://docs.descope.com/build/guides/client_sdks/"
+            target="_blank"
+          >
         <Button className="btn-client-sdk">
-          <span>Backend SDKs</span>
+            <span>Client SDKs</span>
         </Button>
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a
+            href="https://docs.descope.com/build/guides/backend_sdks/"
+            target="_blank"
+          >
+        <Button className="btn-client-sdk">
+            <span>Backend SDKs</span>
+        </Button>
+        </a>
       </div>
     </div>
   );

@@ -15,7 +15,10 @@ const SamplePrevArrow = (props) => {
 };
 
 const Product = () => {
+  const getProductData = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
   const [products, setProducts] = useState(productData);
+  const [cart, setCart] = useState(getProductData);
+
 
   const settings = {
     infinite: true,
@@ -54,7 +57,11 @@ const Product = () => {
       },
     ],
   };
-
+  const addToCart = (data) => {
+    setCart([...cart, data]);
+    let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
+    localStorage.setItem('selectedItem', JSON.stringify([...getSelectedCartArray, data]));
+  };
   return (
     <div>
       <br />
@@ -68,7 +75,7 @@ const Product = () => {
 
       <Slider {...settings} className="popular-product-container">
         {products.map((product) => (
-          <ArrivalProducts {...product} key={product.id} />
+          <ArrivalProducts {...product} key={product.id} addToCart={addToCart}/>
         ))}
       </Slider>
       <br />

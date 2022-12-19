@@ -1,20 +1,20 @@
-import bannerimg1 from '../../assets/bannerimg1.svg';
-import bannerimg2 from '../../assets/bannerimg2.svg';
+import bannerimg1 from "../../assets/bannerimg1.svg";
+import bannerimg2 from "../../assets/bannerimg2.svg";
 export var products = [
   {
     id: 1,
-    title: "Pastwords",
+    title: "Passwords",
     price: "24.66",
-    image:bannerimg1,
-    quantity:1
+    image: bannerimg1,
+    quantity: 1
   },
 
   {
     id: 2,
-    title: "Authenti-late",
+    title: "Authenticate",
     price: "24.99",
-    image:bannerimg2,
-    quantity:1
+    image: bannerimg2,
+    quantity: 1
   },
   // {
   //   "id": 3,
