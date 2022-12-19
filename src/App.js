@@ -5,7 +5,7 @@ import { useSearchParams } from "react-router-dom";
 
 const AppRoot = () => {
   const [searchParams] = useSearchParams();
-  const projectId = searchParams.get("projectId") || localStorage.getItem('projectId');
+  const projectId = searchParams.get("project") || localStorage.getItem('projectId');
   if (projectId) {
     localStorage.setItem('projectId', projectId);
   }
