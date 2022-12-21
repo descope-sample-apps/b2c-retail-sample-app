@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { Col, Row, Typography } from "antd";
 import { Button } from "antd";
@@ -10,12 +10,12 @@ function Cart() {
   const getProductData = JSON.parse(localStorage.getItem("selectedItem"));
   const navigate = useNavigate();
 
-  useEffect(() => {
-    let user = JSON.parse(localStorage.getItem('loginDetails'));
-    if (user === null || !user) {
-      navigate('/')
-    }
-  }, []);
+  // useEffect(() => {
+  //   let user = JSON.parse(localStorage.getItem('loginDetails'));
+  //   if (user === null || !user) {
+  //     navigate('/')
+  //   }
+  // }, []);
   const [CART, setCART] = useState(getProductData);
   const handleRemove = (id) => {
     let updatedCart = CART.filter((item) => item.id !== id);

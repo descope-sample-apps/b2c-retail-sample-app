@@ -7,15 +7,15 @@ import PaymentMethod from "../componants/checkout/paymentMethod/PaymentMethod";
 import Shipping from "../componants/checkout/shipping/Shipping";
 import Login from "../componants/login/Login";
 import Logout from "../componants/logout/Logout";
-import { Navigate, Outlet, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 import Layout from "../layout/Layout";
 import Home from "./home/Home";
 import Signup from "../componants/Signup/Signup";
 
-const ProtectedRoutes=()=>{
-  let user = JSON.parse(localStorage.getItem('loginDetails'));
-  return user?<Outlet/>:<Navigate replace to="/login"/>
-}
+// const ProtectedRoutes=()=>{
+//   let user = JSON.parse(localStorage.getItem('loginDetails'));
+//   return user?<Outlet/>:<Navigate replace to="/login"/>
+// }
 
 const Container = () => {
   return (
@@ -23,15 +23,15 @@ const Container = () => {
       <React.Fragment>
         <Layout>
           <Routes>
-            {/* <Route path="/" element={<Home />} /> */}
-            <Route path="/" element={<ProtectedRoutes />} >
+            <Route path="/" element={<Home />} />
+            {/* <Route path="/" element={<ProtectedRoutes />} >
             <Route path="/" element={<Home />} >
               <Route path="/" element={
                   <Navigate replace to={'/'} />
                 }  
               />
             </Route>
-            </Route>
+            </Route> */}
             <Route path="login" element={<Login />} />
             <Route path="logout" element={<Logout />} />
             <Route path="sign-up" element={<Signup />} />
