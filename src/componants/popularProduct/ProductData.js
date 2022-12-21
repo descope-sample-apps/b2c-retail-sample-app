@@ -16,7 +16,7 @@ export const productData = [
   },
   {
     id: 2,
-    title: "Authenticate",
+    title: "Authenti-late",
     price: "24.99",
     image: mannequin2,
     quantity: 1
