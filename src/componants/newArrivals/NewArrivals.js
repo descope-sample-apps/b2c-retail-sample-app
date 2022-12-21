@@ -1,7 +1,8 @@
 import { Button, Typography } from "antd";
-import React, { useState } from "react";
-import { productData } from "../popularProduct/ProductData";
+import React, { useState, useEffect } from "react";
+import { newArrivalData } from "./NewArrivalData";
 import Slider from "react-slick";
+import { useNavigate } from "react-router-dom";
 
 import "./newArrivals.css";
 import ArrivalProducts from "./ArrivalProducts";
@@ -16,6 +17,11 @@ const SamplePrevArrow = (props) => {
 };
 
 const NewArrivals = () => {
+  const navigate = useNavigate()
+
+  const getProductData = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
+  let newArrivalDataFromLocalStorage = JSON.parse(localStorage.getItem('newArrivalData')) ? JSON.parse(localStorage.getItem('newArrivalData')) : [];
+
   const settings = {
     infinite: true,
     slidesToShow: 5,
@@ -53,9 +59,31 @@ const NewArrivals = () => {
       },
     ],
   };
+  const [cartArray, setCartArray] = useState(getProductData);
 
-  const [products, setProducts] = useState(productData);
+  const [products, setProducts] = useState(newArrivalDataFromLocalStorage);
+  
+  useEffect(() => {
+    if (newArrivalDataFromLocalStorage.length === 0) {
+      localStorage.setItem('newArrivalData', JSON.stringify(newArrivalData));
+    }
+    setProducts(JSON.parse(localStorage.getItem('newArrivalData')));
+  }, []);
 
+  const addToCart = (data) => {
+    setCartArray([...cartArray, data]);
+    let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
+    localStorage.setItem('selectedItem', JSON.stringify([...getSelectedCartArray, data]));
+    navigate("/");
+    let productsArray = [...products];
+    productsArray.map(item => {
+      if (item.id === data.id) {
+        item.addedToCart = true;
+      }
+    });
+    setProducts(productsArray);
+    localStorage.setItem('newArrivalData', JSON.stringify(productsArray));
+  };
   return (
     <div className="arrivals-container">
       <br />
@@ -67,7 +95,7 @@ const NewArrivals = () => {
 
       <Slider {...settings} className="popular-product-container">
         {products.map((product) => (
-          <ArrivalProducts {...product} key={product.id} />
+          <ArrivalProducts {...product} key={product.id} addToCart={addToCart}/>
         ))}
       </Slider>
       <br />

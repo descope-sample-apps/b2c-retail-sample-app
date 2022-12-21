@@ -1,43 +1,11 @@
-import { Button, Divider, Typography } from "antd";
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Typography } from "antd";
+import React from "react";
 import "./login.css";
-import { AuthProvider, useAuth } from '@descope/react-sdk'
-import { Descope, SignUpOrInFlow } from '@descope/react-sdk'
+import { SignUpOrInFlow } from '@descope/react-sdk'
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const initialValues = {
-    email: "",
-  };
   const navigate = useNavigate()
-
-
-  const [formValues, setFormValues] = useState(initialValues);
-
-  const [isSubmit, setIsSubmit] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    console.log(e.target.value);
-    setFormValues({ ...formValues, [name]: value });
-  };
-
-  const submitData = (e) => {
-    e.preventDefault();
-    validate(formValues);
-    setIsSubmit(true);
-  };
-
-  const validate = (values) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-
-    if (!values.email) {
-      alert("Enter an email.");
-    } else if (!regex.test(values.email)) {
-      alert("This is not a valid email format!");
-    }
-  };
   return (
     <>
       <div className="main-container-login">
@@ -55,7 +23,7 @@ const Login = () => {
         <div className="login-container">
         <SignUpOrInFlow
             onSuccess={(e) => {
-              console.log('Logged in!');
+              localStorage.setItem("loginDetails", JSON.stringify(e.detail.user))
               navigate("/");
             }}
             onError={(e) => console.log('Could not logged in!')}

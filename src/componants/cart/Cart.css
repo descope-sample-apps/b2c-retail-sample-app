@@ -233,8 +233,3 @@ padding: 0px 22px;
     padding-bottom: 90px;
   }
 }
-@media screen and (min-width: 1280px) and (max-width: 1590px) {
-  .checkout-cart-container{
-    height: 80vh;
-  }
-}

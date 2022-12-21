@@ -13,9 +13,14 @@ const Flows = () => {
         <br />
         <br />
         <div className="btn-desktop-view">
+        <a
+          href="https://docs.descope.com/build/guides/gettingstarted/"
+          target="_blank"
+        >
           <Button className="btn-learn">
             <span>Learn more</span>
           </Button>
+          </a>
         </div>
       </div>
       <div className="right-flow">
@@ -26,9 +31,16 @@ const Flows = () => {
         </div>
       </div>
       <div className="btn-mobile-view">
+      <a
+            href="https://docs.descope.com/build/guides/gettingstarted/"
+            target="_blank"
+          >
         <Button className="btn-learn">
-          <span>Learn more</span>
+         
+            <span>Learn more</span>
         </Button>
+        </a>
+
       </div>
     </div>
   );
