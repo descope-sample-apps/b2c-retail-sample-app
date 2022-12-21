@@ -12,6 +12,11 @@ import Layout from "../layout/Layout";
 import Home from "./home/Home";
 import Signup from "../componants/Signup/Signup";
 
+// const ProtectedRoutes=()=>{
+//   let user = JSON.parse(localStorage.getItem('loginDetails'));
+//   return user?<Outlet/>:<Navigate replace to="/login"/>
+// }
+
 const Container = () => {
   return (
     <div>
@@ -19,6 +24,14 @@ const Container = () => {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            {/* <Route path="/" element={<ProtectedRoutes />} >
+            <Route path="/" element={<Home />} >
+              <Route path="/" element={
+                  <Navigate replace to={'/'} />
+                }  
+              />
+            </Route>
+            </Route> */}
             <Route path="login" element={<Login />} />
             <Route path="logout" element={<Logout />} />
             <Route path="sign-up" element={<Signup />} />
