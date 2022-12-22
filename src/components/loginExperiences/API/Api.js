@@ -1,8 +1,31 @@
 import { Button, Typography } from "antd";
 import React from "react";
 import "../Flows/flows.css";
+import { useEffect } from "react";
+import "prismjs/themes/prism-tomorrow.css";
+import Prism from 'prismjs';
 
-const Flows = () => {
+const API = () => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
+  const code = `// Rest API call for signup or signin user
+  
+  curl -i -X POST 
+    https://api.descope.com/v1/auth/otp/signup-in/email 
+    -H 'Authorization: Bearer P2DrYacDkgFFUVrgQEEeb3A3ZIeq' 
+    -H 'Content-Type: application/json' 
+    -d '{
+        "externalId": "string",
+        "loginOptions": {
+        "stepup": true,
+        "customClaims": {},
+        "mfa": true
+        }
+    }'
+`;
+// const code = "var data=1;";
   return (
     <div className="main-flow-container">
       <div className="left-flow">
@@ -24,9 +47,11 @@ const Flows = () => {
       </div>
       <div className="right-flow">
         <div className="inner-div">
-          <Typography className="flow-content-right">
-            Code snippet from API
-          </Typography>
+        <div className="Code">
+            <pre>
+              <code className={`language-javascript`} style={{"overflow-y": "scroll"}}>{code}</code>
+            </pre>
+          </div>
         </div>
       </div>
       <div className="btn-mobile-view">
@@ -42,4 +67,4 @@ const Flows = () => {
   );
 };
 
-export default Flows;
+export default API;

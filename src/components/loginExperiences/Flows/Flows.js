@@ -1,8 +1,10 @@
 import { Button, Typography } from "antd";
 import React from "react";
-import "../Flows/flows.css";
+import "./flows.css";
+import flow_image from "../../../assets/flow.jpg"
 
 const Flows = () => {
+  
   return (
     <div className="main-flow-container">
       <div className="left-flow">
@@ -25,9 +27,7 @@ const Flows = () => {
       </div>
       <div className="right-flow">
         <div className="inner-div">
-          <Typography className="flow-content-right">
-            UI screenshot / GIF of a Flow using magic link
-          </Typography>
+        <img src={flow_image} style={{width:"100%"}}></img>
         </div>
       </div>
       <div className="btn-mobile-view">
