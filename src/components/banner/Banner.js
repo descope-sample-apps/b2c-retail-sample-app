@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Typography } from "antd";
+import { Button } from "antd";
 import "./Banner.css";
 import { useNavigate } from "react-router";
 import LoginExperiences from "../loginExperiences/LoginExperiences";
@@ -26,8 +26,8 @@ function Banner() {
           </div>
           {/* for image  */}
           <div className="container-sec-2">
-            <img src={require("../../assets/bannerimg1.svg").default} />
-            <img src={require("../../assets/bannerimg2.svg").default} />
+            <img src={require("../../assets/bannerimg1.svg").default} alt='sample-shirt-1'/>
+            <img src={require("../../assets/bannerimg2.svg").default} alt='sample-shirt-2'/>
           </div>
         </div>
       </div>

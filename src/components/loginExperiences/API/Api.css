@@ -18,6 +18,7 @@
     border: 0.931707px dashed #f90c0c;
     /* height: 83vmin; */
     height: 100%;
+    overflow-y: scroll;
   }
   .btn-api {
     background: #6412e9;
@@ -29,7 +30,6 @@
     font-size: 16px;
     line-height: 21px;
     color: #ffffff;
-    width: 67%;
     height: 40px;
   }
   .btn-mobile-view {
@@ -51,7 +51,6 @@
       display: block;
     }
     .btn-api {
-      width: 100%;
     }
   }
   @media only screen and (min-width: 600px) and (max-width: 1000px) {

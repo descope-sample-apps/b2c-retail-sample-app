@@ -1,8 +1,8 @@
 import React from "react";
-import Banner from "../../componants/banner/Banner";
-import NewArrivals from "../../componants/newArrivals/NewArrivals";
-import Product from "../../componants/popularProduct/Product";
-import WelcomeModal from "../../componants/welcomeModal/WelcomeModal";
+import Banner from "../../components/banner/Banner";
+import NewArrivals from "../../components/newArrivals/NewArrivals";
+import Product from "../../components/popularProduct/Product";
+import WelcomeModal from "../../components/welcomeModal/WelcomeModal";
 
 const Home = () => {
   return (

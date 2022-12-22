@@ -1,8 +1,10 @@
-import { Button, Typography } from "antd";
+import { Button, Typography, Image} from "antd";
 import React from "react";
-import "../Flows/flows.css";
+import "./flows.css";
+import flow_image from "../../../assets/flow.jpg"
 
 const Flows = () => {
+  
   return (
     <div className="main-flow-container">
       <div className="left-flow">
@@ -16,6 +18,7 @@ const Flows = () => {
         <a
           href="https://docs.descope.com/build/guides/gettingstarted/"
           target="_blank"
+          rel="noreferrer"
         >
           <Button className="btn-learn">
             <span>Learn more</span>
@@ -25,15 +28,14 @@ const Flows = () => {
       </div>
       <div className="right-flow">
         <div className="inner-div">
-          <Typography className="flow-content-right">
-            UI screenshot / GIF of a Flow using magic link
-          </Typography>
+        <Image src={flow_image}/>
         </div>
       </div>
       <div className="btn-mobile-view">
       <a
             href="https://docs.descope.com/build/guides/gettingstarted/"
             target="_blank"
+            rel="noreferrer"
           >
         <Button className="btn-learn">
          
