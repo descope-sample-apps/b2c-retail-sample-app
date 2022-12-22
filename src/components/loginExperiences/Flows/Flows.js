@@ -1,4 +1,4 @@
-import { Button, Typography } from "antd";
+import { Button, Typography, Image} from "antd";
 import React from "react";
 import "./flows.css";
 import flow_image from "../../../assets/flow.jpg"
@@ -28,7 +28,7 @@ const Flows = () => {
       </div>
       <div className="right-flow">
         <div className="inner-div">
-        <img src={flow_image} style={{width:"100%"}} alt='flows'></img>
+        <Image src={flow_image}/>
         </div>
       </div>
       <div className="btn-mobile-view">

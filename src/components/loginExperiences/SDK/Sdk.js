@@ -68,7 +68,7 @@ resp = await sdk.otp.signUpOrIn[delivery_method].(identifier, user);
       <div className="right-flow">
         <div className="inner-div">
           <div className="Code">
-            <pre>
+            <pre style={{margin: 0}}>
               <code className={`language-javascript`} style={{"overflow-y": "scroll"}}>{code}</code>
             </pre>
           </div>

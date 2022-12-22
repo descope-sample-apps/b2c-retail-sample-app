@@ -48,7 +48,7 @@ const API = () => {
       <div className="right-flow">
         <div className="inner-div">
         <div className="Code">
-            <pre>
+            <pre style={{margin: 0}}>
               <code className={`language-javascript`} style={{"overflow-y": "scroll"}}>{code}</code>
             </pre>
           </div>
