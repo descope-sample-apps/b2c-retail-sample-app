@@ -50,15 +50,11 @@
   padding: 28px 7rem;
 }
 .tab-main-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   background: #0f0a2c;
   border-radius: 15px;
   padding: 1rem 1rem;
-  margin-left: 9rem;
-  margin-right: 9rem;
-  height: 25rem;
+  margin: auto;
+  width: 70%;
 }
 .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
   text-shadow: none;
@@ -133,13 +129,6 @@
     padding-inline-end: 17px !important;
   }
 
-  .tab-main-container {
-    margin-left: 0;
-    margin-right: 0;
-    height: auto;
-    margin-top: 16px;
-  }
-
   .panel-title {
     padding: 0 1rem;
   }
@@ -155,9 +144,7 @@
     padding: 12px 7rem !important;
   }
   .tab-main-container {
-    width: 97%;
-    margin-left: 0.4rem;
-    margin-right: 0;
+    width: 90%;
   }
   .flow-content-right {
     padding: 1rem;
@@ -165,13 +152,12 @@
   }
 }
 
-@media only screen and (min-width: 1300px) and (max-width: 1650px) {
+@media only screen and (min-width: 1300px) {
   .panel-title {
     padding: 28px 18rem;
   }
   .tab-main-container {
-    margin-left: 19rem;
-    margin-right: 19rem;
+    width: 60%;
   }
   .flow-content-right {
     padding: 5rem;

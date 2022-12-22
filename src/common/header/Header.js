@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useAuth } from '@descope/react-sdk'
 import "./Header.css";
+import { Badge } from "antd";
 
 const getDisplayName = (user) => {
   return user?.email || "";
 }
 
 function Header() {
+  let selectedItems = JSON.parse(localStorage.getItem('selectedItem')) ? JSON.parse(localStorage.getItem('selectedItem')) : [];
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [cartLength, setCartLength] = useState([]);
   const { user, authenticated } = useAuth();
   const {loginLabel,linkPath} = (authenticated) ? {loginLabel:`${getDisplayName(user)} (Logout)`, linkPath:'/logout'} : {loginLabel: "Login", linkPath:'/login'};
-
+  const doLogout = () => {
+    localStorage.clear();
+  }
+  useEffect(() => {
+    if (cartLength && selectedItems.length !== cartLength.length)
+      setCartLength(selectedItems);
+  },[selectedItems]);
   return (
     <>
       <nav className="main-nav">
@@ -57,12 +66,14 @@ function Header() {
         </div>
         <div className="navbar-right">
           <div className="btntag">
-            <NavLink to={linkPath} className="nav-link">
+            <NavLink to={linkPath} className="nav-link" onClick={doLogout}>
               {loginLabel}
             </NavLink>
           </div>
           <NavLink to="cart">
-            <img src={require("../../assets/cart.svg").default} />
+          <Badge count={cartLength.length} overflowCount={100} style={{top: '1em'}}>
+            <img src={require("../../assets/cart.svg").default} alt='cart'/>
+          </Badge>
           </NavLink>
         </div>
       </nav>

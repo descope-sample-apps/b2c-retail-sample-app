@@ -5,11 +5,10 @@ import { useSearchParams } from "react-router-dom";
 
 const AppRoot = () => {
   const [searchParams] = useSearchParams();
-  const projectId = searchParams.get("projectId") || localStorage.getItem('projectId');
+  const projectId = searchParams.get("project") || localStorage.getItem('projectId');
   if (projectId) {
     localStorage.setItem('projectId', projectId);
   }
-  console.log("projectId", projectId)
   return (
       <AuthProvider
           projectId={projectId || process.env.REACT_APP_PROJECT_ID}

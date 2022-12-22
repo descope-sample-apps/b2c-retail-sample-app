@@ -39,8 +39,9 @@
 
 .navbar-right {
   display: flex;
-  margin: auto;
   cursor: pointer;
+  width: 52%;
+  justify-content: flex-end;
 }
 .btntag {
   font-family: "Barlow";
@@ -52,7 +53,6 @@
   color: #ffffff;
   margin-top: 20px;
   margin-right: 10px;
-  margin-left: 60%;
 }
 .navbar-right img {
   background-color: White;

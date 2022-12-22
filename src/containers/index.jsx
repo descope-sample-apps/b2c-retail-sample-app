@@ -1,17 +1,17 @@
 import React from "react";
-import BillingAddress from "../componants/checkout/billingAddress/BillingAddress";
-import Cart from "../componants/cart/Cart";
-import BillingSummary from "../componants/checkout/billingSummary/BillingSummary";
-import OrderPlaced from "../componants/checkout/orderPlaced/OrderPlaced";
-import PaymentMethod from "../componants/checkout/paymentMethod/PaymentMethod";
-import Shipping from "../componants/checkout/shipping/Shipping";
-import Login from "../componants/login/Login";
-import Logout from "../componants/logout/Logout";
+import BillingAddress from "../components/checkout/billingAddress/BillingAddress";
+import Cart from "../components/cart/Cart";
+import BillingSummary from "../components/checkout/billingSummary/BillingSummary";
+import OrderPlaced from "../components/checkout/orderPlaced/OrderPlaced";
+import PaymentMethod from "../components/checkout/paymentMethod/PaymentMethod";
+import Shipping from "../components/checkout/shipping/Shipping";
+import Login from "../components/login/Login";
+import Logout from "../components/logout/Logout";
 import { Route, Routes } from "react-router";
 import Layout from "../layout/Layout";
 import Home from "./home/Home";
-import Signup from "../componants/Signup/Signup";
-import StepUp from "../componants/checkout/orderPlaced/StepUp";
+import Signup from "../components/Signup/Signup";
+import StepUp from "../components/checkout/orderPlaced/StepUp";
 
 const Container = () => {
   return (
@@ -20,6 +20,14 @@ const Container = () => {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            {/* <Route path="/" element={<ProtectedRoutes />} >
+            <Route path="/" element={<Home />} >
+              <Route path="/" element={
+                  <Navigate replace to={'/'} />
+                }  
+              />
+            </Route>
+            </Route> */}
             <Route path="login" element={<Login />} />
             <Route path="logout" element={<Logout />} />
             <Route path="sign-up" element={<Signup />} />

@@ -10,9 +10,9 @@
 .right-flow {
   flex: 1;
   background: #0c0824;
-  height: 398px;
   padding: 14px;
   margin-top: -5.3rem;
+  width: 54%;
 }
 .inner-div {
   border: 0.931707px dashed #f90c0c;
@@ -35,7 +35,18 @@
 .btn-mobile-view {
   display: none;
 }
-
+.btn-api{
+  background: #6412e9;
+  border-radius: 5px;
+  border-color: #6412e9;
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  height: 40px;
+}
 @media only screen and (max-width: 600px) {
   .main-flow-container {
     flex-direction: column;
@@ -47,6 +58,7 @@
     margin-top: -22px;
     margin-bottom: 10px;
     background: #0f0a2c;
+    width: 100%;
   }
   .btn-desktop-view {
     display: none;

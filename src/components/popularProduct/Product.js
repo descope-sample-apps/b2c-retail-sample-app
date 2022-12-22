@@ -1,7 +1,9 @@
 import { Button, Typography } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { productData } from "./ProductData";
 import Slider from "react-slick";
+import { useNavigate } from "react-router-dom";
+
 import "./product.css";
 import ArrivalProducts from "../newArrivals/ArrivalProducts";
 
@@ -15,7 +17,18 @@ const SamplePrevArrow = (props) => {
 };
 
 const Product = () => {
-  const [products, setProducts] = useState(productData);
+  const getProductData = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
+  let productDataFromLocalStorage = JSON.parse(localStorage.getItem('productData')) ? JSON.parse(localStorage.getItem('productData')) : [];
+  const [products, setProducts] = useState(productDataFromLocalStorage);
+  const [cart, setCart] = useState(getProductData);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (productDataFromLocalStorage.length === 0) {
+      localStorage.setItem('productData', JSON.stringify(productData));
+    }
+    setProducts(JSON.parse(localStorage.getItem('productData')));
+  }, []);
 
   const settings = {
     infinite: true,
@@ -54,7 +67,20 @@ const Product = () => {
       },
     ],
   };
-
+  const addToCart = (data) => {
+    setCart([...cart, data]);
+    let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
+    localStorage.setItem('selectedItem', JSON.stringify([...getSelectedCartArray, data]));
+    navigate("/");
+    let productsArray = [...products];
+    productsArray.map(item => {
+      if (item.id === data.id) {
+        item.addedToCart = true;
+      }
+    });
+    setProducts(productsArray);
+    localStorage.setItem('productData', JSON.stringify(productsArray));
+  };
   return (
     <div>
       <br />
@@ -68,7 +94,7 @@ const Product = () => {
 
       <Slider {...settings} className="popular-product-container">
         {products.map((product) => (
-          <ArrivalProducts {...product} key={product.id} />
+          <ArrivalProducts {...product} key={product.id} addToCart={addToCart}/>
         ))}
       </Slider>
       <br />

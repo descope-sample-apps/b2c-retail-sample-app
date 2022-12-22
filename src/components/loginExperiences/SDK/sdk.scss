@@ -1,0 +1,112 @@
+.sdk_main-flow-container {
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+  .left-flow {
+    width: 46%;
+    padding: 9px;
+    /* background: #0f0a2c; */
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+    .btn-desktop-view {
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+      .btn-client-sdk {
+        background: #6412e9;
+        border-radius: 5px;
+        border-color: #6412e9;
+        font-family: "JetBrains Mono";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        color: #ffffff;
+        width: 47%;
+        height: 40px;
+        @media only screen and (min-width: 601px) and (max-width: 750px){
+          width: 100%;
+        }
+      }
+    }
+  }
+  .right-flow {
+    flex: 1;
+    background: #0c0824;
+    height: 398px;
+    padding: 14px;
+    margin-top: -5.3rem;
+    width: 54%;
+    @media only screen and (max-width: 600px) {
+      margin-top: -22px;
+      margin-bottom: 10px;
+      background: #0f0a2c;
+      width: 100%;
+    }
+    .inner-div {
+      border: 0.931707px dashed #f90c0c;
+      height: 100%;
+      overflow: auto;
+    }
+  }
+  .btn-mobile-view {
+    display: none;
+    @media only screen and (min-width: 501px) and (max-width: 600px) {
+      display: block;
+      .btn-client-sdk {
+        background: #6412e9;
+        border-radius: 5px;
+        border-color: #6412e9;
+        font-family: "JetBrains Mono";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        color: #ffffff;
+        width: 47%;
+        height: 40px;
+      }
+    }
+    @media only screen and (max-width: 500px) {
+      display: block;
+      .btn-client-sdk {
+        background: #6412e9;
+        border-radius: 5px;
+        border-color: #6412e9;
+        font-family: "JetBrains Mono";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        color: #ffffff;
+        width: 100%;
+        height: 40px;
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0f0a2c; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0f0a2cab; 
+}
