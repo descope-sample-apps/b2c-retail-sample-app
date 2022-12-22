@@ -11,11 +11,7 @@ import { Route, Routes } from "react-router";
 import Layout from "../layout/Layout";
 import Home from "./home/Home";
 import Signup from "../components/Signup/Signup";
-
-// const ProtectedRoutes=()=>{
-//   let user = JSON.parse(localStorage.getItem('loginDetails'));
-//   return user?<Outlet/>:<Navigate replace to="/login"/>
-// }
+import StepUp from "../components/checkout/orderPlaced/StepUp";
 
 const Container = () => {
   return (
@@ -41,6 +37,7 @@ const Container = () => {
             <Route path="payment-method" element={<PaymentMethod />} />
             <Route path="billing-summary" element={<BillingSummary />} />
             <Route path="payment-success" element={<OrderPlaced />} />
+            <Route path="step-up" element={<StepUp />} />
           </Routes>
         </Layout>
       </React.Fragment>

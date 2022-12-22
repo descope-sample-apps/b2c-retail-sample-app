@@ -1,8 +1,10 @@
-import { Typography, Form, Button } from "antd";
+import { Typography } from "antd";
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { SignUpOrInFlow } from '@descope/react-sdk'
+import { useNavigate } from "react-router-dom";
 import "./signup.css";
 function Signup() {
+  const navigate = useNavigate()
   return (
     <>
       <div className="main-container">
@@ -17,47 +19,13 @@ function Signup() {
           </p>
         </div>
         <div className="signup-container">
-          <Form className="Signup-form">
-            <Typography className="signup-heading">Sign Up</Typography>
-
-            <div className="form">
-              <input
-                type="text"
-                id="fname"
-                name="fname"
-                className="signup__input"
-                autoComplete="off"
-                placeholder="First Name"
-              />
-            </div>
-
-            <div className="form">
-              <input
-                type="text"
-                id="fname"
-                name="fname"
-                className="signup__input"
-                autoComplete="off"
-                placeholder="Last Name "
-              />
-            </div>
-
-            <div className="footer-btn">
-              <Button className="acc-btn">Create your account</Button>
-            </div>
-            <Typography className="footer-para">
-              By creating your account,you agree to the Terms of Service and
-              consent to our Privacy Policy.
-            </Typography>
-            <div className="login-row">
-              <Typography className="footer-line">
-                Already have an account?
-              </Typography>
-              <NavLink className="login-link" to="/login">
-                LOGIN
-              </NavLink>
-            </div>
-          </Form>
+        <SignUpOrInFlow
+            onSuccess={(e) => {
+              console.log('Logged in!');
+              navigate("/");
+            }}
+            onError={(e) => console.log('Could not logged in!')}
+        />
         </div>
       </div>
     </>

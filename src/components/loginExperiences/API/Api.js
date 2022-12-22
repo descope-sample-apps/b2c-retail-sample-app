@@ -14,7 +14,7 @@ const API = () => {
   
   curl -i -X POST 
     https://api.descope.com/v1/auth/otp/signup-in/email 
-    -H 'Authorization: Bearer P2DrYacDkgFFUVrgQEEeb3A3ZIeq' 
+    -H 'Authorization: Bearer <project_id>' 
     -H 'Content-Type: application/json' 
     -d '{
         "externalId": "string",
