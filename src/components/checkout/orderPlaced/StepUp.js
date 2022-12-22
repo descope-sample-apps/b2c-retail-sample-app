@@ -16,7 +16,7 @@ function StepUp() {
             flowId="step-up-protected-assets"
             onSuccess={(e) => {
               console.log('Step up: Logged in!');
-              // navigate("/payment-success");
+              navigate("/payment-success");
             }}
             onError={(e) => console.log('Step up: Could not logged in!')}
         />
