@@ -36,7 +36,7 @@ const API = () => {
         <br />
         <br />
         <div className="btn-desktop-view">
-        <a href="https://docs.descope.com/api/" target="_blank">
+        <a href="https://docs.descope.com/api/" target="_blank" rel="noreferrer">
           <Button className="btn-api">
             
               <span>See API reference</span>
@@ -55,7 +55,7 @@ const API = () => {
         </div>
       </div>
       <div className="btn-mobile-view">
-      <a href="https://docs.descope.com/api/" target="_blank">
+      <a href="https://docs.descope.com/api/" target="_blank" rel="noreferrer">
 
         <Button className="btn-api">
             <span>See API reference</span>

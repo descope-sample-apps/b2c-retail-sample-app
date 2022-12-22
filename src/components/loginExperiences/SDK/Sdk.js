@@ -47,6 +47,7 @@ resp = await sdk.otp.signUpOrIn[delivery_method].(identifier, user);
         <a
               href="https://docs.descope.com/build/guides/client_sdks/"
               target="_blank"
+              rel="noreferrer"
             >
           <Button className="btn-client-sdk">
               <span>Client SDKs</span>
@@ -56,6 +57,7 @@ resp = await sdk.otp.signUpOrIn[delivery_method].(identifier, user);
           <a
               href="https://docs.descope.com/build/guides/backend_sdks/"
               target="_blank"
+              rel="noreferrer"
             >
           <Button className="btn-client-sdk">
               <span>Backend SDKs</span>
@@ -76,6 +78,7 @@ resp = await sdk.otp.signUpOrIn[delivery_method].(identifier, user);
       <a
             href="https://docs.descope.com/build/guides/client_sdks/"
             target="_blank"
+            rel="noreferrer"
           >
         <Button className="btn-client-sdk">
             <span>Client SDKs</span>
@@ -85,6 +88,7 @@ resp = await sdk.otp.signUpOrIn[delivery_method].(identifier, user);
         <a
             href="https://docs.descope.com/build/guides/backend_sdks/"
             target="_blank"
+            rel="noreferrer"
           >
         <Button className="btn-client-sdk">
             <span>Backend SDKs</span>

@@ -18,6 +18,7 @@ const Flows = () => {
         <a
           href="https://docs.descope.com/build/guides/gettingstarted/"
           target="_blank"
+          rel="noreferrer"
         >
           <Button className="btn-learn">
             <span>Learn more</span>
@@ -27,13 +28,14 @@ const Flows = () => {
       </div>
       <div className="right-flow">
         <div className="inner-div">
-        <img src={flow_image} style={{width:"100%"}}></img>
+        <img src={flow_image} style={{width:"100%"}} alt='flows'></img>
         </div>
       </div>
       <div className="btn-mobile-view">
       <a
             href="https://docs.descope.com/build/guides/gettingstarted/"
             target="_blank"
+            rel="noreferrer"
           >
         <Button className="btn-learn">
          

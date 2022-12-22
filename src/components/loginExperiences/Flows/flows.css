@@ -10,9 +10,9 @@
 .right-flow {
   flex: 1;
   background: #0c0824;
-  height: 398px;
   padding: 14px;
   margin-top: -5.3rem;
+  width: 54%;
 }
 .inner-div {
   border: 0.931707px dashed #f90c0c;
@@ -45,7 +45,6 @@
   font-size: 16px;
   line-height: 21px;
   color: #ffffff;
-  width: 67%;
   height: 40px;
 }
 @media only screen and (max-width: 600px) {
@@ -59,6 +58,7 @@
     margin-top: -22px;
     margin-bottom: 10px;
     background: #0f0a2c;
+    width: 100%;
   }
   .btn-desktop-view {
     display: none;

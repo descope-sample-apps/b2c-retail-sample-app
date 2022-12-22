@@ -1,4 +1,4 @@
-import { Button, Modal, Typography } from "antd";
+import { Modal, Typography } from "antd";
 
 import { useState, useEffect } from "react";
 import "./welcomeModal.css";

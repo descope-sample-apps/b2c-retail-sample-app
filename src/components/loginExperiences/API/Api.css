@@ -30,7 +30,6 @@
     font-size: 16px;
     line-height: 21px;
     color: #ffffff;
-    width: 67%;
     height: 40px;
   }
   .btn-mobile-view {
@@ -52,7 +51,6 @@
       display: block;
     }
     .btn-api {
-      width: 100%;
     }
   }
   @media only screen and (min-width: 600px) and (max-width: 1000px) {

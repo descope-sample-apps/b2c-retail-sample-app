@@ -41,7 +41,7 @@
   display: flex;
   cursor: pointer;
   width: 52%;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .btntag {
   font-family: "Barlow";
