@@ -2,12 +2,12 @@ import { Button, Typography } from "antd";
 import React from "react";
 import { useEffect } from "react";
 import "prismjs/themes/prism-tomorrow.css";
-import "./sdk.css";
+import "./sdk.scss";
 import Prism from 'prismjs';
 
 const Sdk = () => {
   useEffect(() => {
-    Prism.highlightAll();
+    Prism.highlightAll(); 
   }, []);
 
   // The code snippet you want to highlight, as a string
@@ -30,7 +30,7 @@ delivery_method = "email";
 resp = await sdk.otp.signUpOrIn[delivery_method].(identifier, user);
 `;
   return (
-    <div className="main-flow-container">
+    <div className="sdk_main-flow-container">
       <div className="left-flow">
         <Typography className="flow-content">
           Descope SDKs allow you to easily integrate any passwordless
