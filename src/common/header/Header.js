@@ -16,7 +16,10 @@ function Header() {
   const { user, authenticated } = useAuth();
   const {loginLabel,linkPath} = (authenticated) ? {loginLabel:`${getDisplayName(user)} (Logout)`, linkPath:'/logout'} : {loginLabel: "Login", linkPath:'/login'};
   const doLogout = () => {
-    localStorage.clear();
+    const localStorageKeysToRemove = ["selectedItem", "productData", "newArrivalData", "loginDetails"]
+    for (const key of localStorageKeysToRemove) {
+      localStorage.removeItem(key)
+    }    
   }
   useEffect(() => {
     if (cartLength && selectedItems.length !== cartLength.length)
