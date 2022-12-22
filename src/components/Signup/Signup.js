@@ -1,7 +1,6 @@
-import { Typography, Form, Button } from "antd";
+import { Typography } from "antd";
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { Descope, SignUpOrInFlow } from '@descope/react-sdk'
+import { SignUpOrInFlow } from '@descope/react-sdk'
 import { useNavigate } from "react-router-dom";
 import "./signup.css";
 function Signup() {

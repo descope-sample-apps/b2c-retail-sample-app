@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button, Row, Col } from "antd";
+import { Typography } from "antd";
 import "./order.css";
 import { useNavigate } from "react-router";
 import { Descope } from '@descope/react-sdk'
