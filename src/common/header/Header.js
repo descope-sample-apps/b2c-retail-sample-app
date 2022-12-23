@@ -1,69 +1,96 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useAuth } from '@descope/react-sdk'
+import { useAuth } from "@descope/react-sdk";
+import hamburger from "../../assets/hamburger.svg";
+import close from "../../assets/close.svg";
 import "./Header.css";
-import { Badge } from "antd";
+import { Badge, Button } from "antd";
 
 const getDisplayName = (user) => {
   return user?.email || "";
-}
+};
 
 function Header() {
-  let selectedItems = JSON.parse(localStorage.getItem('selectedItem')) ? JSON.parse(localStorage.getItem('selectedItem')) : [];
+  let selectedItems = JSON.parse(localStorage.getItem("selectedItem"))
+    ? JSON.parse(localStorage.getItem("selectedItem"))
+    : [];
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [cartLength, setCartLength] = useState([]);
   const { user, authenticated } = useAuth();
-  const {loginLabel,linkPath} = (authenticated) ? {loginLabel:`${getDisplayName(user)} (Logout)`, linkPath:'/logout'} : {loginLabel: "Login", linkPath:'/login'};
+  const { loginLabel, linkPath } = authenticated
+    ? { loginLabel: `${getDisplayName(user)} (Logout)`, linkPath: "/logout" }
+    : { loginLabel: "Login", linkPath: "/login" };
   const doLogout = () => {
     const localStorageKeysToRemove = ["selectedItem", "productData", "newArrivalData", "loginDetails"]
     for (const key of localStorageKeysToRemove) {
       localStorage.removeItem(key)
-    }    
+    }
+    setIsNavExpanded(!isNavExpanded);  
   }
   useEffect(() => {
     if (cartLength && selectedItems.length !== cartLength.length)
       setCartLength(selectedItems);
-  },[selectedItems]);
+  }, [selectedItems]);
+
   return (
     <>
       <nav className="main-nav">
-        <div className="logo">
-          <Link to="/">
-            <h2>Tee-Hee Tees</h2>
-          </Link>
-        </div>
         <button
           className="hamburger"
           onClick={() => {
             setIsNavExpanded(!isNavExpanded);
           }}
         >
-          {/* icon from heroicons.com */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            viewBox="0 0 20 20"
-            fill="white"
-          >
-            <path
-              fillRule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-              clipRule="evenodd"
-            />
-          </svg>
+          {!isNavExpanded ? (
+            <img src={hamburger} alt="hamburger" />
+          ) : (
+            <img src={close} alt="close" />
+          )}
         </button>
-        <div className={isNavExpanded ? "navbar expanded" : "navbar"}>
-          <ul>
-            <li>
-              <a href="/" exact to="">
+        <div className="logo">
+          <Link
+            to="/"
+            onClick={() => {
+              setIsNavExpanded(!isNavExpanded);
+            }}
+          >
+            <h2>Tee-Hee Tees</h2>
+          </Link>
+        </div>
+
+        <div className={!isNavExpanded ? "navbar-expanded" : "navbar"}>
+          <ul className="menu-list">
+            <li className="menu-lists">
+              <NavLink
+                to="/"
+                className="menu-title"
+                onClick={() => {
+                  setIsNavExpanded(!isNavExpanded);
+                }}
+              >
                 Popular
-              </a>
+              </NavLink>
             </li>
-            <li>
-              <a href="/" to="">
+            <li className="menu-lists">
+              <NavLink
+                to="/"
+                className="menu-title"
+                onClick={() => {
+                  setIsNavExpanded(!isNavExpanded);
+                }}
+              >
                 New
-              </a>
+              </NavLink>
+            </li>
+            <li className="menu-lists">
+              <div className="btntag-mobile">
+                <NavLink to={linkPath} className="nav-link" onClick={doLogout}>
+                  <Button className={authenticated ? "btn-login" : "login-nav"}>
+                    {loginLabel}
+                  </Button>
+                </NavLink>
+              </div>
             </li>
           </ul>
         </div>
@@ -74,9 +101,14 @@ function Header() {
             </NavLink>
           </div>
           <NavLink to="cart">
-          <Badge count={cartLength.length} overflowCount={100} style={{top: '1em'}}>
-            <img src={require("../../assets/cart.svg").default} alt='cart'/>
-          </Badge>
+            <Badge
+              count={cartLength.length}
+              overflowCount={100}
+              style={{ top: "2em" }}
+              className="cart-display"
+            >
+              <img src={require("../../assets/cart.svg").default} alt="cart" />
+            </Badge>
           </NavLink>
         </div>
       </nav>
