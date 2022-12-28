@@ -1,8 +1,7 @@
 import { Button, Typography } from "antd";
 import React from "react";
 const ArrivalProducts = (product) => {
-  const { image, title, price, addToCart, addedToCart} = product;
-  
+  const { image, title, price, addToCart, addedToCart } = product;
 
   return (
     <div className="product-details">
@@ -21,9 +20,12 @@ const ArrivalProducts = (product) => {
 
       <Typography className="title-product">{title}</Typography>
       <div className="product-detail">
-        <Typography className="price-product">{price}</Typography>
-        <Button className="add-to-cart-btn" onClick={() =>addedToCart ? '' :  addToCart(product)}>
-          {addedToCart ? 'Already Added' : '+ Add to cart'}
+        <Typography className="price-product">${price}</Typography>
+        <Button
+          className="add-to-cart-btn"
+          onClick={() => (addedToCart ? "" : addToCart(product))}
+        >
+          {addedToCart ? "Already Added" : "+ Add to cart"}
         </Button>
       </div>
     </div>

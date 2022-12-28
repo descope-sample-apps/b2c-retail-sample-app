@@ -5,7 +5,35 @@ import { useNavigate } from "react-router";
 import { Descope } from '@descope/react-sdk'
 function StepUp() {
   const navigate = useNavigate();
-
+  const onSuccessSecurity = () => {
+    console.log('Step up: Logged in!');
+    localStorage.setItem("selectedItem", JSON.stringify([]));
+    let productDataFromLocalStorage = JSON.parse(
+      localStorage.getItem("productData")
+    )
+      ? JSON.parse(localStorage.getItem("productData"))
+      : [];
+    let newArrivalDataFromLocalStorage = JSON.parse(
+      localStorage.getItem("newArrivalData")
+    )
+      ? JSON.parse(localStorage.getItem("newArrivalData"))
+      : [];
+    productDataFromLocalStorage.map((item) => {
+      item.addedToCart = false;
+    });
+    localStorage.setItem(
+      "productData",
+      JSON.stringify(productDataFromLocalStorage)
+    );
+    newArrivalDataFromLocalStorage.map((item) => {
+      item.addedToCart = false;
+    });
+    localStorage.setItem(
+      "newArrivalData",
+      JSON.stringify(newArrivalDataFromLocalStorage)
+    );
+    navigate("/payment-success");
+  }
   return (
     <div className="checkout-order-container">
       <Typography className="checkout-text">Checkout</Typography>
@@ -14,10 +42,7 @@ function StepUp() {
       <div className="order-container">
       <Descope
             flowId="step-up-protected-assets"
-            onSuccess={(e) => {
-              console.log('Step up: Logged in!');
-              navigate("/payment-success");
-            }}
+            onSuccess={(e) => onSuccessSecurity()}
             onError={(e) => console.log('Step up: Could not logged in!')}
         />
 

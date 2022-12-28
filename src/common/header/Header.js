@@ -22,12 +22,17 @@ function Header() {
     ? { loginLabel: `${getDisplayName(user)} (Logout)`, linkPath: "/logout" }
     : { loginLabel: "Login", linkPath: "/login" };
   const doLogout = () => {
-    const localStorageKeysToRemove = ["selectedItem", "productData", "newArrivalData", "loginDetails"]
+    const localStorageKeysToRemove = [
+      "selectedItem",
+      "productData",
+      "newArrivalData",
+      "loginDetails",
+    ];
     for (const key of localStorageKeysToRemove) {
-      localStorage.removeItem(key)
+      localStorage.removeItem(key);
     }
-    setIsNavExpanded(!isNavExpanded);  
-  }
+    setIsNavExpanded(!isNavExpanded);
+  };
   useEffect(() => {
     if (cartLength && selectedItems.length !== cartLength.length)
       setCartLength(selectedItems);
@@ -49,12 +54,7 @@ function Header() {
           )}
         </button>
         <div className="logo">
-          <Link
-            to="/"
-            onClick={() => {
-              setIsNavExpanded(!isNavExpanded);
-            }}
-          >
+          <Link to="/">
             <h2>Tee-Hee Tees</h2>
           </Link>
         </div>

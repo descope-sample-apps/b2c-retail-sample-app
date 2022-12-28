@@ -8,19 +8,37 @@ import "./newArrivals.css";
 import ArrivalProducts from "./ArrivalProducts";
 
 const SampleNextArrow = (props) => {
-  const { className, style } = props;
-  return <div className={className} style={{ ...style, display: "none" }} />;
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none" }}
+      onClick={onClick}
+    />
+  );
 };
 const SamplePrevArrow = (props) => {
-  const { className, style } = props;
-  return <div className={className} style={{ ...style, display: "none" }} />;
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none" }}
+      onClick={onClick}
+    />
+  );
 };
 
 const NewArrivals = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const getProductData = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
-  let newArrivalDataFromLocalStorage = JSON.parse(localStorage.getItem('newArrivalData')) ? JSON.parse(localStorage.getItem('newArrivalData')) : [];
+  const getProductData = JSON.parse(localStorage.getItem("selectedItem"))
+    ? JSON.parse(localStorage.getItem("selectedItem"))
+    : [];
+  let newArrivalDataFromLocalStorage = JSON.parse(
+    localStorage.getItem("newArrivalData")
+  )
+    ? JSON.parse(localStorage.getItem("newArrivalData"))
+    : [];
 
   const settings = {
     infinite: true,
@@ -62,27 +80,32 @@ const NewArrivals = () => {
   const [cartArray, setCartArray] = useState(getProductData);
 
   const [products, setProducts] = useState(newArrivalDataFromLocalStorage);
-  
+
   useEffect(() => {
     if (newArrivalDataFromLocalStorage.length === 0) {
-      localStorage.setItem('newArrivalData', JSON.stringify(newArrivalData));
+      localStorage.setItem("newArrivalData", JSON.stringify(newArrivalData));
     }
-    setProducts(JSON.parse(localStorage.getItem('newArrivalData')));
+    setProducts(JSON.parse(localStorage.getItem("newArrivalData")));
   }, []);
 
   const addToCart = (data) => {
     setCartArray([...cartArray, data]);
-    let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
-    localStorage.setItem('selectedItem', JSON.stringify([...getSelectedCartArray, data]));
+    let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem"))
+      ? JSON.parse(localStorage.getItem("selectedItem"))
+      : [];
+    localStorage.setItem(
+      "selectedItem",
+      JSON.stringify([...getSelectedCartArray, data])
+    );
     navigate("/");
     let productsArray = [...products];
-    productsArray.map(item => {
+    productsArray.map((item) => {
       if (item.id === data.id) {
         item.addedToCart = true;
       }
     });
     setProducts(productsArray);
-    localStorage.setItem('newArrivalData', JSON.stringify(productsArray));
+    localStorage.setItem("newArrivalData", JSON.stringify(productsArray));
   };
   return (
     <div className="arrivals-container">
@@ -95,7 +118,11 @@ const NewArrivals = () => {
 
       <Slider {...settings} className="popular-product-container">
         {products.map((product) => (
-          <ArrivalProducts {...product} key={product.id} addToCart={addToCart}/>
+          <ArrivalProducts
+            {...product}
+            key={product.id}
+            addToCart={addToCart}
+          />
         ))}
       </Slider>
       <br />

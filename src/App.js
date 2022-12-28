@@ -11,7 +11,8 @@ const AppRoot = () => {
   }
   return (
       <AuthProvider
-          projectId={projectId || process.env.REACT_APP_DESCOPE_PROJECT_ID}
+          // projectId={projectId || process.env.REACT_APP_DESCOPE_PROJECT_ID}
+          projectId={'P2IWkrFecmaDJzhQqV5L9MZslivd'}
       >
        <App />
       </AuthProvider>
