@@ -35,7 +35,7 @@
 .btn-mobile-view {
   display: none;
 }
-.btn-api{
+.btn-api {
   background: #6412e9;
   border-radius: 5px;
   border-color: #6412e9;
@@ -53,12 +53,14 @@
   }
   .left-flow {
     width: 100%;
+    padding: 16px 0;
   }
   .right-flow {
     margin-top: -22px;
     margin-bottom: 10px;
     background: #0f0a2c;
     width: 100%;
+    padding: 16px 0;
   }
   .btn-desktop-view {
     display: none;
@@ -69,9 +71,18 @@
   .btn-learn {
     width: 100%;
   }
+  .btn-api {
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 1000px) {
-  .inner-div {
-    height: 45vmin;
+  .left-flow {
+    padding: 16px 0;
   }
+  .right-flow {
+    padding: 16px 0;
+  }
+  /* .inner-div {
+    height: 45vmin;
+  } */
 }

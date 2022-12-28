@@ -8,26 +8,44 @@ import "./product.css";
 import ArrivalProducts from "../newArrivals/ArrivalProducts";
 
 const SampleNextArrow = (props) => {
-  const { className, style } = props;
-  return <div className={className} style={{ ...style, display: "none" }} />;
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none" }}
+      onClick={onClick}
+    />
+  );
 };
 const SamplePrevArrow = (props) => {
-  const { className, style } = props;
-  return <div className={className} style={{ ...style, display: "none" }} />;
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none" }}
+      onClick={onClick}
+    />
+  );
 };
 
 const Product = () => {
-  const getProductData = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
-  let productDataFromLocalStorage = JSON.parse(localStorage.getItem('productData')) ? JSON.parse(localStorage.getItem('productData')) : [];
+  const getProductData = JSON.parse(localStorage.getItem("selectedItem"))
+    ? JSON.parse(localStorage.getItem("selectedItem"))
+    : [];
+  let productDataFromLocalStorage = JSON.parse(
+    localStorage.getItem("productData")
+  )
+    ? JSON.parse(localStorage.getItem("productData"))
+    : [];
   const [products, setProducts] = useState(productDataFromLocalStorage);
   const [cart, setCart] = useState(getProductData);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (productDataFromLocalStorage.length === 0) {
-      localStorage.setItem('productData', JSON.stringify(productData));
+      localStorage.setItem("productData", JSON.stringify(productData));
     }
-    setProducts(JSON.parse(localStorage.getItem('productData')));
+    setProducts(JSON.parse(localStorage.getItem("productData")));
   }, []);
 
   const settings = {
@@ -38,6 +56,7 @@ const Product = () => {
     speed: 500,
     autoplaySpeed: 4000,
     cssEase: "linear",
+
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
 
@@ -69,17 +88,22 @@ const Product = () => {
   };
   const addToCart = (data) => {
     setCart([...cart, data]);
-    let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem")) ? JSON.parse(localStorage.getItem("selectedItem")) : [];
-    localStorage.setItem('selectedItem', JSON.stringify([...getSelectedCartArray, data]));
+    let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem"))
+      ? JSON.parse(localStorage.getItem("selectedItem"))
+      : [];
+    localStorage.setItem(
+      "selectedItem",
+      JSON.stringify([...getSelectedCartArray, data])
+    );
     navigate("/");
     let productsArray = [...products];
-    productsArray.map(item => {
+    productsArray.map((item) => {
       if (item.id === data.id) {
         item.addedToCart = true;
       }
     });
     setProducts(productsArray);
-    localStorage.setItem('productData', JSON.stringify(productsArray));
+    localStorage.setItem("productData", JSON.stringify(productsArray));
   };
   return (
     <div>
@@ -94,7 +118,11 @@ const Product = () => {
 
       <Slider {...settings} className="popular-product-container">
         {products.map((product) => (
-          <ArrivalProducts {...product} key={product.id} addToCart={addToCart}/>
+          <ArrivalProducts
+            {...product}
+            key={product.id}
+            addToCart={addToCart}
+          />
         ))}
       </Slider>
       <br />

@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button} from "antd";
+import { Typography, Button } from "antd";
 import "./order.css";
 import { useNavigate } from "react-router";
 function OrderPlaced() {
