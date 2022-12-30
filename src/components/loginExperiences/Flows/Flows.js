@@ -28,7 +28,7 @@ const Flows = () => {
       </div>
       <div className="right-flow">
         <div className="inner-div">
-        <Image src={flow_image}/>
+        <Image src={flow_image} className="img-flow"/>
         </div>
       </div>
       <div className="btn-mobile-view">

@@ -27,6 +27,7 @@ function Header() {
       "productData",
       "newArrivalData",
       "loginDetails",
+      "firstVisit",
     ];
     for (const key of localStorageKeysToRemove) {
       localStorage.removeItem(key);
