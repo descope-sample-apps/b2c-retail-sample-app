@@ -1,181 +1,177 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800&family=Sedgwick+Ave&display=swap');
-.main-container{
-    width: 100%;
-    height: 558px;
-    background: #EFEBFB;
-    display: flex;
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@800&family=Sedgwick+Ave&display=swap");
+.main-container {
+  width: 100%;
+  height: 558px;
+  background: #efebfb;
+  display: flex;
 }
-.left-side-container{
-    margin:auto 0px;
-    margin-left:15%;
-}
-
-.main-heading{
-width: 472px;
-height: 121px;
-left: 475px;
-top: 208px;
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 800;
-font-size: 42px;
-line-height: 46px;
-color: #6412E9;
-}
-.sub-para{
-    width: 459px;
-height: 96px;
-left: 475px;
-top: 324px;
-font-family: 'Sedgwick Ave';
-font-style: normal;
-font-weight: 400;
-font-size: 22px;
-line-height: 40px;
-/* or 182% */
-
-color: #121217;
-}
-.signup-container{
-    width:350px;
-    height:400px;
-    margin: auto 0px;
-    margin-left: 10%;
-    background: #FFFFFF;
-backdrop-filter: blur(4.5px);
-border-radius: 15px;
-}
- .signup-heading{
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 800;
-font-size: 42px;
-line-height: 46px;
-text-align: center;
-color: #6412E9;
-margin-bottom: 15px;
-} 
-.Signup-form{
-    padding: 25px 24px;
+.left-side-container {
+  margin: auto 0px;
+  margin-left: 15%;
 }
 
-.form{
-    width: 100%;
-    height: 3rem;
-    margin-bottom: 12px;
+.main-heading {
+  width: 472px;
+  height: 121px;
+  left: 475px;
+  top: 208px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 46px;
+  color: #6412e9;
+}
+.sub-para {
+  width: 459px;
+  height: 96px;
+  left: 475px;
+  top: 324px;
+  font-family: "Sedgwick Ave";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 40px;
+  /* or 182% */
+
+  color: #121217;
+}
+.signup-container {
+  width: 350px;
+  height: 400px;
+  margin: auto 0px;
+  margin-left: 10%;
+  background: #ffffff;
+  backdrop-filter: blur(4.5px);
+  border-radius: 15px;
+}
+.signup-heading {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 46px;
+  text-align: center;
+  color: #6412e9;
+  margin-bottom: 15px;
+}
+.Signup-form {
+  padding: 25px 24px;
 }
 
-.signup__input{
-top:0;
-left:0;
-width:100%;
-background: #EFEBFB;
-border: 5px solid  #EFEBFB ;
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 40px;
-color: #716889;
+.form {
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 12px;
 }
-.acc-btn{
-width:100%;
-height:3rem;
-background: #38FFB7;
-border-radius: 5px;
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 22px;
-text-align: center;
-color: #6412E9;
-}
-.footer-para{
-margin-top:2%;
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 22px;
-color: #716889;
-}
-.login-row{
-    margin-top: 3.4%;
-    display: flex;
-    justify-content: space-between;
-}
-.footer-line{
 
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 600;
-font-size: 18px;
-line-height: 40px;
-color: #716889;
+.signup__input {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #efebfb;
+  border: 5px solid #efebfb;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 40px;
+  color: #716889;
 }
-.login-link{
-
-font-family: 'Barlow';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 40px;
-color: #716889;
+.acc-btn {
+  width: 100%;
+  height: 3rem;
+  background: #38ffb7;
+  border-radius: 5px;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #6412e9;
+}
+.footer-para {
+  margin-top: 2%;
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #716889;
+}
+.login-row {
+  margin-top: 3.4%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-line {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 40px;
+  color: #716889;
+}
+.login-link {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 40px;
+  color: #716889;
 }
 
 @media only screen and (max-width: 640px) {
-    .main-container {
-     display: block;
-     height:858px;
-    }
-   .left-side-container{
-    margin:auto;
+  .main-container {
+    display: block;
+    height: 910px;
+  }
+  .left-side-container {
+    margin: auto;
     margin-left: auto;
     padding-top: 3rem;
-   }
-    .main-heading{
-        font-size: 35px;
-        width:320px;  
-        text-align: center;  
-    }
-    .sub-para{
-        width:330px;
-        margin-bottom: 155px;
-        font-size: 25px;
-         text-align: center;
-    }
-    .signup-container{
-        width:340px;
-        margin:auto;
-    }
-    /* .Signup-form{
+  }
+  .main-heading {
+    font-size: 35px;
+    width: 320px;
+    text-align: center;
+  }
+  .sub-para {
+    width: 330px;
+    margin-bottom: 155px;
+    font-size: 25px;
+    text-align: center;
+  }
+  .signup-container {
+    width: 340px;
+    margin: auto;
+  }
+  /* .Signup-form{
         padding: 0px 0px;
     } */
-  }
-  @media screen and (max-width: 950px){
-    .left-side-container{
-       margin:auto 5%;
-       
-    }
-    .signup-container{
-        /* width:390px; */
-        margin: auto ;
-        /* margin-left: 1%; */
-    }
-    .main-heading{
-        font-size: 38px;
-        width:320px;    
-    }
-    .sub-para{
-        width:330px;
-        margin-bottom: 155px;
-        font-size: 25px;
-    }
 }
-@media only screen and (min-width: 1280px) and (max-width: 3060px){
-    .main-container{
-      height:68vh;
-    }
-    
+@media screen and (max-width: 950px) {
+  .left-side-container {
+    margin: auto 5%;
   }
+  .signup-container {
+    /* width:390px; */
+    margin: auto;
+    /* margin-left: 1%; */
+  }
+  .main-heading {
+    font-size: 38px;
+    width: 320px;
+  }
+  .sub-para {
+    width: 330px;
+    margin-bottom: 155px;
+    font-size: 25px;
+  }
+}
+/* @media only screen and (min-width: 1280px) and (max-width: 3060px) {
+  .main-container {
+    height: 68vh;
+  }
+} */

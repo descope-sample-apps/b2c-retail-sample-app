@@ -19,6 +19,9 @@
   /* height: 83vmin; */
   height: 100%;
 }
+.img-flow {
+  height: 14.1rem !important;
+}
 .btn-learn {
   background: #6412e9;
   border-radius: 5px;
@@ -85,4 +88,7 @@
   /* .inner-div {
     height: 45vmin;
   } */
+  .img-flow {
+    height: 16.1rem !important;
+  }
 }

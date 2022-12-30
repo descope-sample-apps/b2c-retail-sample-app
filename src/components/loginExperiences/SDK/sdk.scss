@@ -32,6 +32,10 @@
         width: 48%;
         height: 40px;
 
+        &:hover {
+          color: #4096ff;
+          border-color: #4096ff;
+        }
         @media only screen and (min-width: 601px) and (max-width: 1000px) {
           width: 48%;
         }

@@ -17,7 +17,10 @@ const WelcomeModal = () => {
   };
 
   useEffect(() => {
-    showModal();
+      if (localStorage.getItem('firstVisit') !== "1") {
+        showModal();
+        localStorage.setItem('firstVisit', '1');
+      }
   }, []);
 
   return (
