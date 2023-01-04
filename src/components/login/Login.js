@@ -24,6 +24,10 @@ const Login = () => {
         <SignUpOrInFlow
             onSuccess={(e) => {
               localStorage.setItem("loginDetails", JSON.stringify(e.detail.user))
+              window.analytics.identify(e.detail.user.userId, {
+                name: e.detail.user.name, //user trait
+                email: e.detail.user.email, //user trait
+              });
               navigate("/");
             }}
             onError={(e) => console.log('Could not logged in!')}
