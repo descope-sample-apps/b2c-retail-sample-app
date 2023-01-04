@@ -86,7 +86,7 @@ function Header() {
             </li>
             <li className="menu-lists">
               <div className="btntag-mobile">
-                <NavLink to={linkPath} className="nav-link" onClick={doLogout}>
+                <NavLink to={linkPath} className="nav-link" onClick={() => authenticated ? doLogout(): ''}>
                   <Button className={authenticated ? "btn-login" : "login-nav"}>
                     {loginLabel}
                   </Button>
@@ -97,7 +97,7 @@ function Header() {
         </div>
         <div className="navbar-right">
           <div className="btntag">
-            <NavLink to={linkPath} className="nav-link" onClick={doLogout}>
+            <NavLink to={linkPath} className="nav-link" onClick={() => authenticated ? doLogout(): ''}>
               {loginLabel}
             </NavLink>
           </div>

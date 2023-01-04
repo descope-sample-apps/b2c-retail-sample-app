@@ -150,6 +150,7 @@
   .logo h2 {
     font-size: 25px;
     position: absolute;
+    /* margin-left: 9em; */
     margin: 11px 8px 10px 5rem;
   }
   .ant-badge .ant-badge-count {

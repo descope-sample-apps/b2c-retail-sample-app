@@ -22,7 +22,13 @@ function OrderPlaced() {
           <Button className="btn-just" onClick={() => navigate("/")}>
             Just take me home
           </Button>
-          <Button className="btn-feed">Feeling Lucky?</Button>
+          <a
+            href="https://docs.descope.com"
+            target="_blank"
+            className="btn-feel"
+          >
+            <Button className="btn-feed">Feeling Lucky?</Button>
+          </a>
         </div>
       </div>
     </div>

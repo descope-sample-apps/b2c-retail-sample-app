@@ -17,10 +17,10 @@ const WelcomeModal = () => {
   };
 
   useEffect(() => {
-      if (localStorage.getItem('firstVisit') !== "1") {
-        showModal();
-        localStorage.setItem('firstVisit', '1');
-      }
+    if (sessionStorage.getItem("firstVisit") !== "1") {
+      showModal();
+      sessionStorage.setItem("firstVisit", "1");
+    }
   }, []);
 
   return (

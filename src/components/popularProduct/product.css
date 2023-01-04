@@ -104,7 +104,7 @@
 @media only screen and (max-width: 600px) {
   .main-header {
     padding: 0px 13px;
-    margin-top: 70px;
+    /* margin-top: 70px; */
   }
   .title {
     font-size: 30px;

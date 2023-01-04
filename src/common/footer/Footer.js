@@ -7,7 +7,16 @@ import "./footer.css";
 const Footer = () => {
   const location = useLocation();
 
-  const url = ["/login", "/sign-up"];
+  const url = [
+    "/login",
+    "/sign-up",
+    "/payment-success",
+    "/step-up",
+    "/billing-address",
+    "/billing-summary",
+    "/shipping",
+    "/payment-method",
+  ];
 
   return (
     // Footer section starts

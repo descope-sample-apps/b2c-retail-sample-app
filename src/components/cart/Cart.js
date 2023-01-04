@@ -121,7 +121,7 @@ function Cart() {
                   </div>
                   <div className="price-details">
                     <Col span={5} order={4} className="product-price">
-                      {(product.price * product.quantity).toFixed(2)}
+                      $ {(product.price * product.quantity).toFixed(2)}
                     </Col>
                     <Col
                       span={5}

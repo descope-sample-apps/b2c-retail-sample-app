@@ -34,6 +34,7 @@
   font-size: 22px;
   line-height: 40px;
   color: #170a2c;
+  width: 79%;
 }
 .sign-button {
   width: 180px;
@@ -83,7 +84,7 @@
   color: #170a2c;
 }
 
-@media only screen and (max-width: 668px) {
+@media only screen and (max-width: 600px) {
   .first-screen {
     height: 580px;
   }
@@ -108,6 +109,7 @@
     line-height: 30px;
     height: 5px;
     margin: auto 5%;
+    width: 85%;
   }
   .sign-button {
     margin: 60px 5%;
@@ -163,5 +165,13 @@
   }
   .banner-divider {
     padding: 10px 20px;
+  }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1650px) {
+  .hero-heading {
+    width: 77%;
+  }
+  .hero-para {
+    width: 70%;
   }
 }
