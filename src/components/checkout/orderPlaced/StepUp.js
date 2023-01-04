@@ -2,11 +2,11 @@ import React from "react";
 import { Typography } from "antd";
 import "./order.css";
 import { useNavigate } from "react-router";
-import { Descope } from '@descope/react-sdk'
+import { Descope } from "@descope/react-sdk";
 function StepUp() {
   const navigate = useNavigate();
   const onSuccessSecurity = () => {
-    console.log('Step up: Logged in!');
+    console.log("Step up: Logged in!");
     localStorage.setItem("selectedItem", JSON.stringify([]));
     let productDataFromLocalStorage = JSON.parse(
       localStorage.getItem("productData")
@@ -33,19 +33,20 @@ function StepUp() {
       JSON.stringify(newArrivalDataFromLocalStorage)
     );
     navigate("/payment-success");
-  }
+  };
   return (
-    <div className="checkout-order-container">
+    <div className="checkout-step-up-container">
+      <br />
+      <br />
       <Typography className="checkout-text">Checkout</Typography>
       <br />
       <br />
-      <div className="order-container">
-      <Descope
-            flowId="step-up-protected-assets"
-            onSuccess={(e) => onSuccessSecurity()}
-            onError={(e) => console.log('Step up: Could not logged in!')}
+      <div className="step-up-container">
+        <Descope
+          flowId="step-up-protected-assets"
+          onSuccess={(e) => onSuccessSecurity()}
+          onError={(e) => console.log("Step up: Could not logged in!")}
         />
-
       </div>
     </div>
   );

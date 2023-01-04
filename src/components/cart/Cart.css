@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@800&family=Sedgwick+Ave&display=swap");
 .checkout-cart-container {
-  padding: 0px 16rem;
+  padding: 0px 15rem;
   background-color: #efebfb;
+  padding-bottom: 4em;
 }
 
 .shopping-cart-heading {
@@ -92,9 +93,6 @@
   flex: 1;
 }
 
-.product-quat {
-  /* width: 260px; */
-}
 .product-price {
   left: 69px;
   font-family: "Barlow";
@@ -184,7 +182,7 @@
   }
   .cart-container {
     width: 93%;
-    margin-left: 10px;
+    margin-left: 15px;
   }
   .shopping-cart-heading {
     text-align: center;
@@ -195,7 +193,8 @@
     width: 100%;
   }
   .price-details {
-    width: 43%;
+    /* width: 43%; */
+    width: 100%;
   }
   .counter {
     margin-left: 0;
@@ -221,7 +220,7 @@
     padding: 8px 0;
   }
   .remove {
-    left: 10.3rem;
+    left: 3rem;
   }
   .order-details {
     flex-direction: column;
@@ -250,15 +249,19 @@
 @media only screen and (min-width: 600px) and (max-width: 786px) {
   .checkout-cart-container {
     padding: 0;
+    padding-bottom: 8em;
   }
   .cart-container {
     width: 89%;
-    margin: 0 28px;
+    margin: 0 34px;
+  }
+  .shopping-cart-heading {
+    text-align: center;
   }
 }
-@media only screen and (min-width: 700px) and (max-width: 1280px) {
+@media only screen and (min-width: 700px) and (max-width: 1250px) {
   .checkout-cart-container {
-    padding: 0px 7rem;
+    padding: 0px 2rem;
     padding-bottom: 6rem;
   }
   .cart-container {

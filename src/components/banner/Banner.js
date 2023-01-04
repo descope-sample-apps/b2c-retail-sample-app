@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "antd";
+import { Button, Typography } from "antd";
 import "./Banner.css";
 import { useNavigate } from "react-router";
 import LoginExperiences from "../loginExperiences/LoginExperiences";
@@ -14,8 +14,8 @@ function Banner() {
           <div className="container-section-1">
             <h1 className="hero-heading">Funny Tees, Laughably Low Prices</h1>
             <p className="hero-para">
-              We could all do with a chuckle. Wear a Tee-<br></br>Hee T-shirt
-              today and spread some cheer!
+              We could all do with a chuckle. Wear a Tee-Hee T-shirt today and
+              spread some cheer!
             </p>
             <Button
               className="sign-button"
@@ -26,8 +26,14 @@ function Banner() {
           </div>
           {/* for image  */}
           <div className="container-sec-2">
-            <img src={require("../../assets/bannerimg1.svg").default} alt='sample-shirt-1'/>
-            <img src={require("../../assets/bannerimg2.svg").default} alt='sample-shirt-2'/>
+            <img
+              src={require("../../assets/bannerimg1.svg").default}
+              alt="sample-shirt-1"
+            />
+            <img
+              src={require("../../assets/bannerimg2.svg").default}
+              alt="sample-shirt-2"
+            />
           </div>
         </div>
       </div>
@@ -36,4 +42,4 @@ function Banner() {
   );
 }
 
-export default Banner
+export default Banner;
