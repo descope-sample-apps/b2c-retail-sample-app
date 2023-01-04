@@ -9,6 +9,7 @@ const AppRoot = () => {
   if (projectId) {
     localStorage.setItem('projectId', projectId);
   }
+  window.analytics.page({projectId: projectId});
   return (
       <AuthProvider
           projectId={projectId || process.env.REACT_APP_DESCOPE_PROJECT_ID}
