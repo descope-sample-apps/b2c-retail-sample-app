@@ -5,11 +5,13 @@ import { Button } from "antd";
 import "./Cart.css";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import { useAuth } from '@descope/react-sdk';
 
 function Cart() {
   const getProductData = JSON.parse(localStorage.getItem("selectedItem"));
 
   const navigate = useNavigate();
+  const { authenticated } = useAuth();
 
   // useEffect(() => {
   //   let user = JSON.parse(localStorage.getItem('loginDetails'));
@@ -56,6 +58,13 @@ function Cart() {
     return setCART(updatedCart);
   };
 
+  const navigateThisTo = () => {
+    if (authenticated) {
+      navigate("/step-up");
+    } else {
+      navigate("/login");
+    }
+  }
   return (
     <div className="checkout-cart-container">
       <br />
@@ -159,7 +168,7 @@ function Cart() {
             <div className="proceed-btn">
               <Button
                 className="proceeed-btn"
-                onClick={() => navigate("/step-up")}
+                onClick={() => navigateThisTo()}
               >
                 Proceed to Checkout
               </Button>
@@ -181,7 +190,7 @@ function Cart() {
             <div className="proceed-btn">
               <Button
                 className="proceeed-btn"
-                disabled={CART && CART.length === 0}
+                disabled={CART && CART.length === 0 || !CART}
               >
                 Proceed to Checkout
               </Button>
