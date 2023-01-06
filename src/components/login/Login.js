@@ -28,7 +28,7 @@ const Login = () => {
                 name: e.detail.user.name, //user trait
                 email: e.detail.user.email, //user trait
               });
-              navigate("/");
+              navigate(-2);
             }}
             onError={(e) => console.log('Could not logged in!')}
         />

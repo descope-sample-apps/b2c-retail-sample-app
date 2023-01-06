@@ -1,12 +1,13 @@
 import React from "react";
-import { Button, Typography } from "antd";
+import { Button } from "antd";
 import "./Banner.css";
 import { useNavigate } from "react-router";
 import LoginExperiences from "../loginExperiences/LoginExperiences";
+import { useAuth } from '@descope/react-sdk'
 
 function Banner() {
   const navigate = useNavigate();
-
+  const { authenticated } = useAuth();
   return (
     <>
       <div className="first-screen">
@@ -17,12 +18,17 @@ function Banner() {
               We could all do with a chuckle. Wear a Tee-Hee T-shirt today and
               spread some cheer!
             </p>
+            {
+              authenticated ? 
+              <></>
+              :
             <Button
               className="sign-button"
-              onClick={() => navigate("/sign-up")}
+              onClick={() => navigate("/login")}
             >
-              Sign Up
+              Login
             </Button>
+            }
           </div>
           {/* for image  */}
           <div className="container-sec-2">

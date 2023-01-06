@@ -15,7 +15,7 @@ import StepUp from "../components/checkout/orderPlaced/StepUp";
 
 const Container = () => {
   return (
-    <div>
+    <div style={{height: '100%'}}>
       <React.Fragment>
         <Layout>
           <Routes>
