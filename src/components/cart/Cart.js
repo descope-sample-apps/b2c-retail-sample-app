@@ -190,7 +190,7 @@ function Cart() {
             <div className="proceed-btn">
               <Button
                 className="proceeed-btn"
-                disabled={CART && CART.length === 0}
+                disabled={CART && CART.length === 0 || !CART}
               >
                 Proceed to Checkout
               </Button>
