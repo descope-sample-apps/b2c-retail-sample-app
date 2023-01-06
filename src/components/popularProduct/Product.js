@@ -106,7 +106,7 @@ const Product = () => {
     localStorage.setItem("productData", JSON.stringify(productsArray));
   };
   return (
-    <div>
+    <div style={{backgroundColor: '#FFFFFF'}}>
       <br />
       <br />
       <div className="main-header">
