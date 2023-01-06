@@ -19,8 +19,12 @@ function Banner() {
               spread some cheer!
             </p>
             {
-              authenticated ? 
-              <></>
+              authenticated ?
+              <div
+              className="sign-button"
+              style={{backgroundColor: '#efebfb'}}
+            >
+            </div>
               :
             <Button
               className="sign-button"

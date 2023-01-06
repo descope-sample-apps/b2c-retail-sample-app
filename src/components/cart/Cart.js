@@ -5,13 +5,12 @@ import { Button } from "antd";
 import "./Cart.css";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import { useAuth } from '@descope/react-sdk'
+import { useAuth } from '@descope/react-sdk';
 
 function Cart() {
   const getProductData = JSON.parse(localStorage.getItem("selectedItem"));
-  const { authenticated } = useAuth();
-
   const navigate = useNavigate();
+  const { authenticated } = useAuth();
 
   // useEffect(() => {
   //   let user = JSON.parse(localStorage.getItem('loginDetails'));
