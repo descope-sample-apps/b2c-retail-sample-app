@@ -62,6 +62,7 @@ function Cart() {
       navigate("/step-up");
     } else {
       navigate("/login");
+      localStorage.setItem('pathState', 'CART');
     }
   }
   return (

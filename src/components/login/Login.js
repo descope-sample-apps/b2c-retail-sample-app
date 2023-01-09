@@ -28,7 +28,15 @@ const Login = () => {
                 name: e.detail.user.name, //user trait
                 email: e.detail.user.email, //user trait
               });
-              navigate(-2);
+              switch (localStorage.getItem('pathState')) {
+                case 'CART':
+                  navigate('/cart');
+                  localStorage.removeItem('pathState');
+                  break;              
+                default:
+                  navigate('/');
+                  break;
+              }
             }}
             onError={(e) => console.log('Could not logged in!')}
         />
