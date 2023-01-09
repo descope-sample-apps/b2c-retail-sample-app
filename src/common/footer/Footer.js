@@ -8,8 +8,6 @@ const Footer = () => {
   const location = useLocation();
 
   const url = [
-    "/login",
-    "/sign-up",
     "/payment-success",
     "/step-up",
     "/billing-address",
