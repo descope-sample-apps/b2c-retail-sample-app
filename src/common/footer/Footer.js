@@ -8,6 +8,17 @@ const Footer = () => {
   const location = useLocation();
 
   const url = [
+    "/login",
+    "/sign-up",
+    "/payment-success",
+    "/step-up",
+    "/billing-address",
+    "/billing-summary",
+    "/shipping",
+    "/payment-method",
+    "/cart"
+  ];
+  const footerUrl = [
     "/payment-success",
     "/step-up",
     "/billing-address",
@@ -19,7 +30,7 @@ const Footer = () => {
   const selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
   return (
     // Footer section starts
-    <div className={selectedItem && selectedItem.length <= 2 && url.includes(location.pathname) ? "footer-main" : 'footer-main-1'}>
+    <div className={selectedItem && selectedItem.length <= 2 && footerUrl.includes(location.pathname) ? "footer-main" : 'footer-main-1'}>
       {url.includes(location.pathname) ? (
         <LoginExperiences />
       ) : (
