@@ -30,7 +30,7 @@ const Footer = () => {
   const selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
   return (
     // Footer section starts
-    <div className={selectedItem && selectedItem.length <= 2 && footerUrl.includes(location.pathname) ? "footer-main" : 'footer-main-1'}>
+    <div className={(!selectedItem || selectedItem.length <= 2) && footerUrl.includes(location.pathname) ? "footer-main" : 'footer-main-1'}>
       {url.includes(location.pathname) ? (
         <LoginExperiences />
       ) : (
