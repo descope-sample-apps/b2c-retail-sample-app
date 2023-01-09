@@ -16,11 +16,12 @@ const Footer = () => {
     "/billing-summary",
     "/shipping",
     "/payment-method",
+    "/cart"
   ];
-
+  const selectedItem = JSON.parse(localStorage.getItem('selectedItem'));
   return (
     // Footer section starts
-    <>
+    <div className={selectedItem && selectedItem.length <= 2 && url.includes(location.pathname) ? "footer-main" : 'footer-main-1'}>
       {url.includes(location.pathname) ? (
         <LoginExperiences />
       ) : (
@@ -32,7 +33,7 @@ const Footer = () => {
           Tee-Hee Tees is a sample application made with love by Descope
         </Typography>
       </div>
-    </>
+    </div>
   );
 };
 
