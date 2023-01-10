@@ -1,3 +1,13 @@
+.footer-main {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.footer-main-1 {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
 .footer-divider-first {
   background: linear-gradient(
     0.25turn,

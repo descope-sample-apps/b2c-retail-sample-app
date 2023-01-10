@@ -86,7 +86,7 @@ function Header() {
             </li>
             <li className="menu-lists">
               <div className="btntag-mobile">
-                <NavLink to={linkPath} className="nav-link" onClick={() => authenticated ? doLogout(): ''}>
+                <NavLink to={linkPath} className="nav-link" onClick={() => authenticated ? doLogout(): setIsNavExpanded(!isNavExpanded)}>
                   <Button className={authenticated ? "btn-login" : "login-nav"}>
                     {loginLabel}
                   </Button>

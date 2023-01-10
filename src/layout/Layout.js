@@ -6,7 +6,7 @@ const Layout = (props) => {
   return (
     <React.Fragment>
       <Header />
-      <main>{props.children}</main>
+      <main style={{backgroundColor: '#efebfb'}}>{props.children}</main>
       <Footer />
     </React.Fragment>
   );
