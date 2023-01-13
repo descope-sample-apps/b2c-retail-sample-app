@@ -20,7 +20,6 @@ const Footer = () => {
   ];
   const footerUrl = [
     "/payment-success",
-    "/step-up",
     "/billing-address",
     "/billing-summary",
     "/shipping",

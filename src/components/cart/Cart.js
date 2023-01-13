@@ -148,8 +148,7 @@ function Cart() {
           </div>
           <br />
           <Typography className="cart-text">
-            * To experience step-up authentication, change the number of cart
-            items to more than 10.
+            * To experience step-up authentication, click Proceed to Checkout..
           </Typography>
 
           <div className="order-details">

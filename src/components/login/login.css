@@ -163,7 +163,7 @@
   }
 }
 
-@media only screen and (min-width: 1020px) and (max-width: 1200px) {
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
   .main-container-login {
     padding: 4rem 9rem;
     background: #efebfb;
@@ -178,11 +178,7 @@
 }
 
 @media only screen and (min-width: 1500px) and (max-width: 1650px) {
-  .first-div {
-    margin-left: 10rem;
-  }
   .login-container {
-    margin-right: 11rem;
     width: 33%;
   }
 }
