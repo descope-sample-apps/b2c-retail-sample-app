@@ -46,6 +46,8 @@ function StepUp() {
           flowId="step-up-protected-assets"
           onSuccess={(e) => onSuccessSecurity()}
           onError={(e) => console.log("Step up: Could not logged in!")}
+          // use debug flag to show flow errors and additional debug information
+          // debug="true"
         />
       </div>
     </div>
