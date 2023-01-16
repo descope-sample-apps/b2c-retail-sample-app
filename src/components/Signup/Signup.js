@@ -25,6 +25,8 @@ function Signup() {
               navigate("/");
             }}
             onError={(e) => console.log('Could not logged in!')}
+            // use debug flag to show flow errors and additional debug information
+            // debug="true"
         />
         </div>
       </div>
