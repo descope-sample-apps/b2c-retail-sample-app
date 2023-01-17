@@ -163,10 +163,10 @@ function Cart() {
               </Typography>
             </div>
             <div className="proceed-btn">
-              <Button
+              <Button 
                 className="proceeed-btn"
                 onClick={() => navigateThisTo()}
-              >
+                >
                 Proceed to Checkout
               </Button>
             </div>

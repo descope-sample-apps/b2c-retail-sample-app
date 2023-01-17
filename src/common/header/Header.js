@@ -12,9 +12,9 @@ const getDisplayName = (user) => {
 };
 
 function Header() {
-  let selectedItems = JSON.parse(localStorage.getItem("selectedItem"))
-    ? JSON.parse(localStorage.getItem("selectedItem"))
-    : [];
+  let selectedItems = localStorage.getItem("selectedItem") && JSON.parse(localStorage.getItem("selectedItem"))
+      ? JSON.parse(localStorage.getItem("selectedItem"))
+      : [];
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [cartLength, setCartLength] = useState([]);
   const { user, authenticated } = useAuth();
@@ -97,7 +97,8 @@ function Header() {
         </div>
         <div className="navbar-right">
           <div className="btntag">
-            <NavLink to={linkPath} className="nav-link" onClick={() => authenticated ? doLogout(): ''}>
+            <NavLink to={linkPath} className="nav-link" onClick={() => (authenticated ? doLogout() : "")}
+            >
               {loginLabel}
             </NavLink>
           </div>

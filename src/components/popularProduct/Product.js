@@ -1,8 +1,9 @@
 import { Button, Typography } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { productData } from "./ProductData";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
+import { createClient } from "contentful";
 
 import "./product.css";
 import ArrivalProducts from "../newArrivals/ArrivalProducts";
@@ -29,24 +30,54 @@ const SamplePrevArrow = (props) => {
 };
 
 const Product = () => {
-  const getProductData = JSON.parse(localStorage.getItem("selectedItem"))
-    ? JSON.parse(localStorage.getItem("selectedItem"))
-    : [];
+  const getProductData =
+    localStorage.getItem("selectedItem") &&
+    JSON.parse(localStorage.getItem("selectedItem"))
+      ? JSON.parse(localStorage.getItem("selectedItem"))
+      : [];
   let productDataFromLocalStorage = JSON.parse(
     localStorage.getItem("productData")
   )
     ? JSON.parse(localStorage.getItem("productData"))
     : [];
-  const [products, setProducts] = useState(productDataFromLocalStorage);
-  const [cart, setCart] = useState(getProductData);
+  // const [products, setProducts] = useState(productDataFromLocalStorage);
+  const [products, setProducts] = useState([]);
+  // const [cart, setCart] = useState(getProductData);
+  const [cart, setCart] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (productDataFromLocalStorage.length === 0) {
-      localStorage.setItem("productData", JSON.stringify(productData));
+  //
+  const client = createClient({
+    // space: "4wc7a70gmik6",
+    // accessToken: "SeY-t_X7JsSLkfqD0GUnhJwICSoYKrOTw8AIyqgwZjQ",
+    space: "lrv96uy3vip3",
+    accessToken: "9PNQQmlDG8dH7WjW7DiyHrSB5kqywaURhnQ5Q8Unk5s",
+  });
+
+  const getAllEntries = async () => {
+    try {
+      const response = await client.getEntries({
+        content_type: "mostPopularProducts",
+      });
+      const responseData = response.items;
+      setProducts(responseData);
+    } catch (error) {
+      console.log(error);
     }
-    setProducts(JSON.parse(localStorage.getItem("productData")));
+  };
+
+  useEffect(() => {
+    getAllEntries();
   }, []);
+
+  //
+
+  // useEffect(() => {
+  //   if (productDataFromLocalStorage.length === 0) {
+  //     localStorage.setItem("productData", JSON.stringify(productData));
+  //   }
+  //   setProducts(JSON.parse(localStorage.getItem("productData")));
+  // }, []);
 
   const settings = {
     infinite: true,
@@ -88,13 +119,16 @@ const Product = () => {
   };
   const addToCart = (data) => {
     setCart([...cart, data]);
-    let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem"))
-      ? JSON.parse(localStorage.getItem("selectedItem"))
-      : [];
-    localStorage.setItem(
-      "selectedItem",
-      JSON.stringify([...getSelectedCartArray, data])
-    );
+    let getSelectedCartArray =
+      localStorage.getItem("selectedItem") &&
+      JSON.parse(localStorage.getItem("selectedItem"))
+        ? JSON.parse(localStorage.getItem("selectedItem"))
+        : [];
+
+    // localStorage.setItem(
+    //   "selectedItem",
+    //   JSON.stringify([...getSelectedCartArray, data])
+    // );
     navigate("/");
     let productsArray = [...products];
     productsArray.map((item) => {
@@ -103,7 +137,7 @@ const Product = () => {
       }
     });
     setProducts(productsArray);
-    localStorage.setItem("productData", JSON.stringify(productsArray));
+    // localStorage.setItem("productData", JSON.stringify(productsArray));
   };
   return (
     <div style={{backgroundColor: '#FFFFFF'}}>
@@ -117,13 +151,15 @@ const Product = () => {
       </div>
 
       <Slider {...settings} className="popular-product-container">
-        {products.map((product) => (
-          <ArrivalProducts
-            {...product}
-            key={product.id}
-            addToCart={addToCart}
-          />
-        ))}
+        {products.map((product) => {
+          return (
+            <ArrivalProducts
+              {...product}
+              key={product.sys.id}
+              addToCart={addToCart}
+            />
+          );
+        })}
       </Slider>
       <br />
 

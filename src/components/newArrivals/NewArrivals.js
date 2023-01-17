@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { newArrivalData } from "./NewArrivalData";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
+import { createClient } from "contentful";
 
 import "./newArrivals.css";
 import ArrivalProducts from "./ArrivalProducts";
@@ -31,9 +32,9 @@ const SamplePrevArrow = (props) => {
 const NewArrivals = () => {
   const navigate = useNavigate();
 
-  const getProductData = JSON.parse(localStorage.getItem("selectedItem"))
-    ? JSON.parse(localStorage.getItem("selectedItem"))
-    : [];
+  const getProductData = localStorage.getItem("selectedItem") && JSON.parse(localStorage.getItem("selectedItem"))
+      ? JSON.parse(localStorage.getItem("selectedItem"))
+      : [];
   let newArrivalDataFromLocalStorage = JSON.parse(
     localStorage.getItem("newArrivalData")
   )
@@ -79,15 +80,37 @@ const NewArrivals = () => {
   };
   const [cartArray, setCartArray] = useState(getProductData);
 
-  const [products, setProducts] = useState(newArrivalDataFromLocalStorage);
+  //const [products, setProducts] = useState(newArrivalDataFromLocalStorage);
+  const [products, setProducts] = useState([]);
+
+  // useEffect(() => {
+  //   if (newArrivalDataFromLocalStorage.length === 0) {
+  //     localStorage.setItem("newArrivalData", JSON.stringify(newArrivalData));
+  //   }
+  //   setProducts(JSON.parse(localStorage.getItem("newArrivalData")));
+  // }, []);
+  const client = createClient({
+    // space: "4wc7a70gmik6",
+    // accessToken: "SeY-t_X7JsSLkfqD0GUnhJwICSoYKrOTw8AIyqgwZjQ",
+    space: "lrv96uy3vip3",
+    accessToken: "9PNQQmlDG8dH7WjW7DiyHrSB5kqywaURhnQ5Q8Unk5s",
+  });
+
+  const getAllEntries = async () => {
+    try {
+      const response = await client.getEntries({
+        content_type: "newArrivalData",
+      });
+      const responseData = response.items;
+      setProducts(responseData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    if (newArrivalDataFromLocalStorage.length === 0) {
-      localStorage.setItem("newArrivalData", JSON.stringify(newArrivalData));
-    }
-    setProducts(JSON.parse(localStorage.getItem("newArrivalData")));
+    getAllEntries();
   }, []);
-
   const addToCart = (data) => {
     setCartArray([...cartArray, data]);
     let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem"))
