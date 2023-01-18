@@ -1,12 +1,11 @@
 import { Button, Typography } from "antd";
-import React, { useCallback, useEffect, useState } from "react";
-import { productData } from "./ProductData";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
-import { createClient } from "contentful";
 
 import "./product.css";
 import ArrivalProducts from "../newArrivals/ArrivalProducts";
+import { getAllEntries } from "../../services/apiManager";
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -30,51 +29,25 @@ const SamplePrevArrow = (props) => {
 };
 
 const Product = () => {
-  const getProductData =
-    localStorage.getItem("selectedItem") &&
-    JSON.parse(localStorage.getItem("selectedItem"))
-      ? JSON.parse(localStorage.getItem("selectedItem"))
-      : [];
-  let productDataFromLocalStorage = JSON.parse(
-    localStorage.getItem("productData")
-  )
-    ? JSON.parse(localStorage.getItem("productData"))
-    : [];
-  // const [products, setProducts] = useState(productDataFromLocalStorage);
   const [products, setProducts] = useState([]);
-  // const [cart, setCart] = useState(getProductData);
   const [cart, setCart] = useState([]);
   const navigate = useNavigate();
 
-  const client = createClient({
-    space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
-    accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
-  });
 
-  const getAllEntries = async () => {
+  const getAllProductData = async () => {
     try {
-      const response = await client.getEntries({
-        content_type: "mostPopularProducts",
-      });
-      const responseData = response.items;
-      setProducts(responseData);
+      const response = await getAllEntries('mostPopularProducts');
+      setProducts(response);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    getAllEntries();
+    getAllProductData();
   }, []);
 
-  //
-
-  // useEffect(() => {
-  //   if (productDataFromLocalStorage.length === 0) {
-  //     localStorage.setItem("productData", JSON.stringify(productData));
-  //   }
-  //   setProducts(JSON.parse(localStorage.getItem("productData")));
-  // }, []);
+  
 
   const settings = {
     infinite: true,

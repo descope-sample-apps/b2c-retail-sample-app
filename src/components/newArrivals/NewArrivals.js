@@ -1,12 +1,11 @@
 import { Button, Typography } from "antd";
 import React, { useState, useEffect } from "react";
-import { newArrivalData } from "./NewArrivalData";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
-import { createClient } from "contentful";
 
 import "./newArrivals.css";
 import ArrivalProducts from "./ArrivalProducts";
+import { getAllEntries } from "../../services/apiManager";
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -83,31 +82,18 @@ const NewArrivals = () => {
   //const [products, setProducts] = useState(newArrivalDataFromLocalStorage);
   const [products, setProducts] = useState([]);
 
-  // useEffect(() => {
-  //   if (newArrivalDataFromLocalStorage.length === 0) {
-  //     localStorage.setItem("newArrivalData", JSON.stringify(newArrivalData));
-  //   }
-  //   setProducts(JSON.parse(localStorage.getItem("newArrivalData")));
-  // }, []);
-  const client = createClient({
-    space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
-    accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
-  });
-
-  const getAllEntries = async () => {
+  
+  const getAllNewArrivalData = async () => {
     try {
-      const response = await client.getEntries({
-        content_type: "newArrivalData",
-      });
-      const responseData = response.items;
-      setProducts(responseData);
+      const response = await getAllEntries("newArrivalData");
+      setProducts(response);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    getAllEntries();
+    getAllNewArrivalData();
   }, []);
   const addToCart = (data) => {
     setCartArray([...cartArray, data]);
