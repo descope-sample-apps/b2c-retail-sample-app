@@ -90,10 +90,8 @@ const NewArrivals = () => {
   //   setProducts(JSON.parse(localStorage.getItem("newArrivalData")));
   // }, []);
   const client = createClient({
-    // space: "4wc7a70gmik6",
-    // accessToken: "SeY-t_X7JsSLkfqD0GUnhJwICSoYKrOTw8AIyqgwZjQ",
-    space: "lrv96uy3vip3",
-    accessToken: "9PNQQmlDG8dH7WjW7DiyHrSB5kqywaURhnQ5Q8Unk5s",
+    space: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+    accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
   });
 
   const getAllEntries = async () => {
