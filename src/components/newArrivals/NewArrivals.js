@@ -133,7 +133,7 @@ const NewArrivals = () => {
         {products.map((product) => (
           <ArrivalProducts
             {...product}
-            key={product.id}
+            key={product.sys.id}
             addToCart={addToCart}
           />
         ))}
