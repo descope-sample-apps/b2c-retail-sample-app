@@ -95,12 +95,13 @@ function Cart() {
                           className="decrement-btn"
                           onClick={() => {
                             if (product.fields.quantity > 1) {
-                              const _DECREMENT = CART.map((item, index) => {
-                                return id === index
-                                  ? { ...item, quantity: item.fields.quantity - 1 }
-                                  : item;
+                              let _decrement = [...CART];
+                              _decrement.map((item, index) => {
+                                if (id === index) {
+                                  item.fields.quantity = item.fields.quantity - 1
+                                }
                               });
-                              setCART(_DECREMENT);
+                              setCART(_decrement);
                             } else {
                               handleRemove(product.sys.id);
                             }
@@ -113,12 +114,14 @@ function Cart() {
                           type="secondary"
                           className="increment-btn"
                           onClick={() => {
-                            const _CART = CART.map((item, index) => {
-                              return id === index
-                                ? { ...item, quantity: item.fields.quantity + 1 }
-                                : item;
+                            let _cart = [...CART];
+                            _cart.map((item, index) => {
+                              if (id === index) {
+                                item.fields.quantity = item.fields.quantity + 1
+                              } 
                             });
-                            setCART(_CART);
+                            console.log('_CART => ', _cart);
+                            setCART(_cart);
                           }}
                         >
                           +
