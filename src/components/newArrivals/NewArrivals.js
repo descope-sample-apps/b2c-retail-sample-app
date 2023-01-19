@@ -93,22 +93,28 @@ const NewArrivals = () => {
   };
 
   useEffect(() => {
-    getAllNewArrivalData();
+    let arrivalArray = localStorage.getItem('newArrivalData') ? JSON.parse(localStorage.getItem('newArrivalData')) : []
+    if (arrivalArray.length > 0) {
+      setProducts(arrivalArray);
+    } else {
+      getAllNewArrivalData();
+    }
   }, []);
   const addToCart = (data) => {
     setCartArray([...cartArray, data]);
     let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem"))
       ? JSON.parse(localStorage.getItem("selectedItem"))
       : [];
-    localStorage.setItem(
-      "selectedItem",
-      JSON.stringify([...getSelectedCartArray, data])
-    );
+    
     navigate("/");
     let productsArray = [...products];
     productsArray.map((item) => {
-      if (item.id === data.id) {
-        item.addedToCart = true;
+      if (item.sys.id === data.sys.id) {
+        item.fields.addedToCart = true;
+        localStorage.setItem(
+          "selectedItem",
+          JSON.stringify([...getSelectedCartArray, item])
+        );
       }
     });
     setProducts(productsArray);

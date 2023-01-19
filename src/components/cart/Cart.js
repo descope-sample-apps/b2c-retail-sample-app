@@ -18,7 +18,7 @@ function Cart() {
 
   const [CART, setCART] = useState(getProductData);
   const handleRemove = (id) => {
-    let updatedCart = CART.filter((item) => item.id !== id);
+    let updatedCart = CART.filter((item) => item.sys.id !== id);
     if (updatedCart <= 1) {
       navigate("/");
     }
@@ -34,8 +34,8 @@ function Cart() {
       ? JSON.parse(localStorage.getItem("newArrivalData"))
       : [];
     productDataFromLocalStorage.map((item) => {
-      if (item.id === id) {
-        item.addedToCart = false;
+      if (item.sys.id === id) {
+        item.fields.addedToCart = false;
       }
     });
     localStorage.setItem(
@@ -43,8 +43,8 @@ function Cart() {
       JSON.stringify(productDataFromLocalStorage)
     );
     newArrivalDataFromLocalStorage.map((item) => {
-      if (item.id === id) {
-        item.addedToCart = false;
+      if (item.sys.id === id) {
+        item.fields.addedToCart = false;
       }
     });
     localStorage.setItem(
@@ -80,12 +80,12 @@ function Cart() {
                   <div className="cart-details">
                     <Col className="img-col">
                       <div className="product-img">
-                        <img src={product.image} alt="cart"></img>
+                        <img src={product.fields.image.fields.file.url} alt="cart"></img>
                       </div>
                     </Col>
                     <Col span={5} order={1}>
                       <Typography className="cart-product-title">
-                        {product.title}
+                        {product.fields.title}
                       </Typography>
                     </Col>
                     <Col span={5} order={3} className="product-quat">
@@ -94,28 +94,28 @@ function Cart() {
                           type="seconday"
                           className="decrement-btn"
                           onClick={() => {
-                            if (product.quantity > 1) {
+                            if (product.fields.quantity > 1) {
                               const _DECREMENT = CART.map((item, index) => {
                                 return id === index
-                                  ? { ...item, quantity: item.quantity - 1 }
+                                  ? { ...item, quantity: item.fields.quantity - 1 }
                                   : item;
                               });
                               setCART(_DECREMENT);
                             } else {
-                              handleRemove(product.id);
+                              handleRemove(product.sys.id);
                             }
                           }}
                         >
                           -
                         </Button>
-                        <div className="quantity">{product.quantity}</div>
+                        <div className="quantity">{product.fields.quantity}</div>
                         <Button
                           type="secondary"
                           className="increment-btn"
                           onClick={() => {
                             const _CART = CART.map((item, index) => {
                               return id === index
-                                ? { ...item, quantity: item.quantity + 1 }
+                                ? { ...item, quantity: item.fields.quantity + 1 }
                                 : item;
                             });
                             setCART(_CART);
@@ -128,13 +128,13 @@ function Cart() {
                   </div>
                   <div className="price-details">
                     <Col span={5} order={4} className="product-price">
-                      $ {(product.price * product.quantity).toFixed(2)}
+                      $ {(product.fields.price * product.fields.quantity).toFixed(2)}
                     </Col>
                     <Col
                       span={5}
                       order={4}
                       className="remove"
-                      onClick={() => handleRemove(product.id)}
+                      onClick={() => handleRemove(product.sys.id)}
                     >
                       <img
                         src={require("../../assets/Shape.svg").default}
@@ -157,7 +157,7 @@ function Cart() {
               <Typography className="price">
                 $
                 {CART.length > 0 &&
-                  CART.map((products) => products.price * products.quantity)
+                  CART.map((products) => products.fields.price * products.fields.quantity)
                     .reduce((total, value) => total + value)
                     .toFixed(2)}
               </Typography>

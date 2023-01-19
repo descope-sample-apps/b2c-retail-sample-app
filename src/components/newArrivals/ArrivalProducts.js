@@ -25,9 +25,9 @@ const ArrivalProducts = (product) => {
         </Typography>
         <Button
           className="add-to-cart-btn"
-          onClick={() => (addedToCart ? "" : addToCart(product))}
+          onClick={() => (product.fields.addedToCart ? "" : addToCart(product))}
         >
-          {addedToCart ? "Already Added" : "+ Add to cart"}
+          {product.fields.addedToCart ? "Already Added" : "+ Add to cart"}
         </Button>
       </div>
     </div>

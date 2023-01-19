@@ -44,7 +44,12 @@ const Product = () => {
   };
 
   useEffect(() => {
-    getAllProductData();
+    let productArray = localStorage.getItem('productData') ? JSON.parse(localStorage.getItem('productData')) : []
+    if (productArray.length > 0) {
+      setProducts(productArray);
+    } else {
+      getAllProductData();
+    }
   }, []);
 
   
@@ -95,19 +100,20 @@ const Product = () => {
         ? JSON.parse(localStorage.getItem("selectedItem"))
         : [];
 
-    // localStorage.setItem(
-    //   "selectedItem",
-    //   JSON.stringify([...getSelectedCartArray, data])
-    // );
+    
     navigate("/");
     let productsArray = [...products];
     productsArray.map((item) => {
-      if (item.id === data.id) {
-        item.addedToCart = true;
+      if (item.sys.id === data.sys.id) {
+        item.fields.addedToCart = true;
+        localStorage.setItem(
+          "selectedItem",
+          JSON.stringify([...getSelectedCartArray, item])
+        );
       }
     });
     setProducts(productsArray);
-    // localStorage.setItem("productData", JSON.stringify(productsArray));
+    localStorage.setItem("productData", JSON.stringify(productsArray));
   };
   return (
     <div style={{backgroundColor: '#FFFFFF'}}>

@@ -8,30 +8,8 @@ function StepUp() {
   const onSuccessSecurity = () => {
     console.log("Step up: Logged in!");
     localStorage.setItem("selectedItem", JSON.stringify([]));
-    let productDataFromLocalStorage = JSON.parse(
-      localStorage.getItem("productData")
-    )
-      ? JSON.parse(localStorage.getItem("productData"))
-      : [];
-    let newArrivalDataFromLocalStorage = JSON.parse(
-      localStorage.getItem("newArrivalData")
-    )
-      ? JSON.parse(localStorage.getItem("newArrivalData"))
-      : [];
-    productDataFromLocalStorage.map((item) => {
-      item.addedToCart = false;
-    });
-    localStorage.setItem(
-      "productData",
-      JSON.stringify(productDataFromLocalStorage)
-    );
-    newArrivalDataFromLocalStorage.map((item) => {
-      item.addedToCart = false;
-    });
-    localStorage.setItem(
-      "newArrivalData",
-      JSON.stringify(newArrivalDataFromLocalStorage)
-    );
+    let removeItemArray = ['productData', 'newArrivalData'];
+    removeItemArray.forEach(item => localStorage.removeItem(item));    
     navigate("/payment-success");
   };
   return (
