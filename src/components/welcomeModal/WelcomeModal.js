@@ -43,6 +43,9 @@ const WelcomeModal = () => {
         <Typography className="modal-subtitle">
           This is a sample consumer app built by Descope.
         </Typography>
+        <Typography className="show-project-id">
+          Currently using Descope Flows from Project ID: {localStorage.getItem('projectId') ? localStorage.getItem('projectId') : '(Descope Default)'}
+        </Typography>
         <br />
         <br />
         <div className="content-wrapper">
@@ -53,7 +56,9 @@ const WelcomeModal = () => {
           <br />
           <ul className="content-list">
             <li>Try signing up</li>
-            <li>Try checking out after ordering more than 10 T-shirts</li>
+            <li>
+              Try checking out after adding a T-shirt to experience step-up flow
+            </li>
           </ul>
         </div>
       </div>

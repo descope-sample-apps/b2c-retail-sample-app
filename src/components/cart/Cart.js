@@ -163,11 +163,8 @@ function Cart() {
               </Typography>
             </div>
             <div className="proceed-btn">
-              <Button
-                className="proceeed-btn"
-                onClick={() => navigateThisTo()}
-              >
-                Proceed to Checkout
+              <Button className="proceeed-btn" onClick={() => navigateThisTo()}>
+                {authenticated ? 'Proceed to Checkout' : 'Login to Checkout'}
               </Button>
             </div>
           </div>
@@ -187,9 +184,9 @@ function Cart() {
             <div className="proceed-btn">
               <Button
                 className="proceeed-btn"
-                disabled={CART && CART.length === 0 || !CART}
+                disabled={(CART && CART.length === 0) || !CART}
               >
-                Proceed to Checkout
+                {authenticated ? 'Proceed to Checkout' : 'Login to Checkout'}
               </Button>
             </div>
           </div>

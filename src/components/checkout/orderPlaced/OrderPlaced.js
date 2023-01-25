@@ -12,10 +12,8 @@ function OrderPlaced() {
       <br />
       <div className="order-container">
         <Typography className="order-heading">
-        You have successfully completed step-up verification.<br></br> Thank You, your order has been placed!
-        </Typography>
-        <Typography className="order-sub-heading">
-          Please check your email for your confimation.
+          You have successfully completed step-up verification.<br></br> Thank
+          You, your order has been placed!
         </Typography>
         <br />
         <div className="btn-just-cont">
