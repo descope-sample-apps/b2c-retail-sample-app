@@ -1,11 +1,11 @@
 import { Button, Typography } from "antd";
 import React, { useEffect, useState } from "react";
-import { productData } from "./ProductData";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
 
 import "./product.css";
 import ArrivalProducts from "../newArrivals/ArrivalProducts";
+import { getAllEntries } from "../../services/apiManager";
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -29,23 +29,70 @@ const SamplePrevArrow = (props) => {
 };
 
 const Product = () => {
-  const getProductData = JSON.parse(localStorage.getItem("selectedItem"))
-    ? JSON.parse(localStorage.getItem("selectedItem"))
-    : [];
-  let productDataFromLocalStorage = JSON.parse(
-    localStorage.getItem("productData")
-  )
-    ? JSON.parse(localStorage.getItem("productData"))
-    : [];
-  const [products, setProducts] = useState(productDataFromLocalStorage);
-  const [cart, setCart] = useState(getProductData);
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (productDataFromLocalStorage.length === 0) {
-      localStorage.setItem("productData", JSON.stringify(productData));
+  // const getAllProductData = async () => {
+  //   try {
+  //     const response = await getAllEntries("mostPopularProducts");
+  //     setProducts(response);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const query = `{
+    mostPopularProductHeading(id:"6E1nSKm90MNLEpqGY4CQkZ"){
+      title
+      subTitle
     }
-    setProducts(JSON.parse(localStorage.getItem("productData")));
+    mostPopularProductsCollection {
+      items {
+        sys {
+          id
+        }
+        title
+        price
+        quantity
+        image {
+          url
+        }
+      }
+    }
+  }`;
+
+  const fetchQuery = () => {
+    const queryData = fetch(
+      "https://graphql.contentful.com/content/v1/spaces/lrv96uy3vip3?access_token=yF6NobP1xoWDPfSO6J6xq8ocl3hFUjYtPWvqAp41QrU",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query }),
+      }
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json.data);
+        setProducts(json.data);
+      });
+  };
+  useEffect(() => {
+    fetchQuery();
+  }, []);
+
+  useEffect(() => {
+    let productArray = localStorage.getItem("productData")
+      ? JSON.parse(localStorage.getItem("productData"))
+      : [];
+    if (productArray.length > 0) {
+      setProducts(productArray);
+    } else {
+      // getAllProductData();
+      fetchQuery();
+    }
   }, []);
 
   const settings = {
@@ -88,42 +135,55 @@ const Product = () => {
   };
   const addToCart = (data) => {
     setCart([...cart, data]);
-    let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem"))
-      ? JSON.parse(localStorage.getItem("selectedItem"))
-      : [];
-    localStorage.setItem(
-      "selectedItem",
-      JSON.stringify([...getSelectedCartArray, data])
-    );
+    let getSelectedCartArray =
+      localStorage.getItem("selectedItem") &&
+      JSON.parse(localStorage.getItem("selectedItem"))
+        ? JSON.parse(localStorage.getItem("selectedItem"))
+        : [];
+
     navigate("/");
     let productsArray = [...products];
     productsArray.map((item) => {
-      if (item.id === data.id) {
-        item.addedToCart = true;
+      if (item.sys.id === data.sys.id) {
+        item.fields.addedToCart = true;
+        localStorage.setItem(
+          "selectedItem",
+          JSON.stringify([...getSelectedCartArray, item])
+        );
       }
     });
     setProducts(productsArray);
     localStorage.setItem("productData", JSON.stringify(productsArray));
   };
   return (
-    <div style={{backgroundColor: '#FFFFFF'}}>
+    <div style={{ backgroundColor: "#FFFFFF" }}>
       <br />
       <br />
       <div className="main-header">
-        <Typography className="title">Most Popular</Typography>
+        <Typography className="title">
+          {products.mostPopularProductHeading &&
+            products.mostPopularProductHeading.title}
+        </Typography>
         <Typography className="sub-title">
-          We love all our tees equally, but these ones are better
+          {products.mostPopularProductHeading &&
+            products.mostPopularProductHeading.subTitle}
         </Typography>
       </div>
 
       <Slider {...settings} className="popular-product-container">
-        {products.map((product) => (
-          <ArrivalProducts
-            {...product}
-            key={product.id}
-            addToCart={addToCart}
-          />
-        ))}
+        {products.mostPopularProductsCollection && (
+          <>
+            {products.mostPopularProductsCollection.items.map((product) => {
+              return (
+                <ArrivalProducts
+                  {...product}
+                  key={product.sys.id}
+                  addToCart={addToCart}
+                />
+              );
+            })}
+          </>
+        )}
       </Slider>
       <br />
 

@@ -1,11 +1,11 @@
 import { Button, Typography } from "antd";
 import React, { useState, useEffect } from "react";
-import { newArrivalData } from "./NewArrivalData";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
 
 import "./newArrivals.css";
 import ArrivalProducts from "./ArrivalProducts";
+import { getAllEntries } from "../../services/apiManager";
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
@@ -31,9 +31,11 @@ const SamplePrevArrow = (props) => {
 const NewArrivals = () => {
   const navigate = useNavigate();
 
-  const getProductData = JSON.parse(localStorage.getItem("selectedItem"))
-    ? JSON.parse(localStorage.getItem("selectedItem"))
-    : [];
+  const getProductData =
+    localStorage.getItem("selectedItem") &&
+    JSON.parse(localStorage.getItem("selectedItem"))
+      ? JSON.parse(localStorage.getItem("selectedItem"))
+      : [];
   let newArrivalDataFromLocalStorage = JSON.parse(
     localStorage.getItem("newArrivalData")
   )
@@ -79,29 +81,80 @@ const NewArrivals = () => {
   };
   const [cartArray, setCartArray] = useState(getProductData);
 
-  const [products, setProducts] = useState(newArrivalDataFromLocalStorage);
+  //const [products, setProducts] = useState(newArrivalDataFromLocalStorage);
+  const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    if (newArrivalDataFromLocalStorage.length === 0) {
-      localStorage.setItem("newArrivalData", JSON.stringify(newArrivalData));
+  // const getAllNewArrivalData = async () => {
+  //   try {
+  //     const response = await getAllEntries("newArrivalData");
+  //     setProducts(response);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const query = `{
+    newArrivalsHeading(id: "5xE2OcHC6PbhMk3BH9MC0s") {
+      title
+      subTitle
     }
-    setProducts(JSON.parse(localStorage.getItem("newArrivalData")));
+    newArrivalDataCollection {
+      items {
+        sys {
+          id
+        }
+        title
+        price
+        image {
+          url
+        }
+      }
+    }
+  }`;
+  useEffect(() => {
+    fetch(
+      "https://graphql.contentful.com/content/v1/spaces/lrv96uy3vip3?access_token=yF6NobP1xoWDPfSO6J6xq8ocl3hFUjYtPWvqAp41QrU",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query }),
+      }
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json.data);
+        setProducts(json.data);
+      });
   }, []);
 
+  useEffect(() => {
+    let arrivalArray = localStorage.getItem("newArrivalData")
+      ? JSON.parse(localStorage.getItem("newArrivalData"))
+      : [];
+    if (arrivalArray.length > 0) {
+      setProducts(arrivalArray);
+    }
+    // else {
+    //   getAllNewArrivalData();
+    // }
+  }, []);
   const addToCart = (data) => {
     setCartArray([...cartArray, data]);
     let getSelectedCartArray = JSON.parse(localStorage.getItem("selectedItem"))
       ? JSON.parse(localStorage.getItem("selectedItem"))
       : [];
-    localStorage.setItem(
-      "selectedItem",
-      JSON.stringify([...getSelectedCartArray, data])
-    );
+
     navigate("/");
     let productsArray = [...products];
     productsArray.map((item) => {
-      if (item.id === data.id) {
-        item.addedToCart = true;
+      if (item.sys.id === data.sys.id) {
+        item.fields.addedToCart = true;
+        localStorage.setItem(
+          "selectedItem",
+          JSON.stringify([...getSelectedCartArray, item])
+        );
       }
     });
     setProducts(productsArray);
@@ -111,19 +164,27 @@ const NewArrivals = () => {
     <div className="arrivals-container">
       <br />
       <br />
-      <Typography className="title">New Arrivals</Typography>
+      <Typography className="title">
+        {products.newArrivalsHeading && products.newArrivalsHeading.title}
+      </Typography>
       <Typography className="sub-title">
-        Get in early on these future bestsellers
+        {products.newArrivalsHeading && products.newArrivalsHeading.subTitle}
       </Typography>
 
       <Slider {...settings} className="popular-product-container">
-        {products.map((product) => (
-          <ArrivalProducts
-            {...product}
-            key={product.id}
-            addToCart={addToCart}
-          />
-        ))}
+        {products.newArrivalDataCollection && (
+          <>
+            {products.newArrivalDataCollection.items.map((product) => {
+              return (
+                <ArrivalProducts
+                  {...product}
+                  key={product.sys.id}
+                  addToCart={addToCart}
+                />
+              );
+            })}
+          </>
+        )}
       </Slider>
       <br />
       <div className="view-wrap btn-wrap">
