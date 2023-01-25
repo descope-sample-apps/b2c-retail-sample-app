@@ -6,14 +6,24 @@ import "./Cart.css";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { useAuth } from '@descope/react-sdk';
+import { getAllEntries } from "../../services/apiManager";
 
 function Cart() {
   const getProductData = JSON.parse(localStorage.getItem("selectedItem"));
   const navigate = useNavigate();
   const { authenticated } = useAuth();
-
+  const [screenDetails, setScreenDetails] = useState({});
+  const getAllScreemDetails = async () => {
+    try {
+      const response = await getAllEntries('shoppingCart');
+      setScreenDetails(response[0].fields);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     localStorage.setItem('pathState', 'CART');
+    getAllScreemDetails();
   }, []);
 
   const [CART, setCART] = useState(getProductData);
@@ -66,13 +76,13 @@ function Cart() {
   return (
     <div className="checkout-cart-container">
       <br />
-      <Typography className="shopping-cart-heading">Shopping Cart</Typography>
+      <Typography className="shopping-cart-heading">{screenDetails.heading}</Typography>
       <br />
       <br />
       {CART && CART.length > 0 ? (
         <div className="cart-container">
           <div className="row-col-con">
-            <Typography className="items-text">Items in Cart</Typography>
+            <Typography className="items-text">{screenDetails.tableHeading}</Typography>
             {CART &&
               CART.length > 0 &&
               CART.map((product, id) => (
@@ -151,12 +161,12 @@ function Cart() {
           </div>
           <br />
           <Typography className="cart-text">
-            * To experience step-up authentication, click Proceed to Checkout..
+            {screenDetails.footerText}
           </Typography>
 
           <div className="order-details">
             <div className="order-summary">
-              <Typography className="order-total">OrderTotal</Typography>
+              <Typography className="order-total">{screenDetails.totalText}</Typography>
               <Typography className="price">
                 $
                 {CART.length > 0 &&
@@ -170,7 +180,7 @@ function Cart() {
                 className="proceeed-btn"
                 onClick={() => navigateThisTo()}
                 >
-                Proceed to Checkout
+                {screenDetails.proceedBtn}
               </Button>
             </div>
           </div>
@@ -179,20 +189,20 @@ function Cart() {
         <div className="cart-container">
           <br />
           <Typography className="cart-text">
-            <Link to="/">Please Click to Shopping</Link>
+            <Link to="/">{screenDetails.backBtnText}</Link>
           </Typography>
 
           <div className="order-details">
             <div className="order-summary">
-              <Typography className="order-total">OrderTotal</Typography>
+              <Typography className="order-total">{screenDetails.totalText}</Typography>
               <Typography className="price">$</Typography>
             </div>
             <div className="proceed-btn">
               <Button
                 className="proceeed-btn"
-                disabled={CART && CART.length === 0 || !CART}
+                disabled={(CART && CART.length === 0) || !CART}
               >
-                Proceed to Checkout
+                {screenDetails.proceedBtn}
               </Button>
             </div>
           </div>
