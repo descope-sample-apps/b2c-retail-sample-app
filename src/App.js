@@ -6,7 +6,9 @@ import { useSearchParams } from "react-router-dom";
 const AppRoot = () => {
   const [searchParams] = useSearchParams();
   const projectId = searchParams.get("project") || localStorage.getItem('projectId');
-  if (projectId) {
+  if (projectId !== localStorage.getItem('projectId')) {
+    localStorage.removeItem("DSR")
+    localStorage.removeItem("DS")
     localStorage.setItem('projectId', projectId);
   }
   window.analytics.page({projectId: projectId});
