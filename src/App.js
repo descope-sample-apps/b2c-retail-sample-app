@@ -1,6 +1,6 @@
 import React, { useEffect }from "react";
 import Container from "./containers";
-import { AuthProvider, useAuth } from '@descope/react-sdk'
+import { AuthProvider, useSession } from '@descope/react-sdk'
 import { useSearchParams } from "react-router-dom";
 
 const AppRoot = () => {
@@ -22,12 +22,12 @@ const AppRoot = () => {
 }
 
 const App = () => {
-  const { authenticated, me } = useAuth();
-  useEffect(() => {
-		if (authenticated) {
-			me();
-		}
-	}, [authenticated]);
+  // const { isAuthenticated } = useSession();
+  // // useEffect(() => {
+	// // 	if (isAuthenticated) {
+	// // 		me();
+	// // 	}
+	// // }, [isAuthenticated]);
   return (
     <div style={{height: '100%'}}>
       <Container/>

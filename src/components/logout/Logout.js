@@ -1,9 +1,9 @@
 import React from "react";
-import { useAuth } from "@descope/react-sdk";
+import { useDescope } from "@descope/react-sdk";
 import { useNavigate } from "react-router";
 
 const Logout = () => {
-  const { logout } = useAuth();
+  const { logout } = useDescope();
   const navigate = useNavigate();
   logout();
   navigate("/")
