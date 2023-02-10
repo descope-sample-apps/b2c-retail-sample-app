@@ -24,7 +24,7 @@ const Flows = () => {
     }}
     onError={(e) => {
         console.log("Error!", e)
-    }
+    }}
     theme="light"
 />`;
 useEffect(() => {

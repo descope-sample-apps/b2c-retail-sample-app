@@ -3,11 +3,11 @@ import { Button } from "antd";
 import "./Banner.css";
 import { useNavigate } from "react-router";
 import LoginExperiences from "../loginExperiences/LoginExperiences";
-import { useAuth } from '@descope/react-sdk'
+import { useSession } from '@descope/react-sdk'
 
 function Banner() {
   const navigate = useNavigate();
-  const { authenticated } = useAuth();
+  const { isAuthenticated } = useSession();
   return (
     <>
       <div className="first-screen">
@@ -19,7 +19,7 @@ function Banner() {
               spread some cheer!
             </p>
             {
-              authenticated ?
+              isAuthenticated ?
               <div
               className="sign-button"
               style={{backgroundColor: '#efebfb'}}
