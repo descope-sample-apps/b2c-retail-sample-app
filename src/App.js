@@ -22,12 +22,6 @@ const AppRoot = () => {
 }
 
 const App = () => {
-  // const { isAuthenticated } = useSession();
-  // // useEffect(() => {
-	// // 	if (isAuthenticated) {
-	// // 		me();
-	// // 	}
-	// // }, [isAuthenticated]);
   return (
     <div style={{height: '100%'}}>
       <Container/>
