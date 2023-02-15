@@ -1,7 +1,7 @@
 # Welcome to Tee-Hee-Tees
 This is a sample consumer app built by Descope to showcase the Descope Flows functionality. 
 To experience the sign-up or sign-in experience - click on Login. 
-While logged in, also experience the step-up authentication flow by adding a t-shirt to your card the try to check out (no credit card required). 
+While logged in, you can experience the step-up authentication flow by adding a T-shirt to your cart and then trying to check out (no credit card required). 
 
 ## Set up
 In order to launch this app:
