@@ -127,11 +127,6 @@ const Product = () => {
       </Slider>
       <br />
 
-      <div className="view-wrap">
-        <Button className="view-btn">
-          <span className="view-more">View More</span>
-        </Button>
-      </div>
     </div>
   );
 };
