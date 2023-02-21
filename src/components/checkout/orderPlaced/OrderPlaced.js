@@ -23,6 +23,7 @@ function OrderPlaced() {
           <a
             href="https://docs.descope.com"
             target="_blank"
+            rel="noreferrer"
             className="btn-feel"
           >
             <Button className="btn-feed">Feeling Lucky?</Button>

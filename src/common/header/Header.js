@@ -15,6 +15,12 @@ function Header() {
   let selectedItems = JSON.parse(localStorage.getItem("selectedItem"))
     ? JSON.parse(localStorage.getItem("selectedItem"))
     : [];
+  // let selectedItems = useMemo(()=>{
+  //   return(JSON.parse(localStorage.getItem("selectedItem"))
+  //   ? JSON.parse(localStorage.getItem("selectedItem"))
+  //   : [])
+  // },[]);
+  // console.log('selectedIntems => ', selectedItems)
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [cartLength, setCartLength] = useState([]);
   const { isAuthenticated } = useSession();
@@ -38,7 +44,7 @@ function Header() {
   useEffect(() => {
     if (cartLength && selectedItems.length !== cartLength.length)
       setCartLength(selectedItems);
-  }, [selectedItems]);
+  }, [selectedItems,cartLength]);
 
   return (
     <>

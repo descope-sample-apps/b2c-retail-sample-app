@@ -18,14 +18,14 @@ function StepUp() {
     )
       ? JSON.parse(localStorage.getItem("newArrivalData"))
       : [];
-    productDataFromLocalStorage.map((item) => {
+    productDataFromLocalStorage.forEach((item) => {
       item.addedToCart = false;
     });
     localStorage.setItem(
       "productData",
       JSON.stringify(productDataFromLocalStorage)
     );
-    newArrivalDataFromLocalStorage.map((item) => {
+    newArrivalDataFromLocalStorage.forEach((item) => {
       item.addedToCart = false;
     });
     localStorage.setItem(

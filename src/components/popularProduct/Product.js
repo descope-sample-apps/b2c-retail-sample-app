@@ -1,4 +1,4 @@
-import { Button, Typography } from "antd";
+import { Typography } from "antd";
 import React, { useEffect, useState } from "react";
 import { productData } from "./ProductData";
 import Slider from "react-slick";
@@ -46,7 +46,7 @@ const Product = () => {
       localStorage.setItem("productData", JSON.stringify(productData));
     }
     setProducts(JSON.parse(localStorage.getItem("productData")));
-  }, []);
+  }, [productDataFromLocalStorage.length]);
 
   const settings = {
     infinite: true,
@@ -97,7 +97,7 @@ const Product = () => {
     );
     navigate("/");
     let productsArray = [...products];
-    productsArray.map((item) => {
+    productsArray.forEach((item) => {
       if (item.id === data.id) {
         item.addedToCart = true;
       }
