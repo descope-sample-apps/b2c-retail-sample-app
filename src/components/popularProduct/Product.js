@@ -131,7 +131,7 @@ const Product = () => {
           return (
             <ArrivalProducts
               {...product}
-              key={product.id}
+              key={product.sys.id}
               addToCart={addToCart}
             />
           );
