@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useAuth } from "@descope/react-sdk";
+import { useSession, useUser } from "@descope/react-sdk";
 import hamburger from "../../assets/hamburger.svg";
 import close from "../../assets/close.svg";
 import "./Header.css";
@@ -17,8 +17,9 @@ function Header() {
       : [];
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [cartLength, setCartLength] = useState([]);
-  const { user, authenticated } = useAuth();
-  const { loginLabel, linkPath } = authenticated
+  const { isAuthenticated } = useSession();
+  const { user } = useUser();
+  const { loginLabel, linkPath } = isAuthenticated
     ? { loginLabel: `${getDisplayName(user)} (Logout)`, linkPath: "/logout" }
     : { loginLabel: "Login", linkPath: "/login" };
   const doLogout = () => {
@@ -86,8 +87,8 @@ function Header() {
             </li>
             <li className="menu-lists">
               <div className="btntag-mobile">
-                <NavLink to={linkPath} className="nav-link" onClick={() => authenticated ? doLogout(): setIsNavExpanded(!isNavExpanded)}>
-                  <Button className={authenticated ? "btn-login" : "login-nav"}>
+                <NavLink to={linkPath} className="nav-link" onClick={() => isAuthenticated ? doLogout(): setIsNavExpanded(!isNavExpanded)}>
+                  <Button className={isAuthenticated ? "btn-login" : "login-nav"}>
                     {loginLabel}
                   </Button>
                 </NavLink>
@@ -97,8 +98,7 @@ function Header() {
         </div>
         <div className="navbar-right">
           <div className="btntag">
-            <NavLink to={linkPath} className="nav-link" onClick={() => (authenticated ? doLogout() : "")}
-            >
+            <NavLink to={linkPath} className="nav-link" onClick={() => isAuthenticated ? doLogout(): ''}>
               {loginLabel}
             </NavLink>
           </div>

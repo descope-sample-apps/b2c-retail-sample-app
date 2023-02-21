@@ -116,6 +116,9 @@
   }
   .order-heading {
     font-size: 21px;
+    padding: 26px 8px;
+    margin-bottom: 86px;
+    line-height: 32px;
   }
   .cart-heading {
     align-items: center;
@@ -139,7 +142,7 @@
     width: 100%;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 980px) {
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
   .checkout-order-container {
     padding: 2rem 5rem;
     height: 50vh;
@@ -148,6 +151,13 @@
     align-items: center;
     text-align: center;
     margin: auto;
+  }
+  .order-container {
+    width: 84%;
+  }
+  .order-heading {
+    padding: 32px 11px;
+    margin-bottom: 79px;
   }
   .top-container {
     height: 580px;
@@ -167,5 +177,8 @@
 @media only screen and (min-width: 1280px) and (max-width: 3060px) {
   .checkout-order-container {
     height: 77vh;
+  }
+  .order-heading {
+    margin-bottom: 93px;
   }
 }

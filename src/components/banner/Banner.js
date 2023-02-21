@@ -3,14 +3,13 @@ import { Button } from "antd";
 import "./Banner.css";
 import { useNavigate } from "react-router";
 import LoginExperiences from "../loginExperiences/LoginExperiences";
-import { useAuth } from '@descope/react-sdk'
+import { useSession } from '@descope/react-sdk'
 import { getAllEntries } from "../../services/apiManager";
 
 function Banner() {
   const navigate = useNavigate();
-  const { authenticated } = useAuth();
+  const { isAuthenticated } = useSession();
   const [bannerData, setBannerData] = useState([]);
-
   const getAllBannerData = async () => {
     try {
       const response = await getAllEntries("homePageBanner");
@@ -23,7 +22,6 @@ function Banner() {
   useEffect(() => {
     getAllBannerData();
   }, []);
-
   return (
     <>
       <div className="first-screen">
@@ -34,7 +32,7 @@ function Banner() {
             {bannerData.length > 0 && bannerData[0].fields.subtitle}
             </p>
             {
-              authenticated ?
+              isAuthenticated ?
               <div
               className="sign-button"
               style={{backgroundColor: '#efebfb'}}

@@ -33,6 +33,16 @@
   text-align: center;
   color: #170a2c;
 }
+.show-project-id {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #170a2c;
+  margin-top: 12px;
+  text-align: center;
+}
 .content-wrapper {
   padding: 0 15rem;
 }

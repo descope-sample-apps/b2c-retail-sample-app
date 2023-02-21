@@ -32,6 +32,7 @@
   backdrop-filter: blur(4.5px);
   border-radius: 15px;
   width: 42%;
+  min-width: 500px;
 }
 .login-text {
   font-family: "Barlow";
@@ -139,6 +140,7 @@
   }
   .login-container {
     width: 93%;
+    min-width:500px;
   }
 }
 @media only screen and (min-width: 820px) and (max-width: 1000px) {
@@ -154,6 +156,7 @@
   }
   .login-container {
     width: 44%;
+    min-width:500px;
   }
   .first-text {
     font-size: 34px;
@@ -180,6 +183,7 @@
 @media only screen and (min-width: 1500px) and (max-width: 1650px) {
   .login-container {
     width: 33%;
+    min-width:500px;
   }
 }
 /* @media only screen and (max-width: 1600px) {

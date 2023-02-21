@@ -1,12 +1,14 @@
 import React, { useEffect }from "react";
 import Container from "./containers";
-import { AuthProvider, useAuth } from '@descope/react-sdk'
+import { AuthProvider, useSession } from '@descope/react-sdk'
 import { useSearchParams } from "react-router-dom";
 
 const AppRoot = () => {
   const [searchParams] = useSearchParams();
   const projectId = searchParams.get("project") || localStorage.getItem('projectId');
-  if (projectId) {
+  if (projectId !== localStorage.getItem('projectId')) {
+    localStorage.removeItem("DSR")
+    localStorage.removeItem("DS")
     localStorage.setItem('projectId', projectId);
   }
   window.analytics.page({projectId: projectId});
@@ -20,12 +22,6 @@ const AppRoot = () => {
 }
 
 const App = () => {
-  const { authenticated, me } = useAuth();
-  useEffect(() => {
-		if (authenticated) {
-			me();
-		}
-	}, [authenticated]);
   return (
     <div style={{height: '100%'}}>
       <Container/>

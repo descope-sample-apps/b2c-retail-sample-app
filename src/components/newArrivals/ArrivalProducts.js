@@ -2,7 +2,7 @@ import { Button, Typography } from "antd";
 import React from "react";
 const ArrivalProducts = (product) => {
   const { addToCart, addedToCart } = product;
-
+console.log('product => ', product);
   return (
     <div className="product-details">
       <div>

@@ -41,7 +41,8 @@ const WelcomeModal = () => {
         </Typography>
         <br />
         <Typography className="modal-subtitle">
-          This is a sample consumer app built by Descope.
+          This is a sample consumer app built by Descope.<br/>
+          We hope this app can give you an idea of how Descope can help your B2C app <br/>with seamless and secure authentication.
         </Typography>
         <br />
         <br />
@@ -53,8 +54,11 @@ const WelcomeModal = () => {
           <br />
           <ul className="content-list">
             <li>Try signing up</li>
-            <li>Try checking out after ordering more than 10 T-shirts</li>
+            <li>Try checking out after adding a T-shirt to your cart to experience a “Step Up” flow</li>
           </ul>
+          <Typography className="show-project-id">
+          <code>Currently using Descope Flows from Project ID: {localStorage.getItem('projectId') ? localStorage.getItem('projectId') : '(Descope Default)'}</code>
+        </Typography>
         </div>
       </div>
     </Modal>

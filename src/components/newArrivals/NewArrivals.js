@@ -133,17 +133,12 @@ const NewArrivals = () => {
         {products.map((product) => (
           <ArrivalProducts
             {...product}
-            key={product.sys.id}
+            key={product.id}
             addToCart={addToCart}
           />
         ))}
       </Slider>
       <br />
-      <div className="view-wrap btn-wrap">
-        <Button className="view-btn">
-          <span className="view-more">View More</span>
-        </Button>
-      </div>
     </div>
   );
 };

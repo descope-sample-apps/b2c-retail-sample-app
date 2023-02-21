@@ -127,11 +127,11 @@ const Product = () => {
       </div>
 
       <Slider {...settings} className="popular-product-container">
-        {products.map((product) => {
+        {products.length > 0 && products.map((product, index) => {
           return (
             <ArrivalProducts
               {...product}
-              key={product.sys.id}
+              key={product.id}
               addToCart={addToCart}
             />
           );
@@ -139,11 +139,6 @@ const Product = () => {
       </Slider>
       <br />
 
-      <div className="view-wrap">
-        <Button className="view-btn">
-          <span className="view-more">View More</span>
-        </Button>
-      </div>
     </div>
   );
 };
