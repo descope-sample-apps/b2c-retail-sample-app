@@ -43,7 +43,7 @@ function StepUp() {
       <br />
       <div className="step-up-container">
         <Descope
-          flowId="step-up-protected-assets"
+          flowId="step-up"
           onSuccess={(e) => onSuccessSecurity()}
           onError={(e) => console.log("Step up: Could not logged in!")}
           // use debug flag to show flow errors and additional debug information
