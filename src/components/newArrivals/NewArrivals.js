@@ -1,4 +1,4 @@
-import { Button, Typography } from "antd";
+import { Typography } from "antd";
 import React, { useState, useEffect } from "react";
 import { newArrivalData } from "./NewArrivalData";
 import Slider from "react-slick";

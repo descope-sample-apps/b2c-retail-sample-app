@@ -1,7 +1,7 @@
 import { Typography } from "antd";
 import React from "react";
 import "./login.css";
-import { SignUpOrInFlow } from '@descope/react-sdk'
+import { Descope } from '@descope/react-sdk'
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -21,7 +21,8 @@ const Login = () => {
           </Typography>
         </div>
         <div className="login-container">
-        <SignUpOrInFlow
+        <Descope
+            flowId = "sign-up-or-in"
             onSuccess={(e) => {
               localStorage.setItem("loginDetails", JSON.stringify(e.detail.user))
               window.analytics.identify(e.detail.user.userId, {
