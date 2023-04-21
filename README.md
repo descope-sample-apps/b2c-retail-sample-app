@@ -11,17 +11,13 @@ In order to launch this app:
 git clone git@github.com:descope-sample-apps/b2c-retail-sample-app.git
 ```
 
-#### 2. Set up Descope project ID environment variable in `.env` file
+#### 2. Set up Descope environment variables in `.env` file
 ```
-REACT_APP_DESCOPE_PROJECT_ID="YOUR PROJECT ID"
+REACT_APP_DESCOPE_PROJECT_ID="YOUR PROJECT ID" // Required for Descope authentication
+REACT_APP_DESCOPE_SIGN_IN_FLOW_ID="sign-up-or-in" // Optional, if you would like to use a flow other than sign-up-or-in
 ```
-_You can get the project ID from the Descope console [here](https://app.descope.com/settings/project)_
-
-If you would like to use a different flow, other than sign-up-or-in (**OPTIONAL**):
-```
-REACT_APP_DESCOPE_SIGN_IN_FLOW_ID="sign-up-or-in"
-```
-_You can get this flow-id from the Flows page in the Descope Console [here](https://app.descope.com/flows)_
+_You can get your project-id [here](https://app.descope.com/settings/project)_
+_You can get this flow-id from the Flows page [here](https://app.descope.com/flows)_
 
 #### 3. Install dependencies 
 
