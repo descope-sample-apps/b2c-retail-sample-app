@@ -1,4 +1,3 @@
-import React from "react";
 import { useDescope } from "@descope/react-sdk";
 import { useNavigate } from "react-router";
 
