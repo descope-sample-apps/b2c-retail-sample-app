@@ -15,15 +15,13 @@ git clone git@github.com:descope-sample-apps/b2c-retail-sample-app.git
 ```
 REACT_APP_DESCOPE_PROJECT_ID="YOUR PROJECT ID"
 ```
-
-You can get the project ID from the Descope console [here](https://app.descope.com/settings/project)
+_You can get the project ID from the Descope console [here](https://app.descope.com/settings/project)_
 
 If you would like to use a different flow, other than sign-up-or-in (**OPTIONAL**):
 ```
 REACT_APP_DESCOPE_SIGN_IN_FLOW_ID="sign-up-or-in"
 ```
-
-You can get this flow-id from the Flows page in the Descope Console [here](https://app.descope.com/flows)
+_You can get this flow-id from the Flows page in the Descope Console [here](https://app.descope.com/flows)_
 
 #### 3. Install dependencies 
 
