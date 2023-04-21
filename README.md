@@ -17,7 +17,7 @@ REACT_APP_DESCOPE_PROJECT_ID="YOUR PROJECT ID" // Required for Descope authentic
 REACT_APP_DESCOPE_SIGN_IN_FLOW_ID="sign-up-or-in" // Optional, if you would like to use a flow other than sign-up-or-in
 ```
 _You can get your project-id [here](https://app.descope.com/settings/project)_.
-_You can get this flow-id from the Flows page [here](https://app.descope.com/flows)_
+_You can get this flow-id from the Flows page [here](https://app.descope.com/flows)_.
 
 #### 3. Install dependencies 
 
@@ -27,6 +27,9 @@ yarn install
 ```
 
 #### 4. Start the app
+
+Run this command to start the app:
+
 ```
 yarn start
 ```
