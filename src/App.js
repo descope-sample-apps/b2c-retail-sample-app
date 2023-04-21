@@ -1,6 +1,6 @@
-import React, { useEffect }from "react";
+import React from "react";
 import Container from "./containers";
-import { AuthProvider, useSession } from '@descope/react-sdk'
+import { AuthProvider } from '@descope/react-sdk'
 import { useSearchParams } from "react-router-dom";
 
 const AppRoot = () => {

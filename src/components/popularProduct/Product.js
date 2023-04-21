@@ -1,11 +1,11 @@
-import { Button, Typography } from "antd";
+import { Typography } from "antd";
 import React, { useEffect, useState } from "react";
-import { productData } from "./ProductData";
-import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import { productData } from "./ProductData";
 
-import "./product.css";
 import ArrivalProducts from "../newArrivals/ArrivalProducts";
+import "./product.css";
 
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
