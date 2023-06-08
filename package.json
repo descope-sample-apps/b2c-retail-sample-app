@@ -4,8 +4,6 @@
     "private": true,
     "dependencies": {
         "@descope/react-sdk": "0.0.0-next-253b039c-20230607",
-        "@testing-library/jest-dom": "5.16.5",
-        "@testing-library/react": "14.0.0",
         "@testing-library/user-event": "14.4.3",
         "antd": "5.5.1",
         "prismjs": "1.29.0",
@@ -44,11 +42,23 @@
         ]
     },
     "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^14.0.0",
         "eslint": "8.41.0",
         "eslint-config-react-app": "7.0.1",
-        "eslint-plugin-jest-react": "0.1.0"
+        "eslint-plugin-jest-react": "0.1.0",
+        "jest": "^27.5.1"
     },
     "resolutions": {
         "nth-check": ">=2.0.1"
+    },
+    "jest": {
+        "transformIgnorePatterns": [
+            "/node_modules/(?!antd)"
+        ],
+        "moduleNameMapper": {
+            "\\.(css|less|sass|scss)$": "<rootDir>/src/fileMock.js",
+            "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/src/fileMock.js"
+        }
     }
 }
