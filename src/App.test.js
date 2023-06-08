@@ -3,6 +3,10 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
+jest.mock('@descope/react-sdk', () => ({
+  AuthProvider: ({ children }) => children,
+}));
+
 describe('App', () => {
   beforeEach(() => {
     // Set up a mock for window.analytics
@@ -10,7 +14,6 @@ describe('App', () => {
       page: jest.fn(),
     };
   });
-
 
   it('renders without crashing', () => {
     render(
