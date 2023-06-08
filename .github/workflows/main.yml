@@ -9,11 +9,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # - name: Setup Node.js environment
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: '14' # Specify the Node.js version you want to use.
-
       - name: Install dependencies
         run: yarn install --frozen-lockfile # Use frozen-lockfile to ensure reproducibility.
 
