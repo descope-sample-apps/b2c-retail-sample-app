@@ -5,7 +5,8 @@ import App from './App';
 
 jest.mock('@descope/react-sdk', () => ({
   AuthProvider: ({ children }) => children,
-  useSession: () => ({ isAuthenticated: false })
+  useSession: () => ({ isAuthenticated: false }),
+  useUser: () => ({ user: null }),
 }));
 
 describe('App', () => {
