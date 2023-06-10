@@ -70,9 +70,15 @@ Cypress.Commands.add('loginTestUser', () => {
                     })
                         .then(({ body }) => {
                             cy.log(`Verified OTP for test user via Descope API: ${JSON.stringify(body)}`)
-                            // window.sessionStorage.setItem(key, value)
-                            //   cy.window().then((window) => window.sessionStorage.getItem(key))
+                            // TODO: Get the JWT from the response and store it in the browser's local storage.
 
+                            //   cy.window().then((window) => window.sessionStorage.getItem(key))
+                            // // Store the JWT in the browser's local storage.
+                            // cy.window().then((win) => {
+                            //     win.localStorage.setItem('jwt', jwtToken);
+                            // });
+
+                            // // Now navigate to the root URL of your application.
                             cy.visit('/')
                         })
                 })
