@@ -1,10 +1,6 @@
 describe('Descope', function () {
   beforeEach(function () {
-    // cy.task('db:seed')
-    cy.loginTestUser(
-      // Cypress.env('descope_username'),
-      // Cypress.env('descope_password')
-    )
+    cy.loginTestUser()
     cy.deleteAllTestUsers()
   })
 
