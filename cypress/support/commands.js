@@ -1,6 +1,6 @@
 const projectId = Cypress.env('descope_project_id')
 const managementId = Cypress.env('descope_management_id')
-const descopeDomain = Cypress.env('descope_domain')
+const descopeAPIDomain = Cypress.env('descope_api_domain')
 
 // Define the authorization header
 const authHeader = {
@@ -8,7 +8,7 @@ const authHeader = {
 }
 
 // Define the base URL for Descope API
-const descopeApiBaseURL = `https://${descopeDomain}/v1`;
+const descopeApiBaseURL = `https://${descopeAPIDomain}/v1`;
 
 // Define the test user details
 const testUser = {
