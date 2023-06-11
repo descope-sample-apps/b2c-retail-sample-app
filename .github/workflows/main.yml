@@ -1,28 +1,48 @@
-name: Unit Tests
+name: Unit and E2E Tests
 
 on: [push]
 
 jobs:
   Jest:
+    name: Jest Unit Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: '14' # specify the node version
+
+      # - name: Cache dependencies
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.cache/yarn
+      #     key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-yarn-
+        
       - name: Install dependencies
         run: yarn install --frozen-lockfile # Use frozen-lockfile to ensure reproducibility.
 
       - name: Run Tests
         run: yarn test
-  cypress-run:
+
+  cypress:
+    name: Cypress Integration Tests
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run:  CI=false yarn build
+
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          build: yarn build
           start: yarn start
