@@ -22,7 +22,7 @@ const testUserLoginId = "testUser" + testUserLogIdNumber;
 const testUser = {
     loginId: testUserLoginId,
     email: "testUser1@gmail.com",
-    phone: "+18173742752",
+    phone: "+11231231234",
     verifiedEmail: true,
     verifiedPhone: true,
     displayName: "Test User",
@@ -34,7 +34,7 @@ const testUser = {
     ],
     test: true,
     customAttributes: {},
-    phoneNumber: "+18173740252"
+    phoneNumber: "+11231231234"
 }
 
 
