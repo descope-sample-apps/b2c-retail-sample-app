@@ -12,7 +12,6 @@ module.exports = defineConfig({
     },
   },
   env: {
-    descope_api_domain: process.env.REACT_APP_DESCOPE_API_DOMAIN,
     descope_project_id: process.env.REACT_APP_DESCOPE_PROJECT_ID,
     descope_management_id: process.env.REACT_APP_DESCOPE_MANAGEMENT_ID
   },
