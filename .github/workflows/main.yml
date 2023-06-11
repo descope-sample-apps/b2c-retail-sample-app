@@ -30,8 +30,8 @@ jobs:
         run: yarn test
 
   cypress:
-    name: Cypress Integration Tests
-    runs-on: ubuntu-22.04
+    name: Cypress E2E Tests
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
