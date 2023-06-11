@@ -1,3 +1,8 @@
+// Notes:
+// This testing method is relatively brittle, as you have to delete all test users are the end of each run.
+// This could impact other tests that rely on test users, so it's best to run this test in isolation.
+// Ideally, we could create one test user per test, and delete it at the end of the test.
+
 const projectId = Cypress.env('descope_project_id')
 const managementId = Cypress.env('descope_management_id')
 const descopeAPIDomain = Cypress.env('descope_api_domain')
@@ -10,9 +15,12 @@ const authHeader = {
 // Define the base URL for Descope API
 const descopeApiBaseURL = `https://${descopeAPIDomain}/v1`;
 
+const testUserLogIdNumber = Math.floor(1000 + Math.random() * 9000);
+const testUserLoginId = "testUser" + testUserLogIdNumber;
+
 // Define the test user details
 const testUser = {
-    loginId: "testuser1", // Currently must be lowercase, as the Descope API converts it to lowercase. TODO: Fix this.
+    loginId: testUserLoginId,
     email: "testUser1@gmail.com",
     phone: "+18173742752",
     verifiedEmail: true,
@@ -41,14 +49,15 @@ Cypress.Commands.add('loginTestUser', () => {
     })
         .then(({ body }) => {
             cy.log(`Created test user via Descope API: ${JSON.stringify(body)}`)
-            cy.log(`Getting OTP for test user via Descope API: ${testUser.loginId}`)
+            const loginId = body["user"]["loginIds"][0];
+            cy.log(`Getting OTP for test user via Descope API: ${loginId}`)
 
             cy.request({
                 method: 'POST',
                 url: `${descopeApiBaseURL}/mgmt/tests/generate/otp`,
                 headers: authHeader,
                 body: {
-                    "loginId": testUser.loginId,
+                    "loginId": loginId,
                     "deliveryMethod": "email"
                 }
             })
@@ -57,14 +66,14 @@ Cypress.Commands.add('loginTestUser', () => {
                     cy.log(`otpBody: ${JSON.stringify(body)}`)
                     const otpCode = body["code"]
                     cy.log(otpCode)
-                    cy.log(`Verifying OTP for test user via Descope API: ${testUser.loginId}`)
+                    cy.log(`Verifying OTP for test user via Descope API: ${loginId}`)
 
                     cy.request({
                         method: 'POST',
                         url: `${descopeApiBaseURL}/auth/otp/verify/email`,
                         headers: authHeader,
                         body: {
-                            "loginId": testUser.loginId,
+                            "loginId": loginId,
                             "code": otpCode
                         }
                     })
@@ -79,7 +88,7 @@ Cypress.Commands.add('loginTestUser', () => {
                             // });
 
                             // // Now navigate to the root URL of your application.
-                            cy.visit('/')
+                            // cy.visit('/')
                         })
                 })
         })
