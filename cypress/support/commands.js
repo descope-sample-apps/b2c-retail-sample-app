@@ -5,7 +5,7 @@
 
 const projectId = Cypress.env('descope_project_id')
 const managementId = Cypress.env('descope_management_id')
-const descopeAPIDomain = Cypress.env('descope_api_domain')
+const descopeAPIDomain = "api.descope.com"
 
 // Define the authorization header
 const authHeader = {
