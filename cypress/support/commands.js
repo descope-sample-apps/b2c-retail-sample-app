@@ -26,20 +26,11 @@ const testUser = {
     verifiedEmail: true,
     verifiedPhone: true,
     displayName: "Test User",
-    userTenants: [
-        {
-            tenantId: "string",
-            roleNames: ["string"]
-        }
-    ],
     test: true,
-    customAttributes: {},
-    phoneNumber: "+11231231234"
 }
 
-
-// Add the loginTestUser command
-Cypress.Commands.add('loginTestUser', () => {
+// Add the loginTestUserViaAPI command
+Cypress.Commands.add('loginTestUserViaAPI', () => {
     cy.log("Creating test user via Descope API")
     cy.request({
         method: 'POST',
@@ -79,16 +70,25 @@ Cypress.Commands.add('loginTestUser', () => {
                     })
                         .then(({ body }) => {
                             cy.log(`Verified OTP for test user via Descope API: ${JSON.stringify(body)}`)
-                            // TODO: Get the JWT from the response and store it in the browser's local storage.
+                            const sessionJwt = body["sessionJwt"]
+                            const refreshJwt = body["refreshJwt"]
 
-                            //   cy.window().then((window) => window.sessionStorage.getItem(key))
+                            /** Default name for the session cookie name / local storage key */
+                            const SESSION_TOKEN_KEY = 'DS';
+                            /** Default name for the refresh local storage key */
+                            const REFRESH_TOKEN_KEY = 'DSR';
+                            // As of June 12, 2023, the session and refresh token constants can be found in:
+                            // https://github.dev/descope/web-js-sdk src/withPersistTokens/constants.ts
+
                             // // Store the JWT in the browser's local storage.
-                            // cy.window().then((win) => {
-                            //     win.localStorage.setItem('jwt', jwtToken);
-                            // });
+                            cy.window().then((win) => {
+                                win.localStorage.setItem(SESSION_TOKEN_KEY, sessionJwt);
+                                win.localStorage.setItem(REFRESH_TOKEN_KEY, refreshJwt);
+                            });
 
                             // // Now navigate to the root URL of your application.
-                            // cy.visit('/')
+                            cy.visit('/')
+
                         })
                 })
         })

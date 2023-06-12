@@ -3,11 +3,11 @@ describe('Descope', function () {
     // For some reason if there are test users already created, creation of new ones fails.
     cy.deleteAllTestUsers()
 
-    cy.loginTestUser()
-    cy.deleteAllTestUsers()
+    cy.loginTestUserViaAPI()
   })
 
-  it('shows logged in', function () {
-    // cy.contains('Get Started').should('be.visible')
+  it('shows log out button in nav bar', function () {
+    cy.get('.ant-modal-close-x > .anticon > svg').click(); // Close the modal
+    cy.get('.main-nav .btntag > .nav-link').contains("Logout").should('be.visible');
   })
 })
