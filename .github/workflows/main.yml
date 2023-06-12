@@ -37,9 +37,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Install dependencies
-        env:
-          REACT_APP_DESCOPE_PROJECT_ID: ${{ secrets.REACT_APP_DESCOPE_PROJECT_ID }}
-          REACT_APP_DESCOPE_MANAGEMENT_ID: ${{ secrets.REACT_APP_DESCOPE_MANAGEMENT_ID }}
         run: yarn install --frozen-lockfile
 
       - name: Build
@@ -47,5 +44,8 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
+        env:
+          REACT_APP_DESCOPE_PROJECT_ID: ${{ secrets.REACT_APP_DESCOPE_PROJECT_ID }}
+          REACT_APP_DESCOPE_MANAGEMENT_ID: ${{ secrets.REACT_APP_DESCOPE_MANAGEMENT_ID }}
         with:
           start: yarn start
