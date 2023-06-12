@@ -48,7 +48,8 @@
         "eslint": "8.41.0",
         "eslint-config-react-app": "7.0.1",
         "eslint-plugin-jest-react": "0.1.0",
-        "jest": "^27.5.1"
+        "jest": "^27.5.1",
+        "wait-on": "^7.0.1"
     },
     "resolutions": {
         "nth-check": ">=2.0.1"
