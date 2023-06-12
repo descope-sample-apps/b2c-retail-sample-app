@@ -4,12 +4,12 @@
 // Ideally, we could create one test user per test, and delete it at the end of the test.
 
 const projectId = Cypress.env('descope_project_id')
-const managementId = Cypress.env('descope_management_id')
+const managementKey = Cypress.env('descope_management_key')
 const descopeAPIDomain = "api.descope.com"
 
 // Define the authorization header
 const authHeader = {
-    'Authorization': `Bearer ${projectId}:${managementId}`,
+    'Authorization': `Bearer ${projectId}:${managementKey}`,
 }
 
 // Define the base URL for Descope API
