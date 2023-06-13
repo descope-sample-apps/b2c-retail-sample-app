@@ -1263,18 +1263,18 @@
     jwt-decode "3.1.2"
     lodash.get "4.4.2"
 
-"@descope/react-sdk@0.0.0-next-b2f3de1a-20230612":
-  version "0.0.0-next-b2f3de1a-20230612"
-  resolved "https://registry.yarnpkg.com/@descope/react-sdk/-/react-sdk-0.0.0-next-b2f3de1a-20230612.tgz#0d824e81d63ca1693181ff16af95f28162020a58"
-  integrity sha512-7EFD0QszmaFfpHaBJVKuYEFA2kdDcMDDEbxKAZF6gQOvQR9XMuMxvBqsWZYz+KHV86GfYQnOEH6GauhBufUJlA==
+"@descope/react-sdk@0.0.0-next-4ee3f596-20230613":
+  version "0.0.0-next-4ee3f596-20230613"
+  resolved "https://registry.yarnpkg.com/@descope/react-sdk/-/react-sdk-0.0.0-next-4ee3f596-20230613.tgz#ef4b1d90fa58d3edbb165d953fd04f6dd75a214f"
+  integrity sha512-05jH43P0ysRluoxTMDf/4O+BKtYh9EX05nuGvmqL/UHOrBKrZV9JVym66F3MosHS+piTImWKsrnxCNnMF+sxIw==
   dependencies:
-    "@descope/web-component" "2.4.4"
+    "@descope/web-component" "2.4.5"
     react-router-dom "6.11.2"
 
-"@descope/web-component@2.4.4":
-  version "2.4.4"
-  resolved "https://registry.yarnpkg.com/@descope/web-component/-/web-component-2.4.4.tgz#c3500eea76912667006175738268918c7af8b762"
-  integrity sha512-+5wBsKgEaEg+9LEPuTHL7qOKGVBC1/S7E1/9O+IGI5HdjdmQ8GKMjyJ/yzsUUFrwoKWPEgZBMrsaEaqRvsufHA==
+"@descope/web-component@2.4.5":
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/@descope/web-component/-/web-component-2.4.5.tgz#6f2ef3d61e92d0b8bcd7b8f5600b3759a45eef41"
+  integrity sha512-SBIHWUqHLAausYmqaMEKuhY8fZ6hxoirvIh81oDEgxmvvXuP69A/U4nLF8WWuEpHIh841GvFW5yNK6Obkb4gTg==
   dependencies:
     "@descope/web-js-sdk" "1.2.9"
     tslib "2.5.2"
