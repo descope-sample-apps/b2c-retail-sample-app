@@ -15,6 +15,7 @@ git clone git@github.com:descope-sample-apps/b2c-retail-sample-app.git
 ```
 REACT_APP_DESCOPE_PROJECT_ID="YOUR PROJECT ID" // Required for Descope authentication
 REACT_APP_DESCOPE_SIGN_IN_FLOW_ID="sign-up-or-in" // Optional, if you would like to use a flow other than sign-up-or-in
+REACT_APP_DESCOPE_MANAGEMENT_KEY="YOUR MANAGEMENT KEY" // Optional, if you would like to run E2E tests
 ```
 _You can get your project-id [here](https://app.descope.com/settings/project)_.
 _You can get this flow-id from the Flows page [here](https://app.descope.com/flows)_.
