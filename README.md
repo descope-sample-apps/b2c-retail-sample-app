@@ -38,6 +38,16 @@ yarn start
 Browse to `https://localhost:3000`
 
 
+## Testing
+To run Jest unit tests:
+```
+yarn test
+```
+To run Cypress E2E tests:
+```
+yarn run cypress open
+```
+
 ## Learn More
 To learn more please see the [Descope Documentation and API reference page](https://docs.descope.com/).
 
