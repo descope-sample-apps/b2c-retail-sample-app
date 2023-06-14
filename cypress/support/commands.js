@@ -70,18 +70,13 @@ Cypress.Commands.add('loginViaDescopeAPI', () => {
                                 win.localStorage.setItem(REFRESH_TOKEN_KEY, refreshJwt);
                             });
 
-                            // // Now navigate to the root URL of your application.
-                            cy.visit('/')
-
                         })
                 })
         })
 })
 
-// Add the deleteAllTestUsers command
+// This command deletes all test users
 Cypress.Commands.add('deleteAllTestUsers', () => {
-    cy.log("Deleting test users via Descope API")
-
     cy.request({
         method: 'DELETE',
         url: `${descopeApiBaseURL}/mgmt/user/test/delete/all`,
