@@ -44,7 +44,9 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build
-        run:  CI=false yarn build
+        env:
+          CI: false
+        run:  yarn build
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
@@ -58,4 +60,4 @@ jobs:
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
           browser: chrome
-          record: true
+          # record: true
