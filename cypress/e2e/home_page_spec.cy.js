@@ -1,12 +1,13 @@
 describe('Descope', function () {
   beforeEach(function () {
-    // For some reason if there are test users already created, creation of new ones fails.
     cy.deleteAllTestUsers()
     cy.loginViaDescopeAPI()
   })
 
-  it('shows log out button in nav bar', function () {
+  it('After log in and out, we should see the login button', function () {
     cy.get('.ant-modal-close-x > .anticon > svg').click(); // Close the modal
-    cy.get('.main-nav .btntag > .nav-link').contains("Logout").should('be.visible');
+    cy.get('.main-nav .btntag > .nav-link').contains("Logout").click(); // Click the logout button
+    cy.get('.main-nav .btntag > .nav-link').contains("Login").should('be.visible'); // Check that the login button is visible
+
   })
 })
