@@ -4,6 +4,7 @@ const { defineConfig } = require("cypress");
 require('dotenv').config()
 
 module.exports = defineConfig({
+  projectId: 'o26pgt',
   e2e: {
     experimentalStudio: true,
     baseUrl: 'http://localhost:3000',
