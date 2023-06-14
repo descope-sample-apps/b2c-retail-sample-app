@@ -43,6 +43,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Build
+        run:  CI=false yarn build
+
       - name: Cypress run
         uses: cypress-io/github-action@v5
         env:
@@ -51,5 +54,4 @@ jobs:
           # pass GitHub token to detect new build vs re-run build
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          build: CI=false yarn build
           start: yarn start & wait-on http://localhost:3000
