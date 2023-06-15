@@ -7,6 +7,7 @@ module.exports = defineConfig({
   projectId: 'o26pgt',
   e2e: {
     experimentalStudio: true,
+    includeShadowDom: true,
     baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
       // implement node event listeners here

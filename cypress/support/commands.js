@@ -75,6 +75,46 @@ Cypress.Commands.add('loginViaDescopeAPI', () => {
         })
 })
 
+
+// Add the loginViaDescopeUI command
+Cypress.Commands.add('loginViaDescopeUI', () => {
+    cy.request({
+        method: 'POST',
+        url: `${descopeApiBaseURL}/mgmt/user/create`,
+        headers: authHeader,
+        body: testUser,
+    })
+        .then(({ body }) => {
+            const loginId = body["user"]["loginIds"][0];
+            cy.request({
+                method: 'POST',
+                url: `${descopeApiBaseURL}/mgmt/tests/generate/otp`,
+                headers: authHeader,
+                body: {
+                    "loginId": loginId,
+                    "deliveryMethod": "email"
+                }
+            })
+                .then(({ body }) => {
+                    const otpCode = body["code"]
+                    const loginID = body["loginId"]
+                    cy.visit('/login')
+                    cy.get('descope-wc')
+                        .find('input')
+                        .type(loginID + "@gmail.com") // Add @gmail.com to pass validation
+                    cy.get('descope-wc')
+                        .find('button').contains('Continue').click()
+                    cy.wait(3000)
+                    let otpCodeArray = Array.from(otpCode); // Convert the OTP code string to an array
+                    for (var i = 0; i < otpCodeArray.length; i++) {
+                        cy.get('descope-wc').find('.descope-input-wrapper').find('input').eq(i + 1).type(otpCodeArray[i], { force: true })
+                    }
+                    cy.get('descope-wc')
+                        .find('button').contains('Submit').click()
+                })
+        })
+})
+
 // This command deletes all test users
 Cypress.Commands.add('deleteAllTestUsers', () => {
     cy.request({
