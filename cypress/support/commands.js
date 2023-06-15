@@ -10,12 +10,12 @@ const authHeader = {
 // Define the base URL for Descope API
 const descopeApiBaseURL = `https://${descopeAPIDomain}/v1`;
 
-const testUserLoginId = "testUser" + Math.floor(1000 + Math.random() * 9000);
+const testUserLoginId = "testUser" + Math.floor(1000 + Math.random() * 9000) + "@gmail.com"; // Must match email to pass validation
 
 // Define the test user details
 const testUser = {
     loginId: testUserLoginId,
-    email: "testUser1@gmail.com",
+    email: testUserLoginId,
     phone: "+11231231234",
     verifiedEmail: true,
     verifiedPhone: true,
@@ -101,7 +101,7 @@ Cypress.Commands.add('loginViaDescopeUI', () => {
                     cy.visit('/login')
                     cy.get('descope-wc')
                         .find('input')
-                        .type(loginID + "@gmail.com") // Add @gmail.com to pass validation
+                        .type(loginID)
                     cy.get('descope-wc')
                         .find('button').contains('Continue').click()
                     cy.get('descope-wc').find('.descope-input-wrapper').find('input').should('exist') // Assertion added to wait for the OTP code input to appear
