@@ -104,7 +104,7 @@ Cypress.Commands.add('loginViaDescopeUI', () => {
                         .type(loginID + "@gmail.com") // Add @gmail.com to pass validation
                     cy.get('descope-wc')
                         .find('button').contains('Continue').click()
-                    cy.wait(3000)
+                    cy.get('descope-wc').find('.descope-input-wrapper').find('input').should('exist') // Assertion added to wait for the OTP code input to appear
                     let otpCodeArray = Array.from(otpCode); // Convert the OTP code string to an array
                     for (var i = 0; i < otpCodeArray.length; i++) {
                         cy.get('descope-wc').find('.descope-input-wrapper').find('input').eq(i + 1).type(otpCodeArray[i], { force: true })
