@@ -1263,10 +1263,10 @@
     jwt-decode "3.1.2"
     lodash.get "4.4.2"
 
-"@descope/react-sdk@0.0.0-next-583820e9-20230614":
-  version "0.0.0-next-583820e9-20230614"
-  resolved "https://registry.yarnpkg.com/@descope/react-sdk/-/react-sdk-0.0.0-next-583820e9-20230614.tgz#f64539782c87d51a78ccf4000e14ab23f9f5c7cd"
-  integrity sha512-T1XbRygb5pG42pdLECrgbIsBLz4Hy9iH0PI9dH8sJ11WTU+3u46T7y1EZYWffbzhYyX+xVLia71ySy+BivymHQ==
+"@descope/react-sdk@0.0.0-next-aa0100be-20230616":
+  version "0.0.0-next-aa0100be-20230616"
+  resolved "https://registry.yarnpkg.com/@descope/react-sdk/-/react-sdk-0.0.0-next-aa0100be-20230616.tgz#0ab5794959b262c7bc1323b8cf18a164304d79af"
+  integrity sha512-dOiYTMB3lrQ6ji+L/KTI0T5bIMWAa3QPez3c6xuaqWzZedkqqTFpa/c8ObzeObxYjsHfrfrSY38uIhBRvXHMuw==
   dependencies:
     "@descope/web-component" "2.4.5"
     react-router-dom "6.11.2"
