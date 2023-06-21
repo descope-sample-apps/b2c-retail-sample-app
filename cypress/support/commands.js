@@ -10,7 +10,7 @@ const authHeader = {
 // Define the base URL for Descope API
 const descopeApiBaseURL = `https://${descopeAPIDomain}/v1`;
 
-const testUserLoginId = "testUser" + Math.floor(1000 + Math.random() * 9000) + "@gmail.com"; // Must match email to pass validation
+const testUserLoginId = "testuser" + Math.floor(1000 + Math.random() * 9000) + "@gmail.com"; // Must match email to pass validation
 
 // Define the test user details
 const testUser = {
