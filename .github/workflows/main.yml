@@ -54,7 +54,7 @@ jobs:
           REACT_APP_DESCOPE_MANAGEMENT_KEY: ${{ secrets.REACT_APP_DESCOPE_MANAGEMENT_KEY }}
           REACT_APP_DESCOPE_PROJECT_ID: ${{ secrets.REACT_APP_DESCOPE_PROJECT_ID }}
           # pass GitHub token to detect new build vs re-run build
-          # GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
           start: yarn start
           wait-on: "http://localhost:3000"
