@@ -15,7 +15,7 @@ import StepUp from "../components/checkout/orderPlaced/StepUp";
 
 const Container = () => {
   return (
-    <div>
+    <div data-testid="container">
       <React.Fragment>
         <Layout>
           <Routes>

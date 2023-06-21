@@ -44,11 +44,25 @@
         ]
     },
     "devDependencies": {
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^14.0.0",
+        "cypress": "^12.14.0",
         "eslint": "8.42.0",
         "eslint-config-react-app": "7.0.1",
-        "eslint-plugin-jest-react": "0.1.0"
+        "eslint-plugin-jest-react": "0.1.0",
+        "jest": "^27.5.1",
+        "wait-on": "^7.0.1"
     },
     "resolutions": {
         "nth-check": ">=2.0.1"
+    },
+    "jest": {
+        "transformIgnorePatterns": [
+            "/node_modules/(?!antd)"
+        ],
+        "moduleNameMapper": {
+            "\\.(css|less|sass|scss)$": "<rootDir>/src/fileMock.js",
+            "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/src/fileMock.js"
+        }
     }
 }

@@ -20,18 +20,18 @@ function Banner() {
             </p>
             {
               isAuthenticated ?
-              <div
-              className="sign-button"
-              style={{backgroundColor: '#efebfb'}}
-            >
-            </div>
-              :
-            <Button
-              className="sign-button"
-              onClick={() => navigate("/login")}
-            >
-              Login
-            </Button>
+                <div
+                  className="sign-button"
+                  style={{ backgroundColor: '#efebfb' }}
+                >
+                </div>
+                :
+                <Button
+                  className="sign-button"
+                  onClick={() => navigate("/login")}
+                >
+                  Login
+                </Button>
             }
           </div>
           {/* for image  */}
