@@ -1401,18 +1401,18 @@
     jwt-decode "3.1.2"
     lodash.get "4.4.2"
 
-"@descope/react-sdk@0.0.0-next-82b9581c-20230704":
-  version "0.0.0-next-82b9581c-20230704"
-  resolved "https://registry.yarnpkg.com/@descope/react-sdk/-/react-sdk-0.0.0-next-82b9581c-20230704.tgz#48cb78144507c244260bd3df8316482fa33facc2"
-  integrity sha512-3hTUEhiCh8khUbIRoX5MPVcUXPCj6gCdog05qvzuarKUzjWtWOFJCaxyi0KgYVvWAWtZ9jLVecaExO7wP2lKUA==
+"@descope/react-sdk@0.0.0-next-927a5d61-20230707":
+  version "0.0.0-next-927a5d61-20230707"
+  resolved "https://registry.yarnpkg.com/@descope/react-sdk/-/react-sdk-0.0.0-next-927a5d61-20230707.tgz#f81a3c432019c14f8141f7196531a55faca878ee"
+  integrity sha512-cO0NCQ9H/5TB7q9oQsstteleDj+DozL2U/fDNf+pS01lkGQkVsMMX98TVudYZUM7L2kwK3YenbHk+Ix3OSrwjA==
   dependencies:
-    "@descope/web-component" "2.5.7"
-    react-router-dom "6.12.1"
+    "@descope/web-component" "2.6.0"
+    react-router-dom "6.13.0"
 
-"@descope/web-component@2.5.7":
-  version "2.5.7"
-  resolved "https://registry.yarnpkg.com/@descope/web-component/-/web-component-2.5.7.tgz#05ce531dd033d3ed1e20f831aecec341837f3a35"
-  integrity sha512-CyBA92iLaRu++z6dFRSnTOdmCDAzw+nptxxRTLofn4Z9CjcRQ+eDm2NTPmhzP6iD3WhWQ/daz0FbAMKXZOcpmQ==
+"@descope/web-component@2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@descope/web-component/-/web-component-2.6.0.tgz#bc5987eeb743adc6c9988592eb4e600a19f58382"
+  integrity sha512-iKE/nn1FjWhJCW3Hff+URZTVFqYTU9VFYOcfvH2c3ZZ8X40xDfVQyRbMZ+pOD2X9hu4WgZiVwfR6VM20WDUh2Q==
   dependencies:
     "@descope/web-js-sdk" "1.3.4"
     tslib "2.5.3"
@@ -8974,14 +8974,6 @@ react-refresh@^0.11.0:
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
 
-react-router-dom@6.12.1:
-  version "6.12.1"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.12.1.tgz#601fe7eb493071a33dc7573a20b920324a834606"
-  integrity sha512-POIZN9UDKWwEDga054LvYr2KnK8V+0HR4Ny4Bwv8V7/FZCPxJgsCjYxXGxqxzHs7VBxMKZfgvtKhafuJkJSPGA==
-  dependencies:
-    "@remix-run/router" "1.6.3"
-    react-router "6.12.1"
-
 react-router-dom@6.13.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.13.0.tgz#6651f456bb2af42ef14f6880123b1f575539e81f"
@@ -8989,13 +8981,6 @@ react-router-dom@6.13.0:
   dependencies:
     "@remix-run/router" "1.6.3"
     react-router "6.13.0"
-
-react-router@6.12.1:
-  version "6.12.1"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.12.1.tgz#9e4126aa1139ec6b5d347e19576d5e940cd46362"
-  integrity sha512-evd/GrKJOeOypD0JB9e1r7pQh2gWCsTbUfq059Wm1AFT/K2MNZuDo19lFtAgIhlBrp0MmpgpqtvZC7LPAs7vSw==
-  dependencies:
-    "@remix-run/router" "1.6.3"
 
 react-router@6.13.0:
   version "6.13.0"
