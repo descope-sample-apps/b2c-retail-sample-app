@@ -2918,10 +2918,10 @@ ansi-styles@^5.0.0:
   resolved "https://registry.npmjs.org/ansi-styles/-/ansi-styles-5.2.0.tgz"
   integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
 
-antd@5.6.2:
-  version "5.6.2"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-5.6.2.tgz#97c8b7e37747d7b8fca1bdaf15525332906a998c"
-  integrity sha512-h67gKgJRs07Qrf27AiKcJSEI3nCAmaCxxvEz6DSdRl1mHc03O8zAemRA6jPQQMPS5q4k7FxIphN+2ZnzdXlU2Q==
+antd@5.6.3:
+  version "5.6.3"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-5.6.3.tgz#18ac8a7245949ff972a01fad7b841f9292c75597"
+  integrity sha512-SbZ1rX/eNXiSerF0V048wmh3tdTJdJpP4OsQS2sNH5f+WjZHgC92M7Qqp5YKOM4Rs8GYq63aePpk7SITl85Jqg==
   dependencies:
     "@ant-design/colors" "^7.0.0"
     "@ant-design/cssinjs" "^1.10.1"
