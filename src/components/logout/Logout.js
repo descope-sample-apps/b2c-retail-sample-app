@@ -1,11 +1,12 @@
 import { useDescope } from "@descope/react-sdk";
 import { useNavigate } from "react-router";
 
-const Logout = () => {
+const Logout = async () => {
   const { logout } = useDescope();
   const navigate = useNavigate();
-  logout();
+  await logout();
   navigate("/")
 };
+
 
 export default Logout;
