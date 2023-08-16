@@ -40,20 +40,21 @@
     rc-util "^5.35.0"
     stylis "^4.0.13"
 
-"@ant-design/icons-svg@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.npmjs.org/@ant-design/icons-svg/-/icons-svg-4.2.1.tgz"
-  integrity sha512-EB0iwlKDGpG93hW8f85CTJTs4SvMX7tt5ceupvhALp1IF44SeUFOMhKUOYqpsoYWQKAOuTRDMqn75rEaKDp0Xw==
+"@ant-design/icons-svg@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@ant-design/icons-svg/-/icons-svg-4.3.0.tgz#cd8d3624bba50975e848591cea12cb6be132cd82"
+  integrity sha512-WOgvdH/1Wl8Z7VXigRbCa5djO14zxrNTzvrAQzhWiBQtEKT0uTc8K1ltjKZ8U1gPn/wXhMA8/jE39SJl0WNxSg==
 
-"@ant-design/icons@^5.1.0":
-  version "5.1.4"
-  resolved "https://registry.npmjs.org/@ant-design/icons/-/icons-5.1.4.tgz"
-  integrity sha512-YHKL7Jx3bM12OxvtiYDon04BsBT/6LGitYEqar3GljzWaAyMOAD8i/uF1Rsi5Us/YNdWWXBGSvZV2OZWMpJlcA==
+"@ant-design/icons@^5.2.2":
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@ant-design/icons/-/icons-5.2.5.tgz#852474359e271a36e54a4ac115065fae7396277e"
+  integrity sha512-9Jc59v5fl5dzmxqLWtRev3dJwU7Ya9ZheoI6XmZjZiQ7PRtk77rC+Rbt7GJzAPPg43RQ4YO53RE1u8n+Et97vQ==
   dependencies:
     "@ant-design/colors" "^7.0.0"
-    "@ant-design/icons-svg" "^4.2.1"
+    "@ant-design/icons-svg" "^4.3.0"
     "@babel/runtime" "^7.11.2"
     classnames "^2.2.6"
+    lodash.camelcase "^4.3.0"
     rc-util "^5.31.1"
 
 "@ant-design/react-slick@~1.0.0":
@@ -3380,14 +3381,14 @@ ansi-styles@^5.0.0:
   resolved "https://registry.npmjs.org/ansi-styles/-/ansi-styles-5.2.0.tgz"
   integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
 
-antd@5.8.0:
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-5.8.0.tgz#7ea22b5a24f42685ad8a77857376f008002e1dc5"
-  integrity sha512-ySwMuNidNmhKlwLzOT2/dPftGXiHKWnDbkRl1brVq0pbwqeszl0Fj7z/IDHEXP0/rJCTOjE8SeLpLQuAL/jpKA==
+antd@5.8.1:
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-5.8.1.tgz#4d3ce5f985c447eeeca470315a6e3aa0f3de4c76"
+  integrity sha512-6BEc6QDLzk01RrUjzIQ50oW2+mpscfBU1tusECi4OwEKgZmvmaW8ErvEDWtTHezIdr7dEMOEJlOZaOl8eXuaIw==
   dependencies:
     "@ant-design/colors" "^7.0.0"
     "@ant-design/cssinjs" "^1.16.0"
-    "@ant-design/icons" "^5.1.0"
+    "@ant-design/icons" "^5.2.2"
     "@ant-design/react-slick" "~1.0.0"
     "@babel/runtime" "^7.18.3"
     "@ctrl/tinycolor" "^3.6.0"
@@ -8058,6 +8059,11 @@ locate-path@^6.0.0:
   integrity sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==
   dependencies:
     p-locate "^5.0.0"
+
+lodash.camelcase@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
+  integrity sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==
 
 lodash.debounce@^4.0.8:
   version "4.0.8"
