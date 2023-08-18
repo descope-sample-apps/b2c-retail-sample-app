@@ -87,7 +87,7 @@ function Header() {
             </li>
             <li className="menu-lists">
               <div className="btntag-mobile">
-                <NavLink to={linkPath} className="nav-link" onClick={() => isAuthenticated ? doLogout(): setIsNavExpanded(!isNavExpanded)}>
+                <NavLink to={linkPath} className="nav-link" onClick={() => isAuthenticated ? doLogout() : setIsNavExpanded(!isNavExpanded)}>
                   <Button className={isAuthenticated ? "btn-login" : "login-nav"}>
                     {loginLabel}
                   </Button>
@@ -98,7 +98,7 @@ function Header() {
         </div>
         <div className="navbar-right">
           <div className="btntag">
-            <NavLink to={linkPath} className="nav-link" onClick={() => isAuthenticated ? doLogout(): ''}>
+            <NavLink data-cy="login-logout-button" to={linkPath} className="nav-link" onClick={() => isAuthenticated ? doLogout() : ''}>
               {loginLabel}
             </NavLink>
           </div>
