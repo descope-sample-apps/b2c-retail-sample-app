@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { useSession } from '@descope/react-sdk';
+import { useSession } from '@descope-int/react-dynamic-sdk';
 import Banner from './Banner';
 
 
-jest.mock('@descope/react-sdk', () => ({
+jest.mock('@descope-int/react-dynamic-sdk', () => ({
     useSession: jest.fn(),
 }));
 

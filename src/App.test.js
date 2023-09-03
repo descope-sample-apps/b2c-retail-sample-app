@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
-jest.mock('@descope/react-sdk', () => ({
+jest.mock('@descope-int/react-dynamic-sdk', () => ({
   AuthProvider: ({ children }) => children,
   useSession: () => ({ isAuthenticated: false }),
   useUser: () => ({ user: null }),

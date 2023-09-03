@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@descope/react-sdk": "0.0.0-next-ff7ef905-20230814",
+        "@descope-int/react-dynamic-sdk": "1.0.9",
         "@testing-library/jest-dom": "5.17.0",
         "@testing-library/react": "14.0.0",
         "@testing-library/user-event": "14.4.3",

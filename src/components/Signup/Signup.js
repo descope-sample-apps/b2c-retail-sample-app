@@ -1,6 +1,6 @@
 import { Typography } from "antd";
 import React from "react";
-import { SignUpOrInFlow } from '@descope/react-sdk'
+import { SignUpOrInFlow } from '@descope-int/react-dynamic-sdk'
 import { useNavigate } from "react-router-dom";
 import "./signup.css";
 function Signup() {

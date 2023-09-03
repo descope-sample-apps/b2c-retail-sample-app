@@ -5,7 +5,7 @@ import { Button } from "antd";
 import "./Cart.css";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
-import { useSession } from '@descope/react-sdk';
+import { useSession } from '@descope-int/react-dynamic-sdk';
 
 function Cart() {
   const getProductData = JSON.parse(localStorage.getItem("selectedItem"));

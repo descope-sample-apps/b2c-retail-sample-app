@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useSession, useUser } from "@descope/react-sdk";
+import { useSession, useUser } from "@descope-int/react-dynamic-sdk";
 import hamburger from "../../assets/hamburger.svg";
 import close from "../../assets/close.svg";
 import "./Header.css";

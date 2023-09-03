@@ -3,7 +3,7 @@ import { Button } from "antd";
 import "./Banner.css";
 import { useNavigate } from "react-router";
 import LoginExperiences from "../loginExperiences/LoginExperiences";
-import { useSession } from '@descope/react-sdk'
+import { useSession } from '@descope-int/react-dynamic-sdk'
 
 function Banner() {
   const navigate = useNavigate();

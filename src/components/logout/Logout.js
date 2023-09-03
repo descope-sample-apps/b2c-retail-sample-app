@@ -1,4 +1,4 @@
-import { useDescope } from "@descope/react-sdk";
+import { useDescope } from "@descope-int/react-dynamic-sdk";
 import { useNavigate } from "react-router";
 
 const Logout = () => {

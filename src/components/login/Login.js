@@ -1,7 +1,7 @@
 import { Typography } from "antd";
 import React from "react";
 import "./login.css";
-import { Descope } from '@descope/react-sdk'
+import { Descope } from '@descope-int/react-dynamic-sdk'
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
