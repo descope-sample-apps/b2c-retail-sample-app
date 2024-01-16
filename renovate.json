@@ -3,5 +3,5 @@
     "extends": [
         "local>descope-sample-apps/renovate-config"
     ],
-    "baseBranches": ["main", "dynamicSdk"]
+    "baseBranches": ["main"]
 }
