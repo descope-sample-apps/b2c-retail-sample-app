@@ -6,6 +6,8 @@ import { useSearchParams } from "react-router-dom";
 const AppRoot = () => {
   const [searchParams] = useSearchParams();
   const projectId = searchParams.get("project") || localStorage.getItem('projectId');
+  const flowId = searchParams.get("flow") || localStorage.getItem('flowId');
+  
   if (projectId !== localStorage.getItem('projectId')) {
     localStorage.removeItem("DSR")
     localStorage.removeItem("DS")
