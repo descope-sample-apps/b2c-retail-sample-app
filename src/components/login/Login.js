@@ -6,6 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate()
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const flowId = urlParams.get('flow') || process.env.REACT_APP_DESCOPE_SIGN_IN_FLOW_ID || "sign-up-or-in";
+  
   return (
     <>
       <div className="main-container-login">
@@ -22,9 +26,7 @@ const Login = () => {
         </div>
         <div className="login-container">
         <Descope
-            flowId= {
-              process.env.REACT_APP_DESCOPE_SIGN_IN_FLOW_ID || "sign-up-or-in"
-            }
+            flowId= {flowId}
             onSuccess={(e) => {
               localStorage.setItem("loginDetails", JSON.stringify(e.detail.user))
               window.analytics.identify(e.detail.user.userId, {
