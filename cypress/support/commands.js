@@ -103,14 +103,18 @@ Cypress.Commands.add('loginViaDescopeUI', () => {
                         .find('input')
                         .type(loginID)
                     cy.get('descope-wc')
-                        .find('button').contains('Continue').click()
+                        .find('descope-button').contains('Continue').click()
                     cy.get('descope-wc').find('.descope-input-wrapper').find('input').should('exist') // Assertion added to wait for the OTP code input to appear
                     let otpCodeArray = Array.from(otpCode); // Convert the OTP code string to an array
-                    for (var i = 0; i < otpCodeArray.length; i++) {
-                        cy.get('descope-wc').find('.descope-input-wrapper').find('input').eq(i + 1).type(otpCodeArray[i], { force: true })
-                    }
+                    otpCodeArray.forEach((digit, index) => {
+                        cy.get(`descope-text-field[data-id="${index}"]`).then($element => {
+                                const input = $element[0].shadowRoot.querySelector('input');
+                                input.value = digit;
+                                input.dispatchEvent(new Event('change', { bubbles: true }));
+                            });
+                    });
                     cy.get('descope-wc')
-                        .find('button').contains('Submit').click()
+                        .find('descope-button').contains('Submit').click()
                 })
         })
 })
