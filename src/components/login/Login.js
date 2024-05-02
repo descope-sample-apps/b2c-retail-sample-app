@@ -35,7 +35,7 @@ const Login = () => {
                 case 'CART':
                   navigate('/cart');
                   localStorage.removeItem('pathState');
-                  break;              
+                  break;               
                 default:
                   navigate('/');
                   break;
