@@ -1,10 +1,7 @@
 import { UserProfile, useSession } from "@descope/react-sdk";
-import { redirect, useNavigate } from "react-router";
 
 function Profile() {
-  const navigate = useNavigate();
   const { isAuthenticated } = useSession();
-
 
   return (
     <>
