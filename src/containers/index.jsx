@@ -12,6 +12,7 @@ import Layout from "../layout/Layout";
 import Home from "./home/Home";
 import Signup from "../components/Signup/Signup";
 import StepUp from "../components/checkout/orderPlaced/StepUp";
+import Profile from "../components/profile/Profile";
 
 const Container = () => {
   return (
@@ -32,6 +33,7 @@ const Container = () => {
             <Route path="logout" element={<Logout />} />
             <Route path="sign-up" element={<Signup />} />
             <Route path="cart" element={<Cart />} />
+            <Route path="profile" element={<Profile />} />
             <Route path="billing-address" element={<BillingAddress />} />
             <Route path="shipping" element={<Shipping />} />
             <Route path="payment-method" element={<PaymentMethod />} />

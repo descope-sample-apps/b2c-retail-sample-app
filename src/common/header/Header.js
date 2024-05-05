@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link ,NavLink } from "react-router-dom";
 import { useSession, useUser } from "@descope/react-sdk";
 import hamburger from "../../assets/hamburger.svg";
 import close from "../../assets/close.svg";
@@ -109,7 +109,15 @@ function Header() {
               style={{ top: "2em" }}
               className="cart-display"
             >
-              <img src={require("../../assets/cart.svg").default} alt="cart" />
+              <img src={require("../../assets/cart.svg").default} alt="cart-img" />
+            </Badge>
+          </NavLink>
+          <NavLink to="profile">
+            <Badge
+              style={{ top: "2em" }}
+              className="profile-display"
+            >
+              <img src={require("../../assets/profile.svg").default} alt="profile-img" />
             </Badge>
           </NavLink>
         </div>
