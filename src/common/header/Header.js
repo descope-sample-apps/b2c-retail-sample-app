@@ -109,7 +109,7 @@ function Header() {
               style={{ top: "2em" }}
               className="cart-display"
             >
-              <img src={require("../../assets/cart.svg").default} alt="cart" />
+              <img src={require("../../assets/cart.svg").default} alt="cart-img" />
             </Badge>
           </NavLink>
           <NavLink to="profile">
@@ -117,7 +117,7 @@ function Header() {
               style={{ top: "2em" }}
               className="profile-display"
             >
-              <img src={require("../../assets/profile.svg").default} alt="cart" />
+              <img src={require("../../assets/profile.svg").default} alt="profile-img" />
             </Badge>
           </NavLink>
         </div>
