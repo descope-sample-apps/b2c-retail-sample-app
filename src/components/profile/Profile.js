@@ -1,12 +1,16 @@
 import { UserProfile, useSession } from "@descope/react-sdk";
 
 function Profile() {
-  const { isAuthenticated } = useSession();
+  const { isAuthenticated, isSessionLoading } = useSession();
 
   return (
     <>
     <div>
-      {isAuthenticated ? <UserProfile widgetId="user-profile-widget"></UserProfile> : window.location.href = '/login'}
+      {isAuthenticated || isSessionLoading ? <UserProfile 
+      widgetId="user-profile-widget"     
+      onLogout={() => {
+      window.location.href = '/login';
+    }}></UserProfile> : window.location.href = '/login'}
       </div>
     </>);
 
