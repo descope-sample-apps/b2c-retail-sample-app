@@ -1,11 +1,12 @@
 import { UserProfile, useSession } from "@descope/react-sdk";
+import './profile.css';
 
 function Profile() {
   const { isAuthenticated, isSessionLoading } = useSession();
 
   return (
     <>
-    <div>
+    <div className="profile">
       {isAuthenticated || isSessionLoading ? <UserProfile 
       widgetId="user-profile-widget"     
       onLogout={() => {
