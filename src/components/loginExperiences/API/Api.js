@@ -11,6 +11,7 @@ const API = () => {
   }, []);
 
   const code = `// Rest API call for signup or signin user
+  // Replace api.descope.com if located outside the US with localized base URL
   
   curl -i -X POST 
     https://api.descope.com/v1/auth/otp/signup-in/email 
