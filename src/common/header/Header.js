@@ -8,7 +8,7 @@ import "./Header.css";
 import { Badge, Button } from "antd";
 
 const getDisplayName = (user) => {
-  return user?.email || "";
+  return user?.name || user?.email || "";
 };
 
 function Header() {

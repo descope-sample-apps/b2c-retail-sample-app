@@ -7,7 +7,7 @@ const AppRoot = () => {
   const [searchParams] = useSearchParams();
   const projectId = searchParams.get("project") || localStorage.getItem('projectId');
   const flowId = searchParams.get("flow") || localStorage.getItem('flowId');
-  const baseUrl = searchParams.get("baseurl") || localStorage.getItem('baseurl');
+  const baseUrl = searchParams.get("baseurl") || localStorage.getItem('baseUrl');
   
   if (projectId !== localStorage.getItem('projectId')) {
     localStorage.removeItem("DSR")
