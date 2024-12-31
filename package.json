@@ -8,6 +8,7 @@
         "@testing-library/react": "14.2.2",
         "@testing-library/user-event": "14.5.2",
         "antd": "5.12.8",
+        "jwt-decode": "^4.0.0",
         "prismjs": "1.29.0",
         "react": "18.2.0",
         "react-dom": "18.2.0",
