@@ -28,6 +28,8 @@
   color: #121217;
 }
 .login-container {
+  height: 400px;
+  overflow-y: scroll;
   background: #ffffff;
   backdrop-filter: blur(4.5px);
   border-radius: 15px;
