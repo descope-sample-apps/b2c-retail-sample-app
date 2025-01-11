@@ -28,8 +28,9 @@
   color: #121217;
 }
 .login-container {
-  height: 400px;
+  max-height: 400px;   /* can also be height, but max-height is more accurate */
   overflow-y: scroll;
+
   background: #ffffff;
   backdrop-filter: blur(4.5px);
   border-radius: 15px;
