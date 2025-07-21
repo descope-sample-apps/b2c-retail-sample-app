@@ -3,5 +3,7 @@
     "extends": [
         "local>descope-sample-apps/renovate-config"
     ],
-    "baseBranches": ["main"]
+    "baseBranchPatterns": [
+        "main"
+    ]
 }
