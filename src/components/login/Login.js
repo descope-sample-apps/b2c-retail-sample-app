@@ -26,6 +26,7 @@ const Login = () => {
         <Descope
             flowId= {flowId}
             popupOrigin="https://api.descope.com"
+            redirectUrl="https://api.descope.com/login/P2o6zqzVIfPIGGIQ3LUV4vSp1yi6?flow=sign-up-or-in"
             onSuccess={(e) => {
               localStorage.setItem("loginDetails", JSON.stringify(e.detail.user))
               window.analytics.identify(e.detail.user.userId, {
