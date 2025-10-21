@@ -25,6 +25,7 @@ const Login = () => {
         <div className="login-container">
         <Descope
             flowId= {flowId}
+            popupOrigin="https://api.descope.com"
             onSuccess={(e) => {
               localStorage.setItem("loginDetails", JSON.stringify(e.detail.user))
               window.analytics.identify(e.detail.user.userId, {
