@@ -4,7 +4,7 @@ import paypal from "../../../assets/paypal.svg";
 import paypal_sec from "../../../assets/Fill.svg";
 import vector from "../../../assets/Vector.svg";
 import "./paymentMethod.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const PaymentMethod = () => {
   const initialValues = {

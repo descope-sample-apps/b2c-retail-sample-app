@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Typography, Col, Row, Divider } from "antd";
 import "./billingSummary.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 function BillingSummary() {
   const navigate = useNavigate();
   return (

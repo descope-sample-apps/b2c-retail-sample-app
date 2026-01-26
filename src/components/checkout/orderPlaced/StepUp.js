@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "antd";
 import "./order.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { Descope } from "@descope/react-sdk";
 function StepUp() {
   const navigate = useNavigate();
@@ -18,14 +18,14 @@ function StepUp() {
     )
       ? JSON.parse(localStorage.getItem("newArrivalData"))
       : [];
-    productDataFromLocalStorage.map((item) => {
+    productDataFromLocalStorage.forEach((item) => {
       item.addedToCart = false;
     });
     localStorage.setItem(
       "productData",
       JSON.stringify(productDataFromLocalStorage)
     );
-    newArrivalDataFromLocalStorage.map((item) => {
+    newArrivalDataFromLocalStorage.forEach((item) => {
       item.addedToCart = false;
     });
     localStorage.setItem(

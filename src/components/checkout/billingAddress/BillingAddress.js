@@ -1,6 +1,6 @@
 import { Button, Checkbox, Select, Typography } from "antd";
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import "./billingAddress.css";
 
 const BillingAddress = () => {

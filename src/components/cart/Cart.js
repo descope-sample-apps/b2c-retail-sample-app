@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Col, Row, Typography } from "antd";
 import { Button } from "antd";
 import "./Cart.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useSession } from '@descope/react-sdk';
 
@@ -33,7 +33,7 @@ function Cart() {
     )
       ? JSON.parse(localStorage.getItem("newArrivalData"))
       : [];
-    productDataFromLocalStorage.map((item) => {
+    productDataFromLocalStorage.forEach((item) => {
       if (item.id === id) {
         item.addedToCart = false;
       }
@@ -42,7 +42,7 @@ function Cart() {
       "productData",
       JSON.stringify(productDataFromLocalStorage)
     );
-    newArrivalDataFromLocalStorage.map((item) => {
+    newArrivalDataFromLocalStorage.forEach((item) => {
       if (item.id === id) {
         item.addedToCart = false;
       }

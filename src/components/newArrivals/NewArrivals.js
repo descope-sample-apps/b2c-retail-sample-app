@@ -1,4 +1,4 @@
-import { Button, Typography } from "antd";
+import { Typography } from "antd";
 import React, { useState, useEffect } from "react";
 import { newArrivalData } from "./NewArrivalData";
 import Slider from "react-slick";
@@ -82,10 +82,13 @@ const NewArrivals = () => {
   const [products, setProducts] = useState(newArrivalDataFromLocalStorage);
 
   useEffect(() => {
-    if (newArrivalDataFromLocalStorage.length === 0) {
+    const storedData = JSON.parse(localStorage.getItem("newArrivalData")) || [];
+    if (storedData.length === 0) {
       localStorage.setItem("newArrivalData", JSON.stringify(newArrivalData));
+      setProducts(newArrivalData);
+    } else {
+      setProducts(storedData);
     }
-    setProducts(JSON.parse(localStorage.getItem("newArrivalData")));
   }, []);
 
   const addToCart = (data) => {
@@ -99,7 +102,7 @@ const NewArrivals = () => {
     );
     navigate("/");
     let productsArray = [...products];
-    productsArray.map((item) => {
+    productsArray.forEach((item) => {
       if (item.id === data.id) {
         item.addedToCart = true;
       }

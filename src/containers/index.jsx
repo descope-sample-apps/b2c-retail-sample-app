@@ -7,7 +7,7 @@ import PaymentMethod from "../components/checkout/paymentMethod/PaymentMethod";
 import Shipping from "../components/checkout/shipping/Shipping";
 import Login from "../components/login/Login";
 import Logout from "../components/logout/Logout";
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom";
 import Layout from "../layout/Layout";
 import Home from "./home/Home";
 import Signup from "../components/Signup/Signup";

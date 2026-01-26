@@ -1,6 +1,6 @@
 import { Typography } from "antd";
 import React from "react";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import LoginExperiences from "../../components/loginExperiences/LoginExperiences";
 import "./footer.css";
 
@@ -38,7 +38,7 @@ const Footer = () => {
 
       <div className="footer-wrapper">
         <Typography className="footer-content">
-        Tee-Hee Tees is a sample application made with love by Descope. <br/>The app is open source and available on GitHub here: <a target="_blank" href="https://github.com/descope-sample-apps/b2c-retail-sample-app">https://github.com/descope-sample-apps/b2c-retail-sample-app</a>
+        Tee-Hee Tees is a sample application made with love by Descope. <br/>The app is open source and available on GitHub here: <a target="_blank" rel="noreferrer" href="https://github.com/descope-sample-apps/b2c-retail-sample-app">https://github.com/descope-sample-apps/b2c-retail-sample-app</a>
         </Typography>
       </div>
     </div>

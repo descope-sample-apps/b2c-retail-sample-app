@@ -42,10 +42,13 @@ const Product = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (productDataFromLocalStorage.length === 0) {
+    const storedData = JSON.parse(localStorage.getItem("productData")) || [];
+    if (storedData.length === 0) {
       localStorage.setItem("productData", JSON.stringify(productData));
+      setProducts(productData);
+    } else {
+      setProducts(storedData);
     }
-    setProducts(JSON.parse(localStorage.getItem("productData")));
   }, []);
 
   const settings = {
@@ -97,7 +100,7 @@ const Product = () => {
     );
     navigate("/");
     let productsArray = [...products];
-    productsArray.map((item) => {
+    productsArray.forEach((item) => {
       if (item.id === data.id) {
         item.addedToCart = true;
       }
