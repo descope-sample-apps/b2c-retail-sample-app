@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useSession, useUser } from "@descope/react-sdk";
 import hamburger from "../../assets/hamburger.svg";
@@ -13,11 +12,7 @@ const getDisplayName = (user) => {
 };
 
 function Header() {
-    let selectedItems = JSON.parse(localStorage.getItem("selectedItem"))
-        ? JSON.parse(localStorage.getItem("selectedItem"))
-        : [];
     const [isNavExpanded, setIsNavExpanded] = useState(false);
-    const [cartLength, setCartLength] = useState([]);
     const { isAuthenticated, sessionToken, isSessionLoading } = useSession();
     const isAnonymousUser =
         (sessionToken && jwtDecode(sessionToken)["danu"]) || false;
@@ -43,10 +38,7 @@ function Header() {
         }
         setIsNavExpanded(!isNavExpanded);
     };
-    useEffect(() => {
-        if (cartLength && selectedItems.length !== cartLength.length)
-            setCartLength(selectedItems);
-    }, [selectedItems, cartLength]);
+    
 
     return (
         <>
@@ -137,7 +129,10 @@ function Header() {
                     </div>
                     <NavLink to="cart">
                         <Badge
-                            count={cartLength.length}
+                            count={
+                                (JSON.parse(localStorage.getItem("selectedItem")) || [])
+                                    .length
+                            }
                             overflowCount={100}
                             style={{ top: "2em" }}
                             className="cart-display"
