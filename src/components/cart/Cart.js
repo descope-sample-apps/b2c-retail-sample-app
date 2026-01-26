@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Col, Row, Typography } from "antd";
 import { Button } from "antd";
 import "./Cart.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useSession } from '@descope/react-sdk';
 

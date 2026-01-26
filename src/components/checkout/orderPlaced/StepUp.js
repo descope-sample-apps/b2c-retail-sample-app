@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "antd";
 import "./order.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { Descope } from "@descope/react-sdk";
 function StepUp() {
   const navigate = useNavigate();

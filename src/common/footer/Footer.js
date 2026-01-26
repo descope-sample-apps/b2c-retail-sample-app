@@ -1,6 +1,6 @@
 import { Typography } from "antd";
 import React from "react";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import LoginExperiences from "../../components/loginExperiences/LoginExperiences";
 import "./footer.css";
 

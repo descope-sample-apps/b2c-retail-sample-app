@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "antd";
 import "./Banner.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import LoginExperiences from "../loginExperiences/LoginExperiences";
 import { useSession } from '@descope/react-sdk'
 

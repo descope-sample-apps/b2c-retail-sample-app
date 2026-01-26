@@ -2,7 +2,7 @@ import { Button, Radio, Typography } from "antd";
 import shipping from "../../../assets/shipping.svg";
 import React, { useState } from "react";
 import "./shipping.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const Shipping = () => {
   const navigate = useNavigate();

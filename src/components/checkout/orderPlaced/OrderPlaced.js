@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Button } from "antd";
 import "./order.css";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 function OrderPlaced() {
   const navigate = useNavigate();
 
