@@ -46,7 +46,7 @@ function Header() {
     useEffect(() => {
         if (cartLength && selectedItems.length !== cartLength.length)
             setCartLength(selectedItems);
-    }, [selectedItems]);
+    }, [selectedItems, cartLength]);
 
     return (
         <>

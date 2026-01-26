@@ -33,7 +33,7 @@ function Cart() {
     )
       ? JSON.parse(localStorage.getItem("newArrivalData"))
       : [];
-    productDataFromLocalStorage.map((item) => {
+    productDataFromLocalStorage.forEach((item) => {
       if (item.id === id) {
         item.addedToCart = false;
       }
@@ -42,7 +42,7 @@ function Cart() {
       "productData",
       JSON.stringify(productDataFromLocalStorage)
     );
-    newArrivalDataFromLocalStorage.map((item) => {
+    newArrivalDataFromLocalStorage.forEach((item) => {
       if (item.id === id) {
         item.addedToCart = false;
       }
