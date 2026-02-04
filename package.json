@@ -18,7 +18,7 @@
         "react-slick": "0.29.0",
         "sass": "1.69.7",
         "slick-carousel": "1.8.1",
-        "web-vitals": "3.5.1"
+        "web-vitals": "5.1.0"
     },
     "scripts": {
         "start": "react-scripts start",
