@@ -10,7 +10,7 @@
         "antd": "5.12.8",
         "jwt-decode": "^4.0.0",
         "prismjs": "1.30.0",
-        "react": "18.2.0",
+        "react": "18.3.1",
         "react-dom": "18.2.0",
         "react-router": "7.18.0",
         "react-router-dom": "6.21.2",
